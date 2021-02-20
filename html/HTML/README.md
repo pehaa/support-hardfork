@@ -18,6 +18,8 @@ HTML utilise des **balises** (en anglais _tags_) qui sont insérées au sein d'u
 
 https://codepen.io/alyra/pen/bGeywNy
 
+https://codepen.io/alyra/pen/MWbvVjp
+
 ## Métaphore
 
 ![rangement ikea](https://s3-us-west-2.amazonaws.com/s.cdpn.io/4515922/wardrobe.jpg)
@@ -178,7 +180,7 @@ Attention: Cette liste n'est pas 100% complète. Dans un objectif de clarté, ce
 `span`  
 `sub` `sup` (par exemple : H<sub>2</sub>O et m<sup>3</sup>)  
 `time`  
-`del` `ins` (par exemple : Cette formation durera <del>5 mois</del> <ins>6 mois</ins>.
+`del` `ins` (par exemple : Cette formation durera <del>5 mois</del> <ins>6 mois</ins>).
 
 ### Images, Multimedia et Embedded Content
 
@@ -278,7 +280,11 @@ Vous pouvez voir le code ci-dessus en action en cliquant [ce lien](https://cdpn.
 
 ## Catégories de contenu
 
-Chaque élément HTML est membre d'un certain nombre de catégories de contenu (par exemple _phrasing content_ ou _interactive content_). Il existe plusieurs règles qui sont basées sur ce classement. En particulier, certains éléments peuvent contenir uniquement des éléments appartenant à la classe _contenu phrasé_.
+Chaque élément HTML est membre d'un certain nombre de catégories de contenu (par exemple _phrasing content_ ou _interactive content_). Il existe plusieurs règles qui sont basées sur ce classement. En particulier, certains éléments peuvent contenir uniquement des éléments appartenant à la classe _contenu phrasé_. [Plus de détails sur MDN](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories)
+
+### Flow content
+
+Eléments qui contiennent texte ou embedded content : `<a>`, `<abbr>`, `<address>`, `<article>`, `<aside>`, `<audio>`, `<b>`, `<bdo>`, `<bdi>`, `<blockquote>`, `<br>`, `<button>`, `<canvas>`, `<cite>`, `<code>`, `<command>`, `<data>`, `<datalist>`, `<del>`, `<details>`, `<dfn>`, `<div>`, `<dl>`, `<em>`, `<embed>`, `<fieldset>`, `<figure>`, `<footer>`, `<form>`, `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`, `<header>`, `<hgroup>`, `<hr>`, `<i>`, `<iframe>`, `<img>`, `<input>`, `<ins>`, `<kbd>`, `<keygen>`, `<label>`, `<main>`, `<map>`, `<mark>`, `<math>`, `<menu>`, `<meter>`, `<nav>`, `<noscript>`, `<object>`, `<ol>`, `<output>`, `<p>`, `<picture>`, `<pre>`, `<progress>`, `<q>`, `<ruby>`, `<s>`, `<samp>`, `<script>`, `<section>`, `<select>`, `<small>`, `<span>`, `<strong>`, `<sub>`, `<sup>`, `<svg>`, `<table>`, `<template>`, `<textarea>`, `<time>`, `<ul>`, `<var>`, `<video>`, `<wbr>` et texte.
 
 ### Phrasing content (contenu phrasé)
 
@@ -307,6 +313,7 @@ https://codepen.io/alyra/pen/QWjJzRB
 ### Ressources
 
 - [MDN - Référence des éléments HTML](https://developer.mozilla.org/fr/docs/Web/HTML/Element)
+- [HTML 5.2 W3C Recommendation](https://www.w3.org/TR/html52/)
 - [HTML Reference](https://htmlreference.io/)
 
 ---
