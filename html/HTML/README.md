@@ -64,13 +64,9 @@ L'élément vide le plus souvent utilisé est `img`. La balise `img` permet d'af
 <img src="path/to/myimage.png" alt="Le contenu de mon image" />
 ```
 
-ou
-
-```html
-<img src="path/to/myimage.png" alt="Le contenu de mon image" />
-```
-
 https://codepen.io/alyra/pen/zYBQoWe
+
+https://codepen.io/alyra/pen/MWbvVjp
 
 ## Structure du document HTML
 
