@@ -20,21 +20,21 @@
 
 1. Le navigateur (client) échange avec le serveur. Ils vont utiliser le protocole HTTP pour communiquer. Le navigateur envoie une requete (_request_) et le serveur répond (_response_).
 
-   Jusqu'à ce moment là, le navigateur a agi en tant qu'un client HTTP :
+   Jusqu'à ce moment là, le navigateur a agi en tant qu'un client HTTP. Si vous avez `curl` installé (ex. `brew install curl` pour MacOS) vous pouvez executer les 2 dernières étapes avec la ligne de commande :
 
-   header de la response :
+   **header de la response :**
 
    ```bash
    curl -I https://alyra.fr
    ```
 
-   body de la response :
+   **body de la response :**
 
    ```bash
    curl https://alyra.fr
    ```
 
-   A ce stade notre page web demandée est en cette forme-là :
+   A ce stade notre page web demandée est de cette forme-là :
 
    ```bash
    <!doctype html><html>......</html>
@@ -43,7 +43,7 @@
    ***
 
 1. ✨ Rendering ✨  
-   Le navigateur utilise son moteur _rendering engine_ afin de parser HTML (en. parse = fr. faire l'analyse grammaticale).
+   Le navigateur utilise son moteur de rendu _rendering engine_ afin de parser HTML (en. parse = fr. faire l'analyse grammaticale).
 
    ```html
    <!DOCTYPE html>
@@ -66,3 +66,11 @@
    1. Le navigateur calcule les dimensions de chaque élément - (étape de _layout_ ou _reflow_).
 
    1. Ensuite il passe à l'étape de _paint_ affichage de chaque pixel de l'écran.
+
+   ***
+
+## Rendering engines
+
+En ce moment, les navigateurs utilisent principalement une des 3 rendering engines: Blink, Webkit ou Gecko.
+
+![](https://wptemplates.pehaa.com/assets/alyra/browser-engines.png)
