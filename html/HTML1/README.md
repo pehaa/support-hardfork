@@ -2,10 +2,11 @@
 
 ## Headings - je ne saute pas les niveaux de titre.
 
-Les balises `<h1>`, `<h2>`, &hellip; , `<h6>` devraient toujours correspondre à la structure logique du document, hierarchie du document.
-Ceci dit on n'utilise pas `h3` directement dans la partie avec heading `h1`, ni `h4` dans la partie avec un heading de niveau 2, `h2` et ainsi de suite.
+Les balises `<h1>`, `<h2>`, &hellip; , `<h6>` devraient toujours correspondre à la hierarchie du document (sa structure logique).
 
-## Navigation - j'utilise la balise `nav` et une liste `ul` (plus rarement `ol`)
+Nous n'utilisons pas `h3` directement dans la partie avec heading `h1`, ni `h4` dans la partie avec un heading de `h2` et ainsi de suite.
+
+## Navigation - j'utilise `nav` et une liste `ul` (`ol`)
 
 ```html
 <nav>
@@ -47,6 +48,27 @@ Dans le cas où le document contient plusieurs éléments `nav`, on peut utilise
 
 ## Main - exactement "un" `main` par document
 
+L’élément HTML `<main>` représente le contenu majoritaire et unique du `<body>` du document.
+
+Dans le contexte de l'accessibilité, cette balise va être utilisées par les outils d'assistance afin d'identifier et de naviguer rapidement dans la partie principale du document.
+
+```html
+<body>
+  <header>
+    <!-- ... -->
+    <nav>
+      <!-- ... -->
+    </nav>
+  </header>
+  <main>
+    <!-- ... -->
+  </main>
+  <footer>
+    <!-- ... -->
+  </footer>
+</body>
+```
+
 ## Images - je n'utilise jamais une image sans l'attribut alt
 
 ```html
@@ -57,7 +79,32 @@ Dans le cas où le document contient plusieurs éléments `nav`, on peut utilise
 ## Icônes dans liens et boutons - j'ajoute toujours le contenu textuel
 
 ```html
-<a href="https://twitter.com/pehaa"></a>
+<button typr="button" aria-label="Close">x</button>
+```
+
+```html
+<a href="https://twitter.com/pehaa" aria-label="Trouvez moi sur Twitter">
+  <span class="twitter-icon"></span>
+</a>
+```
+
+```css
+.sr-only {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+```
+
+```html
+<button typr="button">
+  <span class="sr-only">Close the pop-up window here</span>
+  <span aria-hidden="true">x</span>
+</button>
 ```
 
 ## Emojis
