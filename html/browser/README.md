@@ -49,7 +49,7 @@ Mais si tout va bien, le serveur est localisé et nous pouvons passer à l'étap
 
    ```html
    <!DOCTYPE html>
-   <html land="fr">
+   <html lang="fr">
      <head>
        <meta charset="utf-8" />
        <title>HTML - premiers pas</title>
