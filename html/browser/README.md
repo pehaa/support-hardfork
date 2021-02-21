@@ -74,3 +74,5 @@
 En ce moment, les navigateurs utilisent principalement une des 3 rendering engines: Blink, Webkit ou Gecko.
 
 ![](https://wptemplates.pehaa.com/assets/alyra/browser-engines.png)
+
+![](https://wptemplates.pehaa.com/assets/alyra/statcounter-browsers.png)
