@@ -62,10 +62,10 @@
    </html>
    ```
 
-   1. **DOM** Le rendering engine parse HTML et crée sa nouvelle représentation - **DOM (_Document Object Model_) tree.**
+   1. **DOM :** Le rendering engine parse HTML et crée sa nouvelle représentation - **DOM (_Document Object Model_) tree.**
       ![](https://wptemplates.pehaa.com/assets/alyra/dom1.png)
 
-   2. **CSSOM** Pour définir comment _afficher_ chaque élément du DOM tree, le rendering machine crée un autre objet CSSDOM tree.
+   2. **CSSOM :** Pour définir comment _afficher_ chaque élément du DOM tree, le rendering machine crée un autre objet CSSDOM tree.
 
       ```css
       body {
@@ -78,15 +78,15 @@
 
       ![](https://wptemplates.pehaa.com/assets/alyra/cssom.png)
 
-   3. **Render tree** Le navigateur assemble DOM tree et CSSOM tree en prenant en compte uniquement des éléments visibles (_render tree_).
+   3. **Render tree :** Le navigateur assemble DOM tree et CSSOM tree en prenant en compte uniquement des éléments visibles (_render tree_).
 
       ![](https://wptemplates.pehaa.com/assets/alyra/render-tree.png)
 
-   4. **Layout** Le navigateur calcule les dimensions de chaque élément - (étape de _layout_ ou _reflow_).
+   4. **Layout :** Le navigateur calcule les dimensions de chaque élément - (cette étape est aussi appellée _reflow_).
 
-   5. **Paint** Ensuite il passe à l'étape de _paint_ - remplissage de pixels. Il s'agit de dessiner du texte, des couleurs, des images, des bordures et des ombres, essentiellement toutes les parties visuelles des éléments. Le dessin est généralement effectué sur plusieurs couches (_layers_).
+   5. **Paint :** Ensuite il passe à l'étape de _paint_ - remplissage de pixels. Il s'agit de dessiner du texte, des couleurs, des images, des bordures et des ombres, essentiellement toutes les parties visuelles des éléments. Le dessin est généralement effectué sur plusieurs couches (_layers_).
 
-   6. **Compositing** Les _layers_ sont dessinées à l'écran dans le bon ordre (les éléments au-dessus et en-dessous, axe Z).
+   6. **Compositing :** Les _layers_ sont dessinées à l'écran dans le bon ordre (les éléments au-dessus et en-dessous, axe Z).
 
    ***
 

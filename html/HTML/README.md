@@ -16,6 +16,9 @@ Il coexiste avec deux autres technologies Web :
 
 ```javascript
 /* javascript */
+const p = document.createElement("p")
+p.textContent = "Salut !"
+document.body.append(p)
 const img = new Image()
 img.src = "panda-roux.jpg"
 img.alt = "Panda roux sur une branche"
