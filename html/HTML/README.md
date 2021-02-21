@@ -345,7 +345,3 @@ https://codepen.io/alyra/pen/QWjJzRB
 - [Sac de voyage](https://codepen.io/alyra/pen/KKNvRYb)
 - [Trottinette](https://codepen.io/alyra/pen/GRNvBpL)
 - [Personnages Star Wars](https://codepen.io/alyra/pen/vYyJzBE)
-- [Portfolio de Sonia](https://codepen.io/alyra/pen/PoPXqVy)
-- [Jamais sans passer par Markup Validation W3c](https://codepen.io/alyra/pen/JjYaZZL)
-- [Divitis](https://codepen.io/alyra/pen/yLYxEvJ)
-- [Personal Landing Page](https://codepen.io/alyra/pen/WNQgyBw)
