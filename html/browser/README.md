@@ -2,25 +2,27 @@
 
 **Web Browser** (en français navigateur web) est un logiciel qui permet de consulter des pages web. Il localise, charge et assemble les ressources afin de les rendre accessibles aux utilisateurs (en particulier afficher sur l'écran).
 
-1. Je tape un URL (_Uniform Resource Locator_) dans la barre de l'adresse
+1. Je tape un URL (_Uniform Resource Locator_) dans la barre de l'adresse.
 
    ***
 
-1. Le navigateur contacte un serveur DNS (_Domain Name System_) afin d'obtenir l'addresse IP (_Internet Protocol Address_) correspondant à ma requete. Ensuite, il peut arriver que le navigeteur rencontre un problème, comme ceci:
+1. Le navigateur contacte un serveur DNS (_Domain Name System_) afin d'obtenir l'adresse IP (_Internet Protocol Address_) correspondant à ma requête.
 
-   ```bash
-   Could not resolve host: notexistinghost.com
-   ```
+Ensuite, il peut arriver que le navigateur rencontre un problème, per exemple comme ceci:
 
-   ![This site can't be reached](https://wptemplates.pehaa.com/assets/alyra/cantbereached.png)
+```bash
+Could not resolve host: notexistinghost.com
+```
 
-   Mais si tout va bien, le serveur est localisé est nous pouvons passer à l'étape suivante
+![This site can't be reached](https://wptemplates.pehaa.com/assets/alyra/cantbereached.png)
 
-   ***
+Mais si tout va bien, le serveur est localisé et nous pouvons passer à l'étape suivante.
 
-1. Le navigateur (client) échange avec le serveur. Ils vont utiliser le protocole HTTP (_Hypertext Transfer Protocol_) pour communiquer. Le navigateur envoie une requete (_request_) et le serveur répond (_response_).
+---
 
-   Jusqu'à ce moment là, le navigateur a agi en tant qu'un client HTTP. Si vous avez `curl` installé (ex. `brew install curl` pour MacOS) vous pouvez executer les 2 dernières étapes avec la ligne de commande :
+1. Le navigateur (client) échange avec le serveur. Ils vont utiliser le protocole HTTP (_Hypertext Transfer Protocol_) pour communiquer. Le navigateur envoie une requête (_request_) et le serveur répond (_response_).
+
+   Jusqu'à ce moment là, le navigateur a agi en tant qu'un simple client HTTP. Si vous avez `curl` installé (ex. `brew install curl` pour MacOS) vous pouvez executer les 2 dernières étapes avec la ligne de commande :
 
    **header de la response :**
 
@@ -56,7 +58,7 @@
      <body>
        <h1>HTML - premiers pas</h1>
        <p>
-         Cette semaine nous allons <b>découvrir quelques de ses sécrets.</b>
+         Cette semaine nous allons <b>découvrir quelques de ses secrets.</b>
        </p>
      </body>
    </html>
@@ -82,7 +84,7 @@
 
       ![](https://wptemplates.pehaa.com/assets/alyra/render-tree.png)
 
-   4. **Layout :** Le navigateur calcule les dimensions de chaque élément - (cette étape est aussi appellée _reflow_).
+   4. **Layout :** Le navigateur calcule les dimensions de chaque élément - (cette étape est aussi appelée _reflow_).
 
    5. **Paint :** Ensuite il passe à l'étape de _paint_ - remplissage de pixels. Il s'agit de dessiner du texte, des couleurs, des images, des bordures et des ombres, essentiellement toutes les parties visuelles des éléments. Le dessin est généralement effectué sur plusieurs couches (_layers_).
 
