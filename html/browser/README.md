@@ -62,11 +62,10 @@
    </html>
    ```
 
-   1. Le rendering engine parse HTML et crée sa nouvelle représentation - **DOM (_Document Object Model_) tree.**
-
+   1. **DOM** Le rendering engine parse HTML et crée sa nouvelle représentation - **DOM (_Document Object Model_) tree.**
       ![](https://wptemplates.pehaa.com/assets/alyra/dom1.png)
 
-   1. Ceci n'est pas pourtant suffisant pour l'affichage. Pour définir comment afficher chaque élément du DOM tree, le rendering machine crée un autre objet CSSDOM tree.
+   2. **CSSOM** Pour définir comment _afficher_ chaque élément du DOM tree, le rendering machine crée un autre objet CSSDOM tree.
 
       ```css
       body {
@@ -79,13 +78,15 @@
 
       ![](https://wptemplates.pehaa.com/assets/alyra/cssom.png)
 
-   1. Le navigateur assemble DOM tree et CSSOM tree (_render tree_) en prenant en compte uniquement des éléments visibles.
+   3. **Render tree** Le navigateur assemble DOM tree et CSSOM tree en prenant en compte uniquement des éléments visibles (_render tree_).
 
       ![](https://wptemplates.pehaa.com/assets/alyra/render-tree.png)
 
-   1. Le navigateur calcule les dimensions de chaque élément - (étape de _layout_ ou _reflow_).
+   4. **Layout** Le navigateur calcule les dimensions de chaque élément - (étape de _layout_ ou _reflow_).
 
-   1. Ensuite il passe à l'étape de _paint_ affichage de chaque pixel de l'écran.
+   5. **Paint** Ensuite il passe à l'étape de _paint_ - remplissage de pixels. Il s'agit de dessiner du texte, des couleurs, des images, des bordures et des ombres, essentiellement toutes les parties visuelles des éléments. Le dessin est généralement effectué sur plusieurs couches (_layers_).
+
+   6. **Compositing** Les _layers_ sont dessinées à l'écran dans le bon ordre (les éléments au-dessus et en-dessous, axe Z).
 
    ***
 
