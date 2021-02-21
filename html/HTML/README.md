@@ -10,8 +10,8 @@ Il coexiste avec deux autres technologies Web :
 - **CSS** pour décrire la présentation visuelle
 - **JavaScript** pour des fonctionnalités interactives
 
-**HTML** est un standard définit par WHATWG (_Web
-Hypertext Application Technology Working Group_).
+**HTML** est un standard définit par [WHATWG (_Web
+Hypertext Application Technology Working Group_)](https://whatwg.org/).
 
 **HTML** est un language _déclaratif_ (en opposition aux languages impératifs)
 
@@ -68,9 +68,9 @@ Les éléments HTML peuvent aussi avoir des attributs (caractéristiques et éti
 L'ordre dans lequel nous listons des attributs n'a pas d'importance. Les valeurs devraient être encadrées par des guillemets (`""`).
 
 ```html
-<nomdebalise attribut1="sa valeur" attribut2="sa valeur"
-  >contenu de l'élément</nomdebalise
->
+<nomdebalise attribut1="sa valeur" attribut2="sa valeur">
+  contenu de l'élément
+</nomdebalise>
 ```
 
 ![](https://wptemplates.pehaa.com/assets/alyra/balises-html2.png)

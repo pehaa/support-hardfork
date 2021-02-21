@@ -67,9 +67,10 @@ Mais si tout va bien, le serveur est localisé et nous pouvons passer à l'étap
    1. **DOM :** Le rendering engine parse HTML et crée sa nouvelle représentation - **DOM (_Document Object Model_) tree.**
       ![](https://wptemplates.pehaa.com/assets/alyra/dom1.png)
 
-   2. **CSSOM :** Pour définir comment _afficher_ chaque élément du DOM tree, le rendering machine crée un autre objet CSSDOM tree.
+   2. **CSSOM :** Pour définir comment _afficher_ chaque élément du DOM tree, le rendering machine crée un autre objet **CSSOM (_CSS Object Model_) tree.**
 
       ```css
+      /* style.css */
       body {
         font-family: sans-serif;
       }
