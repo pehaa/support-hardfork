@@ -332,7 +332,7 @@ https://codepen.io/alyra/pen/QWjJzRB
 ### Ressources
 
 - [MDN - Référence des éléments HTML](https://developer.mozilla.org/fr/docs/Web/HTML/Element)
-- [HTML 5.2 W3C Recommendation](https://www.w3.org/TR/html52/)
+- [HTML Living Standard](https://html.spec.whatwg.org/multipage/)
 - [HTML Reference](https://htmlreference.io/)
 - [CodePen Template with simplified DOM visualisation](https://codepen.io/pen?template=rNWwGvy)
 - [HTML Tree Generator](https://chrome.google.com/webstore/detail/html-tree-generator/dlbbmhhaadfnbbdnjalilhdakfmiffeg)
