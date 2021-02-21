@@ -22,7 +22,7 @@ Mais si tout va bien, le serveur est localisé et nous pouvons passer à l'étap
 
 1. Le navigateur (client) échange avec le serveur. Ils vont utiliser le protocole HTTP (_Hypertext Transfer Protocol_) pour communiquer. Le navigateur envoie une requête (_request_) et le serveur répond (_response_).
 
-   Jusqu'à ce moment là, le navigateur a agi en tant qu'un simple client HTTP. Si vous avez `curl` installé (ex. `brew install curl` pour MacOS) vous pouvez executer les 2 dernières étapes avec la ligne de commande :
+   Jusqu'à ce moment là, le navigateur a agi en tant que simple client HTTP. Si vous avez `curl` installé (ex. `brew install curl` pour MacOS) vous pouvez executer les 2 dernières étapes avec la ligne de commande :
 
    **header de la response :**
 
@@ -36,7 +36,7 @@ Mais si tout va bien, le serveur est localisé et nous pouvons passer à l'étap
    curl https://alyra.fr
    ```
 
-   A ce stade notre page web demandée est de cette forme-là :
+   À ce stade notre page web demandée est de cette forme-là :
 
    ```bash
    <!doctype html><html>......</html>
@@ -58,7 +58,7 @@ Mais si tout va bien, le serveur est localisé et nous pouvons passer à l'étap
      <body>
        <h1>HTML - premiers pas</h1>
        <p>
-         Cette semaine nous allons <b>découvrir quelques de ses secrets.</b>
+         Cette semaine nous allons <b>découvrir quelques-uns de ses secrets.</b>
        </p>
      </body>
    </html>
