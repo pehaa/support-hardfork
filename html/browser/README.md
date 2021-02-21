@@ -1,6 +1,6 @@
 # Welcome to the browser
 
-**Web Browser** (en français navigateur web) est un logiciel qui permet de consulter une page web. Il localise, charge et assemble les ressources afin de les rendre accessibles aux utilisateurs (en particulier afficher sur l'écran).
+**Web Browser** (en français navigateur web) est un logiciel qui permet de consulter des pages web. Il localise, charge et assemble les ressources afin de les rendre accessibles aux utilisateurs (en particulier afficher sur l'écran).
 
 1. Je tape un URL (_Uniform Resource Locator_) dans la barre de l'adresse
 
@@ -18,7 +18,7 @@
 
    ***
 
-1. Le navigateur (client) échange avec le serveur. Ils vont utiliser le protocole HTTP pour communiquer. Le navigateur envoie une requete (_request_) et le serveur répond (_response_).
+1. Le navigateur (client) échange avec le serveur. Ils vont utiliser le protocole HTTP (_Hypertext Transfer Protocol_) pour communiquer. Le navigateur envoie une requete (_request_) et le serveur répond (_response_).
 
    Jusqu'à ce moment là, le navigateur a agi en tant qu'un client HTTP. Si vous avez `curl` installé (ex. `brew install curl` pour MacOS) vous pouvez executer les 2 dernières étapes avec la ligne de commande :
 
@@ -43,18 +43,18 @@
    ***
 
 1. ✨ Rendering ✨  
-   Le navigateur utilise son moteur de rendu _rendering engine_ afin de parser HTML (en. parse = fr. faire l'analyse grammaticale).
+   Le navigateur utilise son moteur de rendu (_rendering engine_) afin de parser HTML (en. parse = fr. faire l'analyse grammaticale).
 
    ```html
    <!DOCTYPE html>
-   <head>
-     <meta charset="utf-8" />
-     <title>HTML</title>
-     <link href="style.css" rel="stylesheet" />
-   </head>
-   <html>
+   <html land="fr">
+     <head>
+       <meta charset="utf-8" />
+       <title>HTML - premiers pas</title>
+       <link href="style.css" rel="stylesheet" />
+     </head>
      <body>
-       <h1>HTML</h1>
+       <h1>HTML - premiers pas</h1>
        <p>
          Cette semaine nous allons <b>découvrir quelques de ses sécrets.</b>
        </p>
