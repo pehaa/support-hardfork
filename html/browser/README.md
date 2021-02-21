@@ -39,6 +39,7 @@
    Le navigateur utilise son moteur _rendering engine_ afin de parser HTML (en. parse = fr. faire l'analyse grammaticale).
 
    ```html
+   <!DOCTYPE html>
    <html>
      <body>
        <h1>HTML</h1>
@@ -53,4 +54,8 @@
 
    Ceci n'est pas pourtant suffisant pour l'affichage. Pour définir comment afficher chaque élément du DOM tree, le rendering machine crée un autre objet CSSDOM tree.
 
-   Nous pouvons visualiser[Template](https://codepen.io/pen?template=rNWwGvy)
+   Le navigateur assemble DOM tree et CSSOM tree en prenant en compte uniquement des éléments visibles.
+
+   Le navigateur calcule les dimensions de chaque élément - (étape de _layout_ ou _reflow_).
+
+   Ensuite il passe à l'étape de _paint_ affichage de chaque pixel de l'écran.

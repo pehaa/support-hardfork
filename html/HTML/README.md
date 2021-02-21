@@ -18,7 +18,7 @@ Il coexiste avec deux autres technologies Web :
 /* javascript */
 const img = new Image()
 img.src = "panda-roux.jpg"
-img.alt = "Panda roux dort sur une branche"
+img.alt = "Panda roux sur une branche"
 document.body.append(img)
 ```
 
@@ -26,7 +26,7 @@ document.body.append(img)
 <!-- html -->
 <body>
   <p>Salut !</p>
-  <img src="panda-roux.jpg" alt="Panda roux dort sur une branche" />
+  <img src="panda-roux.jpg" alt="Panda roux sur une branche" />
 </body>
 ```
 
@@ -300,7 +300,7 @@ Chaque élément HTML est membre d'un certain nombre de catégories de contenu (
 
 ### Flow content
 
-Eléments qui contiennent texte ou embedded content : `<a>`, `<abbr>`, `<address>`, `<article>`, `<aside>`, `<audio>`, `<b>`, `<bdo>`, `<bdi>`, `<blockquote>`, `<br>`, `<button>`, `<canvas>`, `<cite>`, `<code>`, `<command>`, `<data>`, `<datalist>`, `<del>`, `<details>`, `<dfn>`, `<div>`, `<dl>`, `<em>`, `<embed>`, `<fieldset>`, `<figure>`, `<footer>`, `<form>`, `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`, `<header>`, `<hgroup>`, `<hr>`, `<i>`, `<iframe>`, `<img>`, `<input>`, `<ins>`, `<kbd>`, `<keygen>`, `<label>`, `<main>`, `<map>`, `<mark>`, `<math>`, `<menu>`, `<meter>`, `<nav>`, `<noscript>`, `<object>`, `<ol>`, `<output>`, `<p>`, `<picture>`, `<pre>`, `<progress>`, `<q>`, `<ruby>`, `<s>`, `<samp>`, `<script>`, `<section>`, `<select>`, `<small>`, `<span>`, `<strong>`, `<sub>`, `<sup>`, `<svg>`, `<table>`, `<template>`, `<textarea>`, `<time>`, `<ul>`, `<var>`, `<video>`, `<wbr>` et texte.
+Eléments qui contiennent texte ou embedded content : `a`, `abbr`, `address`, `article`, `aside`, `audio`, `b`, `bdo`, `bdi`, `blockquote`, `br`, `button`, `canvas`, `cite`, `code`, `command`, `data`, `datalist`, `del`, `details`, `dfn`, `div`, `dl`, `em`, `embed`, `fieldset`, `figure`, `footer`, `form`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `header`, `hgroup`, `hr`, `i`, `iframe`, `img`, `input`, `ins`, `kbd`, `keygen`, `label`, `main`, `map`, `mark`, `math`, `menu`, `meter`, `nav`, `noscript`, `object`, `ol`, `output`, `p`, `picture`, `pre`, `progress`, `q`, `ruby`, `s`, `samp`, `script`, `section`, `select`, `small`, `span`, `strong`, `sub`, `sup`, `svg`, `table`, `template`, `textarea`, `time`, `ul`, `var`, `video`, `wbr` et texte.
 
 ### Phrasing content (contenu phrasé)
 
@@ -331,6 +331,8 @@ https://codepen.io/alyra/pen/QWjJzRB
 - [MDN - Référence des éléments HTML](https://developer.mozilla.org/fr/docs/Web/HTML/Element)
 - [HTML 5.2 W3C Recommendation](https://www.w3.org/TR/html52/)
 - [HTML Reference](https://htmlreference.io/)
+- [CodePen Template with simplified DOM visualisation](https://codepen.io/pen?template=rNWwGvy)
+- [HTML Tree Generator](https://chrome.google.com/webstore/detail/html-tree-generator/dlbbmhhaadfnbbdnjalilhdakfmiffeg)
 
 ---
 

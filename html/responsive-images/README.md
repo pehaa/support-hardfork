@@ -18,12 +18,14 @@ Regardons comment on peut y remédier ?
 ### 🤔 Solution 1 : 1x, 2x, (3x)
 
 Première étape est de préparer une autre image, de la taille `600px x 800px` (on double la largeur et la hauteur).
+Nous allons utiliser un attribut `srcset` avec des descripteurs `x` (`1x`, `2x`, `3x`) correspondant aux différentes densités de pixels de nos écrans.
 
 ```html
 <img
   src="img-300x400.jpg"
   srcset="img-300x400.jpg 1x, img-600x800.jpg 2x"
   alt="texte alternatif"
+  width="300"
 />
 ```
 
@@ -34,15 +36,15 @@ Nous pouvons aller encore plus loin. Si nous avons la possibilité d'avoir notre
   src="img-300x400.jpg"
   srcset="img-300x400.jpg 1x, img-600x800.jpg 2x, img-900x1200.jpg 3x"
   alt="texte alternatif"
+  width="300"
 />
 ```
 
 Ici on indique au navigateur quelle image est préparée pour quelle résolution.
-Attribut `width` est recommandé mais pas nécessaire.
 
 ### 🤔 Solution 2 : unités `w`
 
-Pareil, on prépare une autre image, de la taille `600px x 800px` (on double la largeur et la hauteur).
+Pareil, on prépare une autre image, de la taille `600px x 800px` (on double la largeur et la hauteur) (ainsi qu'une image "triplée" en dimenstions si possible).
 
 ```html
 <img
@@ -95,10 +97,12 @@ On peut aller plus loin :
   <source
     media="(max-width:420px)"
     srcset="foxsmall-64x64.png 1x, foxsmall-128x128.png 2x"
+    width="64"
   />
   <source
     media="(min-width:421px)"
     srcset="foxfull-140x140.png 1x, foxfull-280x280.png 2x"
+    width="140"
   />
   <img src="foxsmall-64x64.png" alt="Origami Fox" />
 </picture>
