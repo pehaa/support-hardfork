@@ -10,6 +10,9 @@ Il coexiste avec deux autres technologies Web :
 - **CSS** pour décrire la présentation visuelle
 - **JavaScript** pour des fonctionnalités interactives
 
+**HTML** est un standard définit par WHATWG (_Web
+Hypertext Application Technology Working Group_).
+
 **HTML** est un language _déclaratif_ (en opposition aux languages impératifs)
 
 > Les pages HTML sont déclaratives car elles décrivent ce que contient une page (texte, titres, paragraphes, etc.) et non comment les afficher. Alors qu'en programmation impérative, on décrit le comment, c'est-à-dire la structure de contrôle correspondant à la solution (source [Wikipedia](https://fr.wikipedia.org/wiki/Programmation_d%C3%A9clarative))
