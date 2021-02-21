@@ -10,6 +10,26 @@ Il coexiste avec deux autres technologies Web :
 - **CSS** pour décrire la présentation visuelle
 - **JavaScript** pour des fonctionnalités interactives
 
+**HTML** est un language _déclaratif_ (en opposition aux languages impératifs)
+
+> Les pages HTML sont déclaratives car elles décrivent ce que contient une page (texte, titres, paragraphes, etc.) et non comment les afficher. Alors qu'en programmation impérative, on décrit le comment, c'est-à-dire la structure de contrôle correspondant à la solution (source [Wikipedia](https://fr.wikipedia.org/wiki/Programmation_d%C3%A9clarative))
+
+```javascript
+/* javascript */
+const img = new Image()
+img.src = "panda-roux.jpg"
+img.alt = "Panda roux dort sur une branche"
+document.body.append(img)
+```
+
+```html
+<!-- html -->
+<body>
+  <p>Salut !</p>
+  <img src="panda-roux.jpg" alt="Panda roux dort sur une branche" />
+</body>
+```
+
 HTML utilise des **balises** (en anglais _tags_) qui sont insérées au sein d'un texte. Par exemple, chaque paragraphe est encadré par une balise paragraphe (`p`). Le titre principal sera encadré par la balise `h1`. L'ensemble, le titre + les paragraphes autour d'un sujet seront encadrés par une balise `article`.
 
 ![](https://wptemplates.pehaa.com/assets/alyra/text-pandaroux.png)
@@ -317,9 +337,9 @@ https://codepen.io/alyra/pen/QWjJzRB
 ## Exercices (2 jours)
 
 - [Lecture obligatoire (MDN)](https://developer.mozilla.org/fr/docs/Apprendre/Commencer_avec_le_web/Les_bases_HTML)
-- [Sac de voyage](https://codepen.io/alyra/pen/yLYxEpJ)
-- [Trottinette](https://codepen.io/alyra/pen/vYNzrav)
-- [Personnages Star Wars](https://codepen.io/alyra/pen/QWjPjMz)
+- [Sac de voyage](https://codepen.io/alyra/pen/KKNvRYb)
+- [Trottinette](https://codepen.io/alyra/pen/GRNvBpL)
+- [Personnages Star Wars](https://codepen.io/alyra/pen/vYyJzBE)
 - [Portfolio de Sonia](https://codepen.io/alyra/pen/PoPXqVy)
 - [Jamais sans passer par Markup Validation W3c](https://codepen.io/alyra/pen/JjYaZZL)
 - [Divitis](https://codepen.io/alyra/pen/yLYxEvJ)
