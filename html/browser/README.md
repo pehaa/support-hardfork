@@ -47,21 +47,41 @@
 
    ```html
    <!DOCTYPE html>
+   <head>
+     <meta charset="utf-8" />
+     <title>HTML</title>
+     <link href="style.css" rel="stylesheet" />
+   </head>
    <html>
      <body>
        <h1>HTML</h1>
-       <p>Cette semaine nous allons découvrir quelques de ses sécrets.</p>
+       <p>
+         Cette semaine nous allons <b>découvrir quelques de ses sécrets.</b>
+       </p>
      </body>
    </html>
    ```
 
-   1. Avant d'afficher le contenu, le navigateur doit établir deux arborescences **DOM (_Document Object Model_) tree** et **CSSOM (_CSS Object Model_) tree**.
+   1. Le rendering engine parse HTML et crée sa nouvelle représentation - **DOM (_Document Object Model_) tree.**
 
-      Autrement dit, le rendering engine parse HTML et crée sa nouvelle représentation - DOM tree.
+      ![](https://wptemplates.pehaa.com/assets/alyra/dom1.png)
 
    1. Ceci n'est pas pourtant suffisant pour l'affichage. Pour définir comment afficher chaque élément du DOM tree, le rendering machine crée un autre objet CSSDOM tree.
 
+      ```css
+      body {
+        font-family: sans-serif;
+      }
+      b {
+        color: magenta;
+      }
+      ```
+
+      ![](https://wptemplates.pehaa.com/assets/alyra/cssom.png)
+
    1. Le navigateur assemble DOM tree et CSSOM tree (_render tree_) en prenant en compte uniquement des éléments visibles.
+
+      ![](https://wptemplates.pehaa.com/assets/alyra/render-tree.png)
 
    1. Le navigateur calcule les dimensions de chaque élément - (étape de _layout_ ou _reflow_).
 
