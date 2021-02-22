@@ -343,7 +343,7 @@ https://codepen.io/alyra/pen/QWjJzRB
 
 ---
 
-## Exercices (2 jours)
+## Exercices
 
 - [Lecture obligatoire (MDN)](https://developer.mozilla.org/fr/docs/Apprendre/Commencer_avec_le_web/Les_bases_HTML)
 - [Sac de voyage](https://codepen.io/alyra/pen/KKNvRYb)

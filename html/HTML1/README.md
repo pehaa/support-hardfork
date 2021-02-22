@@ -133,14 +133,14 @@ ou l'élément `input` est descendant de son élément `label`
 
 ### Ressources
 
-- [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#navigation)
+- [MDN - Headings & Navigation](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#navigation)
 - [MDN - Référence des éléments HTML](https://developer.mozilla.org/fr/docs/Web/HTML/Element)
 - [HTML 5.2 W3C Recommendation](https://www.w3.org/TR/html52/)
 - [HTML Reference](https://htmlreference.io/)
 
 ---
 
-## Exercices (2 jours)
+## Exercices
 
 - [Portfolio de Sonia](https://codepen.io/alyra/pen/PoPXqVy)
 - [Jamais sans passer par Markup Validation W3c](https://codepen.io/alyra/pen/JjYaZZL)
