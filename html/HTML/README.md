@@ -112,8 +112,9 @@ https://codepen.io/alyra/pen/MWbvVjp
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <title>Mon Document</title>
     <meta charset="utf-8" />
+    <title>Mon Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Document metadata -->
   </head>
   <body class="full light">
