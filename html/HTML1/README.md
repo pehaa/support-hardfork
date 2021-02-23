@@ -79,7 +79,7 @@ Dans le contexte de l'accessibilité, cette balise va être utilisées par les o
 ## Icônes dans liens et boutons - j'ajoute toujours le contenu textuel
 
 ```html
-<button typr="button" aria-label="Close">x</button>
+<button type="button" aria-label="Close">x</button>
 ```
 
 ```html
@@ -101,7 +101,7 @@ Dans le contexte de l'accessibilité, cette balise va être utilisées par les o
 ```
 
 ```html
-<button typr="button">
+<button type="button">
   <span class="sr-only">Close the pop-up window here</span>
   <span aria-hidden="true">x</span>
 </button>
