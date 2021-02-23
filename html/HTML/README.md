@@ -160,6 +160,21 @@ Attention: Cette liste n'est pas 100% complète. Dans un objectif de clarté, ce
 `title`  
 `meta`
 
+```html
+<head>
+  <!-- encodage des caractères -->
+  <meta charset="utf-8" />
+  <title>Titre de ma Page</title>
+  <!-- affichage sur mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="./style.css" rel="stylesheet" />
+  <!-- bloque le parser et s'execute immédiatement -->
+  <script src="script1.js"></script>
+  <!-- ne bloque pas parser et s'execute quand DOM est construit -->
+  <script src="script2.js" defer></script>
+</head>
+```
+
 ### Racine de sectionnement
 
 `body`
