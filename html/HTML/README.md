@@ -330,7 +330,7 @@ https://codepen.io/alyra/pen/QWjJzRB
 
 **Comment savoir ?**
 
-- Suivre la spécification - [MDN - Référence des éléments HTML](https://developer.mozilla.org/fr/docs/Web/HTML/Element)
+- Suivre la spécification - [HTML Living Standard](https://html.spec.whatwg.org/multipage/), [MDN - Référence des éléments HTML](https://developer.mozilla.org/fr/docs/Web/HTML/Element)
 - [Veiller à toujours valider son document HTML](https://validator.w3.org/)
 
 ### Ressources

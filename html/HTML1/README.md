@@ -84,7 +84,7 @@ Dans le contexte de l'accessibilité, cette balise va être utilisées par les o
 
 ```html
 <a href="https://twitter.com/pehaa" aria-label="Trouvez moi sur Twitter">
-  <span class="twitter-icon"></span>
+  <i class="fab fa-twitter"></i>
 </a>
 ```
 
