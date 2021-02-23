@@ -167,7 +167,7 @@ Attention: Cette liste n'est pas 100% complète. Dans un objectif de clarté, ce
   <title>Titre de ma Page</title>
   <!-- affichage sur mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="./style.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
   <!-- bloque le parser et s'execute immédiatement -->
   <script src="script1.js"></script>
   <!-- ne bloque pas parser et s'execute quand DOM est construit -->
