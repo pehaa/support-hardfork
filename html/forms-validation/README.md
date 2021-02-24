@@ -1,6 +1,6 @@
 # Validation des Formulaires <span role="img" aria-label="">✅</span>
 
-C'est le rôle de développeur front-end d'assurer que le format correbt des données soumises par un utilisateur via un formulaire. Nous parlons ici de la validation côté client (_client-side validation_). La validation _client-side_ s'ajoute à la validation côté serveur (_server-side validation_). Elle n'est pas pourtant moins importante et ne devrait pas être négligée. Un des avantages est le feedback instantané envoyé à l'utilisateur sur ses saisies. C'est absolument nécessaire dans le contexte de bonne expérience utilisateur.
+C'est le rôle de développeur front-end d'assurer le format correct des données soumises par un utilisateur via un formulaire. Nous parlons ici de la validation côté client (_client-side validation_). La validation _client-side_ s'ajoute à la validation côté serveur (_server-side validation_). Elle n'est pas pourtant moins importante et ne devrait pas être négligée. Un des avantages est le feedback instantané envoyé à l'utilisateur sur ses saisies. C'est absolument nécessaire dans le contexte de bonne expérience utilisateur.
 
 Avec l'arrivée de _HTML5_ nous avons la validation _"nativement"_ disponible dans le navigateur 🎉. Nous pouvons spécifier le format souhaité grâce aux attributs HTML. L'élément `form` bloquera l'envoi des données si les formats ne sont pas respectés.
 
@@ -38,7 +38,7 @@ Nous avons à notre disposition :
   type="text"
   placeholder="ex. Alyra"
   minlength="3"
-  maxlenght="8"
+  maxlength="8"
 />
 ```
 

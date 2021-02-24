@@ -215,5 +215,5 @@ https://codepen.io/alyra/pen/qBOzGRo
 
 ## Exercices
 
-- [Monstre](https://codepen.io/alyra/pen/LYpJrwg)
+- [Monstre](https://codepen.io/alyra/pen/zYoPRNg)
 - [Form - Dev Freelance](https://codepen.io/alyra/pen/pojOZoP)
