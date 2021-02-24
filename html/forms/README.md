@@ -213,6 +213,13 @@ Comme `<input type="radio">`, l'élément `<select>` permet de choisir parmi plu
 
 https://codepen.io/alyra/pen/qBOzGRo
 
+### Ressources
+
+- [MDN - form](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
+- [MDN - input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
+- [MDN - select](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select)
+- [MDN - datalist](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist)
+
 ## Exercices
 
 - [Monstre](https://codepen.io/alyra/pen/zYoPRNg)
