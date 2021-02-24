@@ -166,6 +166,8 @@ L'attribut `checked` indique la valeur choisie par défaut.
 
 ![""](https://wptemplates.pehaa.com/assets/alyra/input-type-radio.png)
 
+https://codepen.io/alyra/pen/rNWYbwd
+
 ### <code>input</code> type checkbox
 
 L’élément `<input type=checkbox>` permet de cocher une (ou plusieurs) valeur.
