@@ -1,12 +1,12 @@
 # CSS - Introduction
 
-CSS vient de *Cascading Style Sheets*, ce qui se traduit en français par « feuilles de style en cascade » ([source MDN.](https://developer.mozilla.org/en-US/docs/Web/CSS))
+CSS vient de _Cascading Style Sheets_, ce qui se traduit en français par « feuilles de style en cascade » ([source MDN.](https://developer.mozilla.org/en-US/docs/Web/CSS))
 
 Est-ce CSS un langage de programmation ? Pas tout à fait, c'est plutôt un langage de feuille de style. Il permet de communiquer avec le navigateur en indiquant l'aspect visuel d'un élément HTML.
 
-CSS permet de passer le message: 
+CSS permet de passer le message:
 
-> "Hey navigateur, affiche des paragraphes en rouge, et aussi pour chaque paragraphe, espace les lettres davantage, disons de 2px". 
+> "Hey navigateur, affiche des paragraphes en rouge, et aussi pour chaque paragraphe, espace les lettres davantage, disons de 2px".
 
 Ici on communique sur les propriétés: couleur - `color` et espacement des lettres - `letter-spacing`, mais aussi on indique sur quels éléments ces propriétés doivent être appliquées. CSS est alors lié très étroitement au HTML.
 
@@ -79,8 +79,8 @@ Afin que le document HTML puisse "lire" les styles, nous devons ajouter une bali
 
 ## Exercices
 
-- [Texte](https://codepen.io/alyra/pen/XWmGaxE) | [solution](https://codepen.io/alyra/pen/71324a74c0b4cc0eeafc258ca92ecff9)
-- [Ajouter des classes](https://codepen.io/alyra/pen/VwvRzRJ) | [solution](https://codepen.io/alyra/pen/9bba5bbe25f5173c3356816078256b0e)
-- [Sac à dos](https://codepen.io/alyra/pen/LYpwabq) | [solution](https://codepen.io/alyra/pen/adce46c948e55c0792b03f7deee72700)
-- [Trottinette ](https://codepen.io/alyra/pen/abvMLBM) | [solution](https://codepen.io/alyra/pen/10ebf7eee701d8cb292a9561a0d40c2a)
-- [Chotto Motto](https://codepen.io/alyra/pen/mdeoBqr) | [solution](https://codepen.io/alyra/pen/6d30ffdd107e2dadd630433d5cd5aa61)
+- [Texte](https://codepen.io/alyra/pen/XWmGaxE)
+- [Ajouter des classes](https://codepen.io/alyra/pen/VwvRzRJ)
+- [Sac à dos](https://codepen.io/alyra/pen/LYpwabq)
+- [Trottinette ](https://codepen.io/alyra/pen/abvMLBM)
+- [Chotto Motto](https://codepen.io/alyra/pen/mdeoBqr)

@@ -165,4 +165,4 @@ Si vous cherchez des polices avec un caractère particulier, vous pouvez vous se
 
 ## Exercices
 
-- [Wanted Dead or Alive - Google Fonts](https://codesandbox.io/s/police-rxtme?file=/index.html) | [solution](https://codepen.io/alyra/pen/6eba070d53ff9fa1f9b0952d6ace935f)
+- [Wanted Dead or Alive - Google Fonts](https://codesandbox.io/s/police-rxtme?file=/index.html)

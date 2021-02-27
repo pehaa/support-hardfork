@@ -173,4 +173,4 @@ Vous pouvez trouver plus de détails et exemples sur [MDN](https://developer.moz
 
 ## Exercices
 
-- [hsl colors](https://codepen.io/alyra/pen/JjGdBwM) | [solution](https://codepen.io/alyra/pen/24600deab70bf2bd797c1e39fbedec24)
+- [hsl colors](https://codepen.io/alyra/pen/JjGdBwM)
