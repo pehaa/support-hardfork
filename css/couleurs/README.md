@@ -46,7 +46,7 @@ Sur les écrans modernes, 8 bits de mémoire sont affectés pour chaque couleur 
 
 [Playground - Couleurs RGB expliquée](https://cdpn.io/alyra/debug/b2c543699a8868342fb23ac6c9f6f73d)
 
-```
+```css
 p {
   color: rgb(255, 0, 0);
   background: rgb(255, 0, 0, 0.1);
@@ -77,7 +77,7 @@ Le format `hsl` est particulièrement pratique pour gérer :
 
 - les nuances et ombres (**juste le 3e paramètre change**):
 
-```
+```css
 /* Teinte de base */
 background-color: hsl(14, 76%, 55%);
 
@@ -90,7 +90,7 @@ background-color: hsl(14, 76%, 35%);
 
 - couleurs complémentaires (ajouter 180 - demi-tour au 1er paramètre):
 
-```
+```css
 /* Teinte de base */
 color: hsl(14, 76%, 55%);
 
@@ -100,7 +100,7 @@ color: hsl(194, 76%, 55%);
 
 - couleurs complémentaires adjacentes (+/-120 au 1er paramètre):
 
-```
+```css
 /* Teinte de base */
 color: hsl(14, 76%, 55%);
 
@@ -113,7 +113,7 @@ color: hsl(254, 76%, 55%);
 
 - couleurs similaires (analogous) (+/-30 au 1er paramètre):
 
-```
+```css
 /* Teinte de base */
 color: hsl(14, 76%, 55%);
 
