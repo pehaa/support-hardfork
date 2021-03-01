@@ -59,7 +59,7 @@ Le format **hexadécimal** fonctionne comme le format `rgb`, il regroupe des int
 
 Vous pouvez en lire davantage dans [cet article sur smashingmagazine.](https://www.smashingmagazine.com/2012/10/the-code-side-of-color/)
 
-![""](https://wptemplates.pehaa.com/assets/alyra/rgbtohex.png)
+[![""](https://wptemplates.pehaa.com/assets/alyra/rgbtohex.png)](https://cdpn.io/alyra/debug/b2c543699a8868342fb23ac6c9f6f73d)
 
 [![Le fameux Quiz du Professeur Hervé B.*](https://wptemplates.pehaa.com/assets/alyra/quizz-rvb.png)](https://cdpn.io/alyra/debug/616e97467780239fc8927073fe284ec5)
 
