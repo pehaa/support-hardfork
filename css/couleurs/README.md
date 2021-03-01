@@ -169,6 +169,7 @@ Vous pouvez trouver plus de détails et exemples sur [MDN](https://developer.moz
 ### Playgrounds :
 
 - [background-size/background-repeat/background-position](https://codepen.io/alyra/debug/ExPxpyw)
+- [background-size/background-repeat/background-position (1)](https://cdpn.io/alyra/debug/ExNLYLd)
 - [linear-gradient](https://codepen.io/alyra/debug/bGEdmMM)
 
 ## Exercices
