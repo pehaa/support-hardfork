@@ -83,4 +83,4 @@ Afin que le document HTML puisse "lire" les styles, nous devons ajouter une bali
 - [Ajouter des classes](https://codepen.io/alyra/pen/VwvRzRJ)
 - [Sac à dos](https://codepen.io/alyra/pen/LYpwabq)
 - [Trottinette ](https://codepen.io/alyra/pen/abvMLBM)
-- [Chotto Motto](https://codepen.io/alyra/pen/mdeoBqr)
+- [Chotto Motto](https://github.com/pehaa/hardfork-ex-chotto-motto)
