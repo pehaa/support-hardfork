@@ -333,7 +333,17 @@ https://codepen.io/alyra/pen/RwrrpBO
 
 ---
 
-Avec tous ces types de sélecteurs et la possibilité de les combiner, il est clair que les éléments peuvent être ciblés à plusieurs manières. Regardons ensemble cet exemple :
+## Résolutions de conflits
+
+Avec tous ces types de sélecteurs et la possibilité de les combiner, il est clair que les éléments peuvent être ciblés à plusieurs manières.
+
+Les 2 règles principales sont :
+
+1. Le CSS est lu de haute en bas, les déclarations qui suivent prennent le dessus sur les déclarations précédentes.
+
+1. Nos déclarations prennent toujours le dessur sur le _user agent stylesheet_
+
+Regardons ensemble cet exemple :
 
 ```html
 <ul class="personnages">
