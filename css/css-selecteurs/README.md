@@ -399,13 +399,11 @@ https://codepen.io/alyra/pen/MWKaXjG
 
 https://codepen.io/alyra/pen/NWxGzbv
 
+[Quizzzzz :](https://cdpn.io/alyra/debug/d341e5aba9eb51c6b9b0f517b45cf812)
 [![](https://wptemplates.pehaa.com/assets/alyra/quiz-selectors2.png)](https://cdpn.io/alyra/debug/d341e5aba9eb51c6b9b0f517b45cf812)
 
-[Quizzzzz](https://cdpn.io/alyra/debug/d341e5aba9eb51c6b9b0f517b45cf812)
-
+[et l'affrontement final :](https://codepen.io/pehaa/debug/dEpvXN)
 [![](https://wptemplates.pehaa.com/assets/alyra/quiz-selectors3.png)](https://codepen.io/pehaa/debug/dEpvXN)
-
-[et l'affrontement final.](https://codepen.io/pehaa/debug/dEpvXN)
 
 ## Exercices
 
