@@ -387,6 +387,8 @@ ul > li {
 
 [Specificity calculator](https://specificity.keegan.st/)
 
+<iframe src="https://giphy.com/embed/Ld77zD3fF3Run8olIt" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/disneyplus-star-wars-the-mandalorian-madalorian-Ld77zD3fF3Run8olIt">via GIPHY</a></p>
+
 ![](https://wptemplates.pehaa.com/assets/alyra/yoda.png)
 
 > Des surspécificités, tu te méfieras… Plus efficaces les sélecteurs de base sont, pour qui sait les manipuler… Plus séducteur est le côté obscur, plus facile… N’en crois rien.
