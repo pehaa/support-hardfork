@@ -389,13 +389,9 @@ ul > li {
   <dd><code class="language-text">{color: red!important;}</code></dd>
 </dl>
 
-[![](https://wptemplates.pehaa.com/assets/alyra/grille-specificite.png)](https://assets.codepen.io/4515922/Tableau_de_cartes%402x.pdf)
+[![La grille de spécificité en format .pdf](https://wptemplates.pehaa.com/assets/alyra/grille-specificite.png)](https://assets.codepen.io/4515922/Tableau_de_cartes%402x.pdf)
 
-[La grille de spécificité en format .pdf](https://assets.codepen.io/4515922/Tableau_de_cartes%402x.pdf)
-
-[![](https://wptemplates.pehaa.com/assets/alyra/calculator.png)](https://specificity.keegan.st/)
-
-[Specificity calculator](https://specificity.keegan.st/)
+[![Specificity calculator](https://wptemplates.pehaa.com/assets/alyra/calculator.png)](https://specificity.keegan.st/)
 
 ![](https://wptemplates.pehaa.com/assets/alyra/mando.jpg)
 
