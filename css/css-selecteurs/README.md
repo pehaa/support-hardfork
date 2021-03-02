@@ -359,11 +359,11 @@ ul > li {
 À votre avis de quelles couleurs seront nos personnages ?
 
 <dl style="font-size:20px">
-  <dt><strong>Puissance "0"</strong></dt>
+  <dt>Puissance "0"</dt>
   <dd>Sélecteurs universels <em>universal selector</em> <code>*</code></dd>
-  <dt><strong>Puissance "1"</strong></dt>
+  <dt>Puissance "1"</dt>
   <dd><em>type selectors</em> (<code>html</code>, <code>body</code>, <code>div</code>, ... ) et pseudo-elements (<code>:before</code>, <code>:after</code>, ....)</dd>
-  <dt><strong>Puissance "10"</dt>
+  <dt>Puissance "10"</dt>
   <dd>
     classes <code>.title</code>,  
     attributs <code>[class]</code>, <code>[id]</code>, <code>[title]</code>, <code>[href]</code>,  pseudo-classes <code>:hover</code>, <code>:first-child</code>, <code>:lang()</code>, <code>:focus</code>
