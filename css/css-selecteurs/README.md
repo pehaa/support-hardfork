@@ -407,8 +407,8 @@ https://codepen.io/alyra/pen/NWxGzbv
 
 ## Exercices
 
-- [Selectors - Statistiques](https://codepen.io/alyra/pen/JjGdeLy) | [solution](https://codepen.io/alyra/pen/351f134590b49036c87d4411ab114932)
-- [Selectors - sac à dos](https://codepen.io/alyra/pen/RwrPqYe) | [solution](https://codepen.io/alyra/pen/f44b1d8384c5545652d8eb65e4b84a99)
-- [Selectors - damier](https://codepen.io/alyra/pen/MWKwzZe) | [solution](https://codepen.io/alyra/pen/097d079ae3beab1186f3564fdbc2fe1b)
-- [Selectors - lorem](https://codepen.io/alyra/pen/gOPpQVJ) | [solution](https://codepen.io/alyra/pen/819a084e0ce8c33dbd8dca7aa1d60370)
-- [Selectors - cards](https://codepen.io/alyra/pen/xxZZqVL) | [solution](https://codepen.io/alyra/pen/05daf99332451394a1b1cd41acd71022)
+- [Selectors - Statistiques](https://codepen.io/alyra/pen/JjGdeLy)
+- [Selectors - sac à dos](https://codepen.io/alyra/pen/RwrPqYe)
+- [Selectors - damier](https://codepen.io/alyra/pen/MWKwzZe)
+- [Selectors - lorem](https://codepen.io/alyra/pen/gOPpQVJ)
+- [Selectors - cards](https://codepen.io/alyra/pen/xxZZqVL)
