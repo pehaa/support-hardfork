@@ -51,7 +51,7 @@ En français _sélecteur de classe._ Le symbole `.` suivi (sans espace) par le n
 
 ## ID Selector
 
-`#jolie`
+`#id`
 
 En français _sélecteur d'identifiant._ Avec le symbole `#` suivi (sans espace) par le nom d'identifiant on peut cibler un élément par son attribut `id.` C'est un sélecteur simple.
 
