@@ -360,7 +360,7 @@ ul > li {
 
 <dl style="font-size:20px">
   <dt>Puissance "0"</dt>
-  <dd>Sélecteurs universels <em>universal selector</em> <code>*</code></dd>
+  <dd>Sélecteurs universels <em>universal selector</em> <code class="language-text">*</code></dd>
   <dt>Puissance "1"</dt>
   <dd>
   <em>type selectors</em> <code class="language-text">html</code>, <code class="language-text">body</code>, <code class="language-text">div</code>, ...<br>
