@@ -362,11 +362,14 @@ ul > li {
   <dt>Puissance "0"</dt>
   <dd>Sélecteurs universels <em>universal selector</em> <code>*</code></dd>
   <dt>Puissance "1"</dt>
-  <dd><em>type selectors</em> (<code>html</code>, <code>body</code>, <code>div</code>, ... ) et pseudo-elements (<code>:before</code>, <code>:after</code>, ....)</dd>
+  <dd>
+  <em>type selectors</em> <code>html</code>, <code>body</code>, <code>div</code>, ...  
+  <em>pseudo-elements</em> <code>:before</code>, <code>:after</code>, ....</dd>
   <dt>Puissance "10"</dt>
   <dd>
     classes <code>.title</code>,  
-    attributs <code>[class]</code>, <code>[id]</code>, <code>[title]</code>, <code>[href]</code>,  pseudo-classes <code>:hover</code>, <code>:first-child</code>, <code>:lang()</code>, <code>:focus</code>
+    attributs <code>[class]</code>, <code>[id]</code>, <code>[title]</code>, <code>[href]</code>,  
+    pseudo-classes <code>:hover</code>, <code>:first-child</code>, <code>:lang()</code>, <code>:focus</code>
   </dd>
   <dt>Puissance "100"</dt>
   <dd>ids <code>#top</code>, <code>#contact</code>, ...</dd>
