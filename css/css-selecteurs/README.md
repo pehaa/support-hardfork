@@ -407,8 +407,9 @@ https://codepen.io/alyra/pen/NWxGzbv
 
 ## Exercices
 
-- [Selectors - Statistiques](https://codepen.io/alyra/pen/JjGdeLy)
+👉 Dans tous ces exercices, NE TOUCHEZ PAS AU HTML et privilegier les unités `rem` 👈
+
 - [Selectors - sac à dos](https://codepen.io/alyra/pen/RwrPqYe)
+- [Selectors - Statistiques](https://codepen.io/alyra/pen/JjGdeLy)
 - [Selectors - damier](https://codepen.io/alyra/pen/MWKwzZe)
 - [Selectors - lorem](https://codepen.io/alyra/pen/gOPpQVJ)
-- [Selectors - cards](https://codepen.io/alyra/pen/xxZZqVL)
