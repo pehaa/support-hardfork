@@ -359,14 +359,17 @@ ul > li {
 À votre avis de quelles couleurs seront nos personnages ?
 
 <dl style="font-size:20px">
-  <dt>Puissance "0"</dt>
+  <dt><strong>Puissance "0"</strong></dt>
   <dd>Sélecteurs universels <em>universal selector</em> <code>*</code></dd>
-  <dt>Puissance "1"</dt>
+  <dt><strong>Puissance "1"</strong></dt>
   <dd><em>type selectors</em> (<code>html</code>, <code>body</code>, <code>div</code>, ... ) et pseudo-elements (<code>:before</code>, <code>:after</code>, ....)</dd>
-  <dt>Puissance "10"</dt>
-  <dd>classes (<code>.title</code>), attributs(<code>[class]</code>, <code>[id]</code>, <code>[title]</code>, <code>[href]</code>,...), pseudo-classes (<code>:hover</code>, <code>:first-child</code>, <code>:lang()</code>, <code>:focus</code>, ...)</dd>
+  <dt><strong>Puissance "10"</dt>
+  <dd>
+    classes <code>.title</code>,  
+    attributs <code>[class]</code>, <code>[id]</code>, <code>[title]</code>, <code>[href]</code>,  pseudo-classes <code>:hover</code>, <code>:first-child</code>, <code>:lang()</code>, <code>:focus</code>
+  </dd>
   <dt>Puissance "100"</dt>
-  <dd>ids (<code>#top</code>, <code>#contact</code>, ...)</dd>
+  <dd>ids <code>#top</code>, <code>#contact</code>, ...</dd>
   <dt>Puissance "1000"</dt>
   <dd> <code>style="font-weight:bold"</code></dd>
   <dt>Puissance "10000"</dt>
