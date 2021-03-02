@@ -363,13 +363,13 @@ ul > li {
   <dd>Sélecteurs universels <em>universal selector</em> <code>*</code></dd>
   <dt>Puissance "1"</dt>
   <dd>
-  <em>type selectors</em> <code>html</code>, <code>body</code>, <code>div</code>, ...<br>
-  <em>pseudo-elements</em> <code>:before</code>, <code>:after</code>, ....</dd>
+  <em>type selectors</em> <code class="language-text">html</code>, <code class="language-text">body</code>, <code class="language-text">div</code>, ...<br>
+  <em>pseudo-elements</em> <code class="language-text">:before</code>, <code class="language-text">:after</code>, ....</dd>
   <dt>Puissance "10"</dt>
   <dd>
-    classes <code>.title</code>,<br>
-    attributs <code>[class]</code>, <code>[id]</code>, <code>[title]</code>, <code>[href]</code>,<br>
-    pseudo-classes <code>:hover</code>, <code>:first-child</code>, <code>:lang()</code>, <code>:focus</code><br>
+    classes <code class="language-text">.title</code>,<br>
+    attributs <code class="language-text">[class]</code>, <code class="language-text">[id]</code>, <code class="language-text">[title]</code>, <code class="language-text">[href]</code>,<br>
+    pseudo-classes <code class="language-text">:hover</code>, <code>:first-child</code>, <code>:lang()</code>, <code>:focus</code><br>
   </dd>
   <dt>Puissance "100"</dt>
   <dd>ids <code>#top</code>, <code>#contact</code>, ...</dd>
