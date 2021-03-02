@@ -90,20 +90,20 @@ En français - sélecteur universel. Il correspond à un élément de n'importe 
 En français _sélecteur d'attribut._ C'est un sélecteur simple.
 
 <dl>
- <dt><code>[<em>attr</em>]</code></dt>
- <dd>Cible des éléments avec l'attribut <code>attr</code>.</dd>
- <dt><code>[<em>attr</em>=<em>value</em>]</code></dt>
- <dd>Cible  des éléments avec l'attribut <code>attr</code> dont la valeur est exactement <code>value</code>.</dd>
- <dt><code>[<em>attr</em>~=<em>value</em>]</code></dt>
- <dd>Cible des éléments avec l'attribut <code>attr</code> dont la valeur contient <code>value</code> séparée par des espaces.
- <dt><code>[<em>attr</em>|=<em>value</em>]</code></dt>
- <dd>Cible des éléments avec l'attribut <code>attr</code> dont la valeur est exactement <code>value</code> ou dont la valeur commence par <code>value</code> suivi immédiatement d'un tiret (U+002D). Souvent utilisé avec des codes de langues.</dd>
- <dt><code>[<em>attr</em>^=<em>value</em>]</code></dt>
- <dd>Cible des éléments avec l'attribut <code>attr</code> dont la valeur commence par <code>value</code>.</dd>
- <dt><code>[<em>attr</em>$=<em>value</em>]</code></dt>
- <dd>Cible des éléments avec l'attribut <code>attr</code> dont la valeur se termine par <code>value</code>.</dd>
- <dt><code>[<em>attr</em>*=<em>value</em>]</code></dt>
- <dd>Cible des éléments avec l'attribut <code>attr</code> et dont la valeur contient au moins une occurrence de&nbsp;<code>value</code>.</dd>
+ <dt><code class="language-text">[<em>attr</em>]</code></dt>
+ <dd>Cible des éléments avec l'attribut <code class="language-text">attr</code>.</dd>
+ <dt><code class="language-text">[<em>attr</em>=<em>value</em>]</code></dt>
+ <dd>Cible  des éléments avec l'attribut <code class="language-text">attr</code> dont la valeur est exactement <code class="language-text">value</code>.</dd>
+ <dt><code class="language-text">[<em>attr</em>~=<em>value</em>]</code></dt>
+ <dd>Cible des éléments avec l'attribut <code class="language-text">attr</code> dont la valeur contient <code class="language-text">value</code> séparée par des espaces.
+ <dt><code class="language-text">[<em>attr</em>|=<em>value</em>]</code></dt>
+ <dd>Cible des éléments avec l'attribut <code class="language-text">attr</code> dont la valeur est exactement <code class="language-text">value</code> ou dont la valeur commence par <code class="language-text">value</code> suivi immédiatement d'un tiret (U+002D). Souvent utilisé avec des codes de langues.</dd>
+ <dt><code class="language-text">[<em>attr</em>^=<em>value</em>]</code></dt>
+ <dd>Cible des éléments avec l'attribut <code class="language-text">attr</code> dont la valeur commence par <code class="language-text">value</code>.</dd>
+ <dt><code class="language-text">[<em>attr</em>$=<em>value</em>]</code></dt>
+ <dd>Cible des éléments avec l'attribut <code class="language-text">attr</code> dont la valeur se termine par <code class="language-text">value</code>.</dd>
+ <dt><code class="language-text">[<em>attr</em>*=<em>value</em>]</code></dt>
+ <dd>Cible des éléments avec l'attribut <code class="language-text">attr</code> et dont la valeur contient au moins une occurrence de&nbsp;<code class="language-text">value</code>.</dd>
 </dl>
 
 ```css
@@ -369,14 +369,14 @@ ul > li {
   <dd>
     classes <code class="language-text">.title</code>,<br>
     attributs <code class="language-text">[class]</code>, <code class="language-text">[id]</code>, <code class="language-text">[title]</code>, <code class="language-text">[href]</code>,<br>
-    pseudo-classes <code class="language-text">:hover</code>, <code>:first-child</code>, <code>:lang()</code>, <code>:focus</code><br>
+    pseudo-classes <code class="language-text">:hover</code>, <code class="language-text">:first-child</code>, <code class="language-text">:lang()</code>, <code class="language-text">:focus</code><br>
   </dd>
   <dt>Puissance "100"</dt>
-  <dd>ids <code>#top</code>, <code>#contact</code>, ...</dd>
+  <dd>ids <code class="language-text">#top</code>, <code class="language-text">#contact</code>, ...</dd>
   <dt>Puissance "1000"</dt>
-  <dd> <code>style="font-weight:bold"</code></dd>
+  <dd> <code class="language-text">style="font-weight:bold"</code></dd>
   <dt>Puissance "10000"</dt>
-  <dd><code>{color: red!important;}</code></dd>
+  <dd><code class="language-text">{color: red!important;}</code></dd>
 </dl>
 
 [![](https://wptemplates.pehaa.com/assets/alyra/grille-specificite.png)](https://assets.codepen.io/4515922/Tableau_de_cartes%402x.pdf)
