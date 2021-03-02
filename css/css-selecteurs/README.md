@@ -363,20 +363,20 @@ ul > li {
   <dd>Sélecteurs universels <em>universal selector</em> <code class="language-text">*</code></dd>
   <dt>Puissance "1"</dt>
   <dd>
-  <em>type selectors</em> <code class="language-text">html</code>, <code class="language-text">body</code>, <code class="language-text">div</code>, ...<br>
-  <em>pseudo-elements</em> <code class="language-text">:before</code>, <code class="language-text">:after</code>, ....</dd>
+  <em>type selectors</em> <code class="language-text">html</code>, <code class="language-text">body</code>, <code class="language-text">div</code>,  &hellip;<br>
+  <em>pseudo-elements</em> <code class="language-text">:before</code>, <code class="language-text">:after</code>, &hellip;</dd>
   <dt>Puissance "10"</dt>
   <dd>
-    classes <code class="language-text">.title</code>,<br>
+    classes <code class="language-text">.title</code><br>
     attributs <code class="language-text">[class]</code>, <code class="language-text">[id]</code>, <code class="language-text">[title]</code>, <code class="language-text">[href]</code>,<br>
-    pseudo-classes <code class="language-text">:hover</code>, <code class="language-text">:first-child</code>, <code class="language-text">:lang()</code>, <code class="language-text">:focus</code><br>
+    pseudo-classes <code class="language-text">:hover</code>, <code class="language-text">:first-child</code>, <code class="language-text">:lang()</code>, <code class="language-text">:focus</code> &hellip;<br>
   </dd>
   <dt>Puissance "100"</dt>
-  <dd>ids <code class="language-text">#top</code>, <code class="language-text">#contact</code>, ...</dd>
+  <dd>ids <code class="language-text">#top</code>, <code class="language-text">#contact</code>,  &hellip;</dd>
   <dt>Puissance "1000"</dt>
-  <dd> <code class="language-text">style="font-weight:bold"</code></dd>
+  <dd> <code class="language-text">style="font-weight:bold"</code> &hellip;</dd>
   <dt>Puissance "10000"</dt>
-  <dd><code class="language-text">{color: red!important;}</code></dd>
+  <dd><code class="language-text">{color: red!important;}</code> &hellip;</dd>
 </dl>
 
 [![](https://wptemplates.pehaa.com/assets/alyra/grille-specificite.png)](https://assets.codepen.io/4515922/Tableau_de_cartes%402x.pdf)
