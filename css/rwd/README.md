@@ -50,7 +50,7 @@ img {
 
 Le contenu textuel ne provoque pas des problèmes comme les images. Le texte va passer à la ligne et ne dépassera pas la largeur disponible. Par contre, sur les écrans larges, les lignes du texte peuvent devenir trop longues, ce qui gênera la lisibilité.
 
-_Approche "classique"_
+### Approche "classique"
 
 ```css
 .container {
@@ -62,11 +62,11 @@ _Approche "classique"_
 }
 ```
 
-_Unité `ch`_
+### Unité `ch`
 
 Selon les bonnes pratique de la lisibilité, une colonne idéale devrait contenir 50 à 75 caractères par ligne (environ 8 à 10 mots en anglais). Nous devons veiller à ne pas nous éloigner trop des ces valeurs.
 
-[https://baymard.com/blog/line-length-readability](Readability: the Optimal Line Length)
+[Readability: the Optimal Line Length](https://baymard.com/blog/line-length-readability)
 
 ```css
 .text-container {
