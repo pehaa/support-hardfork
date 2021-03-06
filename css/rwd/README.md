@@ -62,15 +62,18 @@ Le contenu textuel ne provoque pas des problèmes comme les images. Le texte va 
 }
 ```
 
+https://codepen.io/alyra/pen/VwKLRWd
+
 ### Unité `ch`
 
 Selon les bonnes pratique de la lisibilité, une colonne idéale devrait contenir 50 à 75 caractères par ligne (environ 8 à 10 mots en anglais). Nous devons veiller à ne pas nous éloigner trop des ces valeurs.
+
+L'unité qui représente la largeur du caractère de la police est : `ch`. Plus précisement, cette unité représente la largeur du caractère « 0 » (zéro).
 
 [Readability: the Optimal Line Length](https://baymard.com/blog/line-length-readability)
 
 ```css
 .text-container {
-  /* ici la largeur ne dépassera pas  640px */
   max-width: 60ch;
   /* et si besoin de centrer ce contenu */
   margin-left: auto;
@@ -78,7 +81,7 @@ Selon les bonnes pratique de la lisibilité, une colonne idéale devrait conteni
 }
 ```
 
-https://codepen.io/alyra/pen/VwKLRWd
+https://codepen.io/pehaa/pen/NWbLgWq
 
 ## Media queries
 
