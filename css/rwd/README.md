@@ -1,6 +1,6 @@
 # Responsive Web Design
 
-Ça fait déjà quelques année que les pages web sont consultées majoritairement sur mobile. 
+Ça fait déjà quelques année que les pages web sont consultées majoritairement sur mobile.
 
 Le terme _Responsive Web Design (RWD)_ date de 2010, il était introduit dans [cet article](https://alistapart.com/article/responsive-web-design/) en 2010 par Ethan Marcotte. RWD décrit une approche du web design qui prend soin que les sites web s'adaptent à leur environnement, en particulier à la taille de l'écran sur lequel ils sont consultés. Par exemple sur un grand écran (desktop d'un Mac ou un PC) nous allons voir un layout composé de plusieurs colonnes, sur un écran mobile le même contenu sera affiché dans une seule colonne.
 
@@ -50,14 +50,28 @@ img {
 
 Le contenu textuel ne provoque pas des problèmes comme les images. Le texte va passer à la ligne et ne dépassera pas la largeur disponible. Par contre, sur les écrans larges, les lignes du texte peuvent devenir trop longues, ce qui gênera la lisibilité.
 
-Selon les bonnes pratique de la lisibilité, une colonne idéale devrait contenir 70 à 80 caractères par ligne (environ 8 à 10 mots en anglais). Nous devons veiller à ne pas nous éloigner trop des ces valeurs.
-
-Voici un exemple qui prend en compte ces contraints :
+_Approche "classique"_
 
 ```css
 .container {
   /* ici la largeur ne dépassera pas  640px */
   max-width: 35rem;
+  /* et si besoin de centrer ce contenu */
+  margin-left: auto;
+  margin-right: auto;
+}
+```
+
+_Unité `ch`_
+
+Selon les bonnes pratique de la lisibilité, une colonne idéale devrait contenir 50 à 75 caractères par ligne (environ 8 à 10 mots en anglais). Nous devons veiller à ne pas nous éloigner trop des ces valeurs.
+
+[https://baymard.com/blog/line-length-readability](Readability: the Optimal Line Length)
+
+```css
+.text-container {
+  /* ici la largeur ne dépassera pas  640px */
+  max-width: 60ch;
   /* et si besoin de centrer ce contenu */
   margin-left: auto;
   margin-right: auto;
@@ -108,7 +122,7 @@ Il est important de savoir que les styles en état `:hover` ne fonctionnent pas 
 
 Parfois, manque de support pour `hover` peut rendre notre contenu inaccessible (comme dans notre exemple [Hello Marie](https://codepen.io/alyra/pen/ZEQYYEr)).
 
-Heureusement, avec *media query*, il est possible de détecter le support pour `hover` et adapter nos styles :
+Heureusement, avec _media query_, il est possible de détecter le support pour `hover` et adapter nos styles :
 
 ```css
 @media (hover: hover) {
@@ -133,5 +147,5 @@ https://codepen.io/alyra/pen/88d72ae8d0d2618620106b56c2bfbc52
 
 ## Exercices
 
- - [Alyra](https://codepen.io/alyra/pen/LYGEyaL) | [solution](https://codepen.io/alyra/pen/996c8dcb84a663435a2da59232300985)
- - “Migrer” Hello Marie dans codeSandBox
+- [Alyra](https://codepen.io/alyra/pen/LYGEyaL) | [solution](https://codepen.io/alyra/pen/996c8dcb84a663435a2da59232300985)
+- “Migrer” Hello Marie dans codeSandBox
