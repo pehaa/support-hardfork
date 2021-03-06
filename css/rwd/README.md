@@ -62,7 +62,7 @@ Le contenu textuel ne provoque pas des problèmes comme les images. Le texte va 
 }
 ```
 
-https://codepen.io/alyra/pen/VwKLRWd
+https://codepen.io/alyra/pen/KKNxqym
 
 ### Unité `ch`
 
@@ -123,7 +123,7 @@ Nous pouvons utiliser media queries en fonction de la taille de l'écran, les di
 
 Il est important de savoir que les styles en état `:hover` ne fonctionnent pas tout à fait correctement sur les écrans tactiles (en particulier sur les écrans mobiles).
 
-Parfois, manque de support pour `hover` peut rendre notre contenu inaccessible (comme dans notre exemple [Hello Marie](https://codepen.io/alyra/pen/ZEQYYEr)).
+Parfois, manque de support pour `hover` peut rendre notre contenu inaccessible.
 
 Heureusement, avec _media query_, il est possible de détecter le support pour `hover` et adapter nos styles :
 
@@ -137,6 +137,8 @@ Heureusement, avec _media query_, il est possible de détecter le support pour `
   }
 }
 ```
+
+[@media hover sur MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover)
 
 ---
 
