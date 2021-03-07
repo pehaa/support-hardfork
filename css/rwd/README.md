@@ -140,6 +140,65 @@ Heureusement, avec _media query_, il est possible de détecter le support pour `
 
 [@media hover sur MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover)
 
+## Layout avec Bootstrap
+
+![grid](https://assets.codepen.io/4515922/BlogArticle-BootstrapGrid.png)
+
+<table class="table" style="width: 100%">
+  <thead>
+    <tr>
+      <th>Breakpoint</th>
+      <th>Class infix</th>
+      <th>Dimensions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>X-Small</td>
+      <td><em>None</em></td>
+      <td>0–576px</td>
+    </tr>
+    <tr>
+      <td>Small</td>
+      <td><code>sm</code></td>
+      <td>≥576px</td>
+    </tr>
+    <tr>
+      <td>Medium</td>
+      <td><code>md</code></td>
+      <td>≥768px</td>
+    </tr>
+    <tr>
+      <td>Large</td>
+      <td><code>lg</code></td>
+      <td>≥992px</td>
+    </tr>
+    <tr>
+      <td>Extra large</td>
+      <td><code>xl</code></td>
+      <td>≥1200px</td>
+    </tr>
+    <tr>
+      <td>Extra extra large</td>
+      <td><code>xxl</code></td>
+      <td>≥1400px</td>
+    </tr>
+  </tbody>
+</table>
+
+```html
+<div class="container">
+  <div class="row">
+    <div class="col-md">Column</div>
+    <div class="col-md">Column</div>
+  </div>
+</div>
+```
+
+https://codepen.io/alyra/pen/OJboqOP
+
+https://codepen.io/alyra/pen/VwmGRyR
+
 ---
 
 ## Live coding
@@ -153,4 +212,5 @@ https://codepen.io/alyra/pen/88d72ae8d0d2618620106b56c2bfbc52
 ## Exercices
 
 - “Migrer” Hello Marie dans VSCODE
--
+- [Chotto Motto](https://github.com/pehaa/hardfork-ex-chotto-motto)
+- [B5 - responsive grid (2)](https://codepen.io/alyra/pen/ExPZwWK) | [solution](https://codepen.io/alyra/pen/85688979ba506492bce387099c80bc93)
