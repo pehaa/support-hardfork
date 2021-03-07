@@ -301,6 +301,7 @@ https://codepen.io/alyra/pen/YzwVeQG
 
 ## Exercices
 
-- [B5 - text](https://codepen.io/alyra/pen/GRorKox) | [solution](https://codepen.io/alyra/pen/3f97ec03324f5cf55daa6f97618ea43e)
-- [B5 - section](https://codepen.io/alyra/pen/rNxjNpJ) | [solution](https://codepen.io/alyra/pen/d6a277fe5a33b558335b0904c151803a)
-- [B5 - m/p/colors](https://codepen.io/alyra/pen/RwrKZzg) | [solution](https://codepen.io/alyra/pen/137a55fd1a91de2232e60ff936b2807e)- [B5 - responsive grid](https://codepen.io/alyra/pen/jOWLNOw) | [solution](https://codepen.io/alyra/pen/03d919fda707fa50b382679e2a5474db)
+- [B5 - text](https://codepen.io/alyra/pen/GRorKox)
+- [B5 - section](https://codepen.io/alyra/pen/rNxjNpJ)
+- [B5 - m/p/colors](https://codepen.io/alyra/pen/RwrKZzg)
+- [B5 - responsive grid](https://codepen.io/alyra/pen/jOWLNOw)
