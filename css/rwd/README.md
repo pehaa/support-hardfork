@@ -62,7 +62,7 @@ Le contenu textuel ne provoque pas des problèmes comme les images. Le texte va 
 }
 ```
 
-https://codepen.io/alyra/pen/KKNxqym
+https://codepen.io/alyra/pen/ZEBMwgB
 
 ### Unité `ch`
 
@@ -81,7 +81,7 @@ L'unité qui représente la largeur du caractère de la police est : `ch`. Plus 
 }
 ```
 
-https://codepen.io/pehaa/pen/NWbLgWq
+https://codepen.io/alyra/pen/KKNxqym
 
 ## Media queries
 
@@ -152,5 +152,5 @@ https://codepen.io/alyra/pen/88d72ae8d0d2618620106b56c2bfbc52
 
 ## Exercices
 
-- [Alyra](https://codepen.io/alyra/pen/LYGEyaL) | [solution](https://codepen.io/alyra/pen/996c8dcb84a663435a2da59232300985)
-- “Migrer” Hello Marie dans codeSandBox
+- “Migrer” Hello Marie dans VSCODE
+-

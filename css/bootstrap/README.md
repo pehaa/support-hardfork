@@ -257,6 +257,12 @@ plus <code>m{sides}-auto</code>
 
 ### Système de grid bootstrap
 
+#### Container
+
+https://codepen.io/alyra/pen/dyGWJjx
+
+#### Grille
+
 La grille de bootstrap est, comme la plupart des systèmes de grille, basée sur **12** colonnes.
 
 ![grid](https://assets.codepen.io/4515922/BlogArticle-BootstrapGrid.png)
