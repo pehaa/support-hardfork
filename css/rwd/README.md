@@ -159,6 +159,8 @@ Heureusement, avec _media query_, il est possible de détecter le support pour `
 
 ## Layout avec Bootstrap
 
+[Documentation Bootstrap 5](https://getbootstrap.com/)
+
 ```html
 <!-- Bootstrap CSS -->
 <link
