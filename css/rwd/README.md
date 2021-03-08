@@ -218,8 +218,8 @@ Heureusement, avec _media query_, il est possible de détecter le support pour `
 ```html
 <div class="container">
   <div class="row">
-    <div class="col-md">Column</div>
-    <div class="col-md">Column</div>
+    <div class="col-md-6">Column</div>
+    <div class="col-md-6">Column</div>
   </div>
 </div>
 ```
