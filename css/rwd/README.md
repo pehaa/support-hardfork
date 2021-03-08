@@ -232,4 +232,4 @@ https://codepen.io/alyra/pen/VwmGRyR
 
 - “Migrer” Hello Marie dans VSCODE
 - [Chotto Motto](https://github.com/pehaa/hardfork-ex-chotto-motto)
-- [B5 - responsive grid (2)](https://codepen.io/alyra/pen/ExPZwWK)
+- [B5 - responsive grid](https://codepen.io/alyra/pen/ExPZwWK)
