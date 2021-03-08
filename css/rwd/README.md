@@ -31,6 +31,12 @@ Pour être plus précis nous parlons ici des _density-independent_ (_device-inde
 
 Nous pouvons aussi comparer cet [exemple sans `meta viewport`](https://without-vp-meta.glitch.me/) et [celui avec `meta viewport`.](https://with-vp-meta.glitch.me/)
 
+## Live coding [Marie la Photographe](https://cdpn.io/alyra/debug/88d72ae8d0d2618620106b56c2bfbc52)
+
+https://codepen.io/alyra/pen/ZEQYYEr
+
+https://codepen.io/alyra/pen/ZEBqbEp
+
 ## Images
 
 Chaque image a ses dimensions fixes (physiques) et si une image est plus grande que la fenêtre, elle entraînera l'apparition d'une barre de scroll horizontalle.
@@ -219,14 +225,6 @@ Heureusement, avec _media query_, il est possible de détecter le support pour `
 https://codepen.io/alyra/pen/OJboqOP
 
 https://codepen.io/alyra/pen/VwmGRyR
-
----
-
-## Live coding [Marie la Photographe](https://cdpn.io/alyra/debug/88d72ae8d0d2618620106b56c2bfbc52)
-
-https://codepen.io/alyra/pen/ZEQYYEr
-
-https://codepen.io/alyra/pen/ZEBqbEp
 
 ---
 
