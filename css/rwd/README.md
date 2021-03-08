@@ -87,6 +87,8 @@ https://codepen.io/alyra/pen/KKNxqym
 
 Media queries marchent comme des filtres appliqués à CSS. Ils permettent d'écrire les déclarations CSS qui ne sont prises un compte que dans certains situations. Par exemple, nous pouvons mettre en place des styles qui seront pris en compte uniquement si notre document est imprimé.
 
+[media queries sur MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
+
 ```css
 @media print {
   /* les style pour print viennent ici */
@@ -102,10 +104,19 @@ Media queries marchent comme des filtres appliqués à CSS. Ils permettent d'éc
 Nous pouvons utiliser media queries en fonction de la taille de l'écran, les dimension de l'appareil, son orientation, le support pour l'interactivité `hover`, etc.
 
 ```css
+body {
+  padding: 1rem;
+}
+@media (min-width: 800px) {
+  body {
+    padding: 2rem;
+  }
+}
 /* la largeur du viewport minimum 1200px */
 @media (min-width: 1200px) {
   body {
-    border: 3rem solid white;
+    border: 1rem solid red;
+    padding: 3rem;
   }
 }
 ```
@@ -113,8 +124,8 @@ Nous pouvons utiliser media queries en fonction de la taille de l'écran, les di
 ```css
 /* la largeur du viewport maximum 400px */
 @media (max-width: 400px) {
-  body {
-    padding: 1rem;
+  h1 {
+    font-size: 1.5rem;
   }
 }
 ```
@@ -141,6 +152,16 @@ Heureusement, avec _media query_, il est possible de détecter le support pour `
 [@media hover sur MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover)
 
 ## Layout avec Bootstrap
+
+```html
+<!-- Bootstrap CSS -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+  crossorigin="anonymous"
+/>
+```
 
 ![grid](https://assets.codepen.io/4515922/BlogArticle-BootstrapGrid.png)
 
@@ -201,11 +222,11 @@ https://codepen.io/alyra/pen/VwmGRyR
 
 ---
 
-## Live coding
+## Live coding [Marie la Photographe](https://cdpn.io/alyra/debug/88d72ae8d0d2618620106b56c2bfbc52)
 
 https://codepen.io/alyra/pen/ZEQYYEr
 
-https://codepen.io/alyra/pen/88d72ae8d0d2618620106b56c2bfbc52
+https://codepen.io/alyra/pen/ZEBqbEp
 
 ---
 
@@ -213,4 +234,4 @@ https://codepen.io/alyra/pen/88d72ae8d0d2618620106b56c2bfbc52
 
 - “Migrer” Hello Marie dans VSCODE
 - [Chotto Motto](https://github.com/pehaa/hardfork-ex-chotto-motto)
-- [B5 - responsive grid (2)](https://codepen.io/alyra/pen/ExPZwWK) | [solution](https://codepen.io/alyra/pen/85688979ba506492bce387099c80bc93)
+- [B5 - responsive grid (2)](https://codepen.io/alyra/pen/ExPZwWK)

@@ -16,9 +16,8 @@
 - [Typographie](./css/typographie)
 - [Selecteurs CSS](./css/css-selecteurs)
 - [RWD](./css/rwd)
-- [Bootstrap](./css/bootstrap)
 <!---
-
+- [Bootstrap](./css/bootstrap)
 
 - [Flexbox](./css/flexbox)
 - [Grid](./css/grid)
