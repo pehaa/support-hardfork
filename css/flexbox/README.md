@@ -206,8 +206,6 @@ https://codepen.io/alyra/pen/jOWqepw
 
 ---
 
-[Quiz on-line Flexbox Froggy](https://flexboxfroggy.com/#fr)
-
 ## Ressources
 
 - [A Complete Guide to Flexbox (en) CSS-Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
@@ -235,3 +233,5 @@ https://codepen.io/alyra/pen/jOWqepw
 - [Design Quotes (flexbox)](https://codepen.io/alyra/pen/XWXraxW)
 
 ---
+
+- [Triple Dare - CSS Messy Challenge](https://github.com/pehaa/css-off-hardfork)
