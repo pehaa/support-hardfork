@@ -137,7 +137,7 @@ Raccourci pour `row-gap column-gap` permet de définir les espaces entre les él
 
 ## Step 2 : Les "enfants"
 
-### propriété `order`
+### `order`
 
 Par défaut, les items flex sont disposés par ordre d'arrivée, `order` permet de changer l'ordre dans lequel ils apparaissent dans leur parent.  
 La valeur par défaut de tous les éléments est 0.
@@ -148,45 +148,17 @@ La valeur par défaut de tous les éléments est 0.
 }
 ```
 
-### propriété `flex`
+---
 
-Cette propriété est un raccourci de 3 propriétés à la fois `flex-grow`, `flex-shrink` et `flex-basis`.
+### `flex`
+
+Un raccourci de 3 propriétés à la fois `flex-grow`, `flex-shrink` et `flex-basis`.
 
 Chaque élément enfant peut être étiré (c'est `flex-grow` qui est responsable à ça) ou réduit (et c'est `flex-shrink` qui est responsable à ça). La 3e propriété `flex-basis` correspond à la taille de base d'un élément.
 
 La valeur par défaut est `0 1 auto`
 
-**Exemples :**
-
-Nous partons tous sur la même bases et nous prenons chacun la partie égale de l'espace restante.
-
-```css
-.item {
-  flex: 1;
-  /* est équivalent à : */
-  /*
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0%;
-  */
-}
-```
-
-Au départ chacun de nous prend l'espace proportionnel à son contenu. Nous partagerons ensuite l'espace restant également entre nous:
-
-```css
-.item {
-  flex: auto;
-  /* est équivalent à : */
-  /*
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: auto;
-  */
-}
-```
-
-[Exemple](https://cdpn.io/alyra/debug/d8c627f95d09e10c1e6f32269bba9493)
+[Playground `flex`](https://cdpn.io/alyra/debug/d8c627f95d09e10c1e6f32269bba9493)
 
 Et si ensuite j'ajoute
 
@@ -206,7 +178,9 @@ Et si ensuite j'ajoute
 
 https://codepen.io/alyra/pen/GRoZXEX
 
-### propriété `align-self`
+---
+
+### `align-self`
 
 ```css
 .item {
@@ -215,6 +189,8 @@ https://codepen.io/alyra/pen/GRoZXEX
 ```
 
 https://codepen.io/alyra/pen/pogyOLJ
+
+---
 
 ### `margin: auto`
 
@@ -236,6 +212,7 @@ https://codepen.io/alyra/pen/jOWqepw
 
 - [A Complete Guide to Flexbox (en) CSS-Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [MDN - Tuto Flexbox - lecture obligatoire](https://developer.mozilla.org/fr/docs/Apprendre/CSS/CSS_layout/Flexbox)
+- [Quiz on-line Flexbox Froggy](https://flexboxfroggy.com/#fr)
 
 ---
 
@@ -256,3 +233,5 @@ https://codepen.io/alyra/pen/jOWqepw
 - [Flexbox ex. 2](https://codepen.io/alyra/pen/WNrxvqO)
 - [Flexbox ex. 5](https://codepen.io/alyra/pen/qBbNOod)
 - [Design Quotes (flexbox)](https://codepen.io/alyra/pen/XWXraxW)
+
+---
