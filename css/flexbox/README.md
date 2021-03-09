@@ -113,7 +113,25 @@ Aligne les lignes d'un container flex (si plus qu'une ligne). La valeur par déf
 
 ![align-content](https://wptemplates.pehaa.com/assets/alyra/align-content.png)
 
-- [`align-content`](https://cdpn.io/alyra/debug/f32a3e24e05d59a1c4f5f31b7182c9c5)
+- [Playground `align-content`](https://cdpn.io/alyra/debug/f32a3e24e05d59a1c4f5f31b7182c9c5)
+
+---
+
+### <code>gap</code>
+
+Raccourci pour `row-gap column-gap` permet de définir les espaces entre les éléments.
+
+```css
+.container {
+  gap: 1rem;
+  /*
+  row-gap: 1rem;
+  column-gap: 1rem;
+  */
+}
+```
+
+- [Playground `align-content`](https://cdpn.io/alyra/debug/a4466cf0ef4247de582cbe8e9ef65318)
 
 ---
 
