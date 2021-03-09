@@ -117,7 +117,7 @@ Aligne les lignes d'un container flex (si plus qu'une ligne). La valeur par déf
 
 ---
 
-### <code>gap</code>
+### <code>gap</code> 👈
 
 Raccourci pour `row-gap column-gap` permet de définir les espaces entre les éléments.
 
