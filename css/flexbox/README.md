@@ -241,12 +241,18 @@ https://codepen.io/alyra/pen/jOWqepw
 
 ## Exercices
 
-- [Flexbox ex. 1 ](https://codepen.io/alyra/pen/GRoqJxR) | [solution](https://codepen.io/alyra/pen/84a9f8a69b6243deb2b95fe93aa74316)
-- [Flexbox ex. 1a](https://codepen.io/alyra/pen/PoZzqaP) | [solution](https://codepen.io/alyra/pen/8b774f4e71b7eb7946a15dbb378d862b)
-- [Flexbox ex. 2](https://codepen.io/alyra/pen/WNrxvqO) | [solution](https://codepen.io/alyra/pen/9a050e3c91e9029cd2096770f37876e4)
-- [Flexbox ex. 3](https://codepen.io/alyra/pen/VwejvZw) | [solution](https://codepen.io/alyra/pen/1a040d1d180f068547f1b0c6f931e071)
-- [Flexbox ex. 3a](https://codepen.io/alyra/pen/xxZOwxB) | [solution](https://codepen.io/alyra/pen/d9f7f2e28a301e7e3a2b9c70d5d945a6)
-- [Flexbox ex. 4](https://codepen.io/alyra/pen/RwrRWGa) | [solution](https://codepen.io/alyra/pen/d88f38824dc4c48923c7f067642baa93)
-- [Flexbox ex. 5](https://codepen.io/alyra/pen/qBbNOod) | [solution](https://codepen.io/alyra/pen/4713d0afd1668d23a263bc14ad9b89da)
-- [Poulet Tikka](https://codepen.io/alyra/pen/GRpVexo) | [solution](https://codepen.io/alyra/pen/e345eab877855ce5b5c1457688a56fea)
-- [Design Quotes (flexbox)](https://codepen.io/alyra/pen/XWXraxW) | [solution](https://codepen.io/alyra/pen/9ede43cefbc1b8e2815f178ffac4507d)
+- [Flexbox ex. 1 ](https://codepen.io/alyra/pen/GRoqJxR)
+- [Flexbox ex. 1a](https://codepen.io/alyra/pen/PoZzqaP)
+
+---
+
+- [Flexbox ex. 3](https://codepen.io/alyra/pen/VwejvZw)
+- [Flexbox ex. 3a](https://codepen.io/alyra/pen/xxZOwxB)
+- [Flexbox ex. 4](https://codepen.io/alyra/pen/RwrRWGa)
+- [Poulet Tikka](https://codepen.io/alyra/pen/jOVedgN)
+
+---
+
+- [Flexbox ex. 2](https://codepen.io/alyra/pen/WNrxvqO)
+- [Flexbox ex. 5](https://codepen.io/alyra/pen/qBbNOod)
+- [Design Quotes (flexbox)](https://codepen.io/alyra/pen/XWXraxW)
