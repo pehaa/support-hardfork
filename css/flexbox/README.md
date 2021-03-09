@@ -1,7 +1,5 @@
 # Flexbox
 
-Le temps est venu d'expérimenter les [layouts plus élaborés...](https://wp-pehaa.xyz/assets/layout.mp4)
-
 Le **Module Flexbox** permet de contrôler la disposition des éléments verticalement ou horizontalement. En parallèle le navigateur essaie d'optimiser l'espace disponible. Grâce au flexbox, on sort facilement du modèle [classique](https://codepen.io/alyra/debug/eYJZMVa) (le contenu qui s'affiche du haut en bas)</a> vers [un layout plus complexe.](https://codepen.io/alyra/debug/e115e4a915987967ec21f41b96c37456?editors=1100)
 
 [Faisons ça ensemble](https://codepen.io/alyra/pen/eYJZMVa)
@@ -17,23 +15,107 @@ Le **Module Flexbox** permet de contrôler la disposition des éléments vertica
 
 ## Step 1 : Élément "parent"
 
+### <code>display</code>
+
 ```css
 .container {
   display: flex;
 }
 ```
 
-[![](https://wptemplates.pehaa.com/assets/alyra/cheatsheet-flex-parent.png)](https://assets.codepen.io/4515922/FlexCheatsheetParent.pdf)
-
-[Cheatsheet en format .pdf](https://assets.codepen.io/4515922/FlexCheatsheetParent.pdf)
-
-### Playgrounds (testez les propriétés concernant l'élément "parent")
-
-- [`flex-flow` (`flex-direction` `flex-wrap`)](https://cdpn.io/alyra/debug/d0ef4e9fed51c6dcf0de9d423b642243)
-- [`justify-content`](https://cdpn.io/alyra/debug/572a2fe40e375d00d458afdc37768a68)
-- [`align-items`](https://cdpn.io/alyra/debug/9aaec9c3fa5928e7cbf845ccac43ba34)
 ---
+
+### <code>flex-direction</code>
+
+Ici on établit l'axe principal d'un container flex sur lequel les items sont disposés. La valeur par défaut est `row`.
+
+```css
+.container {
+  flex-direction: row | row-reverse | column | column-reverse;
+}
+```
+
+---
+
+### <code>flex-wrap</code>
+
+Cette propriété définit si le container comprend une seule ligne ou plusieurs. La valeur par défaut est `nowrap`.
+
+```css
+.container {
+  flex-wrap: nowrap | wrap | wrap-reverse;
+}
+```
+
+![flex-wrap](https://wptemplates.pehaa.com/assets/alyra/flex-wrap.png)
+
+---
+
+### <code>flex-flow</code>
+
+Cette propriété est un raccourci des propriétés `flex-direction` et `flex-wrap`. La valeur par défaut est `row nowrap`.
+
+```css
+/* exemple */
+.container {
+  flex-flow: column wrap;
+}
+```
+
+- [Playground `flex-flow` (`flex-direction` `flex-wrap`)](https://cdpn.io/alyra/debug/d0ef4e9fed51c6dcf0de9d423b642243)
+
+---
+
+### <code>justify-content</code> 👈
+
+Définit l'alignement le long de l'axe principal en distribuant l'espace qui reste libre. La valeur par défaut est `flex-start`.
+
+```css
+.container {
+  justify-content: flex-start | flex-end | center | space-between | space-around
+    | space-evenly;
+}
+```
+
+![justify-content](https://wptemplates.pehaa.com/assets/alyra/justify-content.png)
+
+- [Playground `justify-content`](https://cdpn.io/alyra/debug/572a2fe40e375d00d458afdc37768a68)
+
+---
+
+### <code>align-items</code> 👈
+
+Définit la façon dont les items d'une ligne sont disposés le long de l'axe "secondaire". La valeur par défaut est `stretch`.
+
+```css
+.container {
+  align-items: stretch | flex-start | flex-end | center | baseline;
+}
+}
+```
+
+![align-items](https://wptemplates.pehaa.com/assets/alyra/align-items.png)
+
+- [Playground `align-items`](https://cdpn.io/alyra/debug/9aaec9c3fa5928e7cbf845ccac43ba34)
+
+---
+
+### <code>align-content</code>
+
+Aligne les lignes d'un container flex (si plus qu'une ligne). La valeur par défaut est `stretch`.
+
+```css
+.container {
+  align-content: flex-start | flex-end | center | space-between | space-around |
+    space-evenly | stretch;
+}
+```
+
+![align-content](https://wptemplates.pehaa.com/assets/alyra/align-content.png)
+
 - [`align-content`](https://cdpn.io/alyra/debug/f32a3e24e05d59a1c4f5f31b7182c9c5)
+
+---
 
 ## Step 2 : Les "enfants"
 
@@ -150,4 +232,3 @@ https://codepen.io/alyra/pen/jOWqepw
 - [Flexbox ex. 5](https://codepen.io/alyra/pen/qBbNOod) | [solution](https://codepen.io/alyra/pen/4713d0afd1668d23a263bc14ad9b89da)
 - [Poulet Tikka](https://codepen.io/alyra/pen/GRpVexo) | [solution](https://codepen.io/alyra/pen/e345eab877855ce5b5c1457688a56fea)
 - [Design Quotes (flexbox)](https://codepen.io/alyra/pen/XWXraxW) | [solution](https://codepen.io/alyra/pen/9ede43cefbc1b8e2815f178ffac4507d)
-
