@@ -22,4 +22,4 @@
 
 ## Bootstrap
 
-- [Bootstrap](./css/bootstrap)
+- [Bootstrap](./bootstrap/introduction)
