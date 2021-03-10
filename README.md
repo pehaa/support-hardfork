@@ -19,9 +19,4 @@
 - [Flexbox](./css/flexbox)
 - [Grid](./css/grid)
 - [Position & z-index](./css/position-z-index)
-<!---
 - [Bootstrap](./css/bootstrap)
-
-)
-
--->
