@@ -281,20 +281,15 @@ Les noms de classes correspondent au nombre de colonnes occupées.
 
 https://codepen.io/alyra/pen/dyGWJjx
 
-## Navigation
+https://codepen.io/alyra/pen/OJboqOP
 
-- [Menus de navigation dans la documentation bootstrap](https://v5.getbootstrap.com/docs/5.0/components/navs/)
-- [Barres de navigation dans la documentation bootstrap](https://v5.getbootstrap.com/docs/5.0/components/navbar/)
+https://codepen.io/alyra/pen/VwmGRyR
 
-https://codepen.io/alyra/pen/YzwVeQG
+https://codepen.io/alyra/pen/OJbaZem
 
 ### Bootstrap Icons
 
 [Documentation](https://icons.getbootstrap.com/)
-
-### Bonjour Bootstrap Live
-
-[Live coding start](https://codepen.io/alyra/pen/JjGNOKN) - [rendu final](https://cdpn.io/alyra/debug/7855e2a6ac75130ab07c8201ad3e5d44)
 
 ---
 
