@@ -202,7 +202,8 @@ https://codepen.io/alyra/pen/oNzbyKL
 
 [Source : Docs > Utilities > Spacing](https://getbootstrap.com/docs/5.0/utilities/spacing/)
 
-**Syntaxe :** `p{side}-{breakpoint}-{size}`
+**Syntaxe :** `p{side}-{breakpoint}-{size}`  
+**Valeurs :** `0`, `0.25rem`, `.5rem`, `1rem`, `1.5rem`, `3rem`
 
 <dl>
   <dt><code>p-0</code></dt>
@@ -302,6 +303,5 @@ https://codepen.io/alyra/pen/YzwVeQG
 ## Exercices
 
 - [B5 - text](https://codepen.io/alyra/pen/GRorKox)
-- [B5 - section](https://codepen.io/alyra/pen/rNxjNpJ)
 - [B5 - m/p/colors](https://codepen.io/alyra/pen/RwrKZzg)
 - [B5 - responsive grid](https://codepen.io/alyra/pen/jOWLNOw)
