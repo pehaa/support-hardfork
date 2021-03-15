@@ -21,7 +21,11 @@ https://codepen.io/alyra/pen/bGBZMQN
 </p>
 ```
 
+https://codepen.io/alyra/pen/ExNMReG
+
 ----
 
 ## Challenge
+
+[AlyraMag challenge starter](https://github.com/pehaa/alyra-b5-challenge-starter)
 
