@@ -1,4 +1,4 @@
-# Alyra Bootstrap Challenge - Custom Bootstrap5 CSS build
+# Custom Bootstrap5 CSS build
 
 ## Prérequis
 
