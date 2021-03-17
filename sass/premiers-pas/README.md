@@ -14,8 +14,7 @@ Nous allons utiliser la syntaxe SCSS du Sass. Elle est compatible avec CSS, ce q
 
 ## Variables Sass
 
-Avec Sass nous pouvons utiliser des variables. Pour mettre en place une variable Sass, on attribue une valeur à un nom qui commence (obligatoirement) par le symbole `$`. Ensuite on peut faire référence à ce nom au lieu de la valeur elle-même.  
-Les variables permettent de réduire les répétitions, car la valeur est mise en place qu'une seule fois. Ceci est très pratique, et correspond au principe très connu dans la programmation informatique - [DRY (_Don't Repeat Yourself_)](https://fr.wikipedia.org/wiki/Ne_vous_r%C3%A9p%C3%A9tez_pas).
+Avec Sass nous pouvons utiliser des variables. Pour mettre en place une variable Sass, on attribue une valeur à un nom qui commence obligatoirement par le symbole `$`. Ensuite on peut faire référence à ce nom au lieu de la valeur elle-même.
 
 ```scss
 // scss
