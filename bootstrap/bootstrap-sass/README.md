@@ -121,6 +121,7 @@ touch custom/mybootstrap.scss
 ## Configuration de Sass Live Compiler
 
 Nous allons installer et configurer l'extenstion VSCode, **Sass Live Compiler**
+
 ![](https://wptemplates.pehaa.com/assets/alyra/sasscompiler.png)
 
 - créer un dossier `.vscode` (dans la racine du projet `alyra-challenge-custom-b5` )
@@ -199,9 +200,9 @@ avant :
 
 ```html
 <link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha3/dist/css/bootstrap.min.css"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
   rel="stylesheet"
-  integrity="sha384-CuOF+2SnTUfTwSZjCXf01h7uYhfOBuxIhGKPbfEJ3+FqH/s6cIFN9bGr1HmAg4fQ"
+  integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
   crossorigin="anonymous"
 />
 ```
