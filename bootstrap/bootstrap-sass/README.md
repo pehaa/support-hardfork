@@ -4,7 +4,7 @@
 
 **`node` est installé.**
 
-Nous allons utiliser [ce repo](https://github.com/pehaa/alyramag-custom-b5-build-starter) en tant que le point de départ. Au lieu de charger le fichier bootstrap depuis un _CDN_, nous allons utiliser le _package manager_ [npm](https://www.youtube.com/watch?v=ZNbFagCBlwo) pour installer bootstrap.
+Vous allez utiliser votre repo Alyra Mag (challenge bootstrap) en tant que le point de départ. Au lieu de charger le fichier bootstrap depuis un _CDN_, nous allons utiliser le _package manager_ [npm](https://www.youtube.com/watch?v=ZNbFagCBlwo) pour installer bootstrap.
 _npm_ téléchargera et mettra dans notre projet les fichiers bootstrap.
 
 ---
