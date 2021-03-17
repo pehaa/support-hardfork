@@ -10,12 +10,12 @@ https://wptemplates.pehaa.com/assets/alyra/scss.mp4
 
 Nous allons utiliser la syntaxe SCSS du Sass. Elle est compatible avec CSS, ce qui veut dire que nous pouvons continuer d'écrire du pure CSS sans avoir des erreurs. Nous pouvons dire que la syntaxe SCSS du Sass est une extension du CSS.
 
-🍒 Vous pouvez aussi utiliser le compilateur en ligne [sassmeister.com](https://www.sassmeister.com/)
+🍒 Vous pouvez aussi utiliser le compilateur en ligne [**sassmeister.com**](https://www.sassmeister.com/) 🍒
 
 ## Variables Sass
 
 Avec Sass nous pouvons utiliser des variables. Pour mettre en place une variable Sass, on attribue une valeur à un nom qui commence (obligatoirement) par le symbole `$`. Ensuite on peut faire référence à ce nom au lieu de la valeur elle-même.  
-Les variables permettent de réduire les répétitions, car la valeur est mise en place qu'une seule fois.  Ceci est très pratique, et correspond au principe très connu dans la programmation informatique - [DRY (*Don't Repeat Yourself*)](https://fr.wikipedia.org/wiki/Ne_vous_r%C3%A9p%C3%A9tez_pas).
+Les variables permettent de réduire les répétitions, car la valeur est mise en place qu'une seule fois. Ceci est très pratique, et correspond au principe très connu dans la programmation informatique - [DRY (_Don't Repeat Yourself_)](https://fr.wikipedia.org/wiki/Ne_vous_r%C3%A9p%C3%A9tez_pas).
 
 ```scss
 // scss
@@ -182,7 +182,7 @@ Par contre, la fonctionnalité _nesting_ devrait être utilisée **avec modérat
 
 ## Mixins
 
-*Mixins* (`@mixin`) permettent d'écrire une fois une partie du style et le réutiliser dans plusieurs endroits. Ceci est très pratique, et correspond aussi au principe DRY.
+_Mixins_ (`@mixin`) permettent d'écrire une fois une partie du style et le réutiliser dans plusieurs endroits. Ceci est très pratique, et correspond aussi au principe DRY.
 
 ```scss
 //scss
@@ -276,4 +276,3 @@ h2 {
 - [SASS nesting](https://codepen.io/alyra/pen/xxZqmLM) | [solution](https://codepen.io/alyra/pen/7c103eba03c079c5736c8fee15f28670)
 - [SASS refactor Marie la Photographe](https://codepen.io/alyra/pen/jOWwLaV) | [solution](https://codepen.io/alyra/pen/f9c226199f0301284222f97fc9d4e76a)
 - [SASS BEM](https://codepen.io/alyra/pen/QWypYqJ) | [solution](https://codepen.io/alyra/pen/47c4875be5a8cd92625d24ed9f5dafb6)
-
