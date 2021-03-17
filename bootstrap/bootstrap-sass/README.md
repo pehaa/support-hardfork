@@ -23,7 +23,11 @@ npm init
 
 La ligne de commande posera quelques questions, les réponses seront intégrées dans le fichier `package.json`, créé automatiquement.
 
-Pour l'instant les valeurs par défaut sont tout à fait ok. Faites juste attention au `"name"` de votre projet - il doit être en minuscules, sans espaces, il peut par contre contenir "-" ou "\_".
+Pour l'instant les valeurs par défaut sont tout à fait ok, pour ceci vous pouvez ajouter l'option `--yes` :
+
+```bash
+npm init --yes
+```
 
 ---
 
