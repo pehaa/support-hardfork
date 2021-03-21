@@ -32,4 +32,7 @@
 
 ## React
 
-- [Hello React & Prérequis](./react/prerequis)
+- [Hello React](./react/prerequis)
+- JSX
+  - [JSX - 1](./react/jsx/jsx-1)
+  - [JSX - 2](./react/jsx/jsx-2)

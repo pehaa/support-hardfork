@@ -340,6 +340,19 @@ const element = React.createElement(
 
 Faites attention aux noms des propriétés en camelCase et des valeurs avec des guillemets (!) Sachez aussi que la directive `!important` ne marche pas avec le style inline dans React.
 
+## Réconciliation
+
+Que se passe quand on appelle la méthode `ReactDOM.render` lorsque l'élément React est déjà inséré dans le container ?  
+Au lieu de remplacer le contenu du container, `ReactDOM.render` procède à une "mise à jour". Au lieu de recréer tous les noeuds, `ReactDOM.render` utilise un algorithme de comparaison (_diffing algorithm_). Par conséquent, le DOM est modifié uniquement là où c’est strictement nécessaire. Si l'élément React n'a pas changé, le DOM ne sera pas modifié.
+
+Vous pouvez observer ce fonctionnement dans le pen suivant :
+
+https://codepen.io/alyra/pen/PoNZvgd
+
+![](https://wptemplates.pehaa.com/assets/alyra/diffing.gif)
+
+À ce stade, il n'est pas nécessaire de comprendre comment l’algorithme de comparaison fonctionne en détail, mais si cela vous intéresse, vous pouvez en lire davantage [dans la documentation.](https://fr.reactjs.org/docs/reconciliation.html)
+
 ---
 
 ## Exercices :
