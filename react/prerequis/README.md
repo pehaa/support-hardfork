@@ -1,8 +1,6 @@
 # Hello React
 
-React est la plus librairie JavaScript. React open-source, créée et maintenue par Facebook, distribuée sous la licence MIT.
-
-**React est une bibliothèque JavaScript pour créer de interfaces utilisateurs (UI).** React affiche des éléments UI ainsi que gére le côté intéractif d'une application.
+**React est une librairie JavaScript pour créer de interfaces utilisateurs (UI).** React affiche des éléments UI ainsi que gére le côté intéractif d'une application. React est open-source, créée et maintenue par Facebook, distribuée sous la licence MIT.
 
 Depuis quelques années, React est le choix numéro un des développeurs web. Ceci est confirmé par les sondages menés par [Stack Overflow](https://insights.stackoverflow.com/survey/2019/#technology-_-most-loved-dreaded-and-wanted-web-frameworks), [State of Frontend 2020](https://tsh.io/state-of-frontend/#frameworks) ou encore [State of JS](https://2020.stateofjs.com/en-US/technologies/front-end-frameworks/).
 
@@ -10,7 +8,7 @@ De nombreuses grandes entreprises utilisent React en production, parmi elles bie
 
 ## Approche _native_, DOM Web API
 
-Avant d'utiliser React, nous allons intéragir avec la page web avec JavaScript et l'API DOM
+Avant d'utiliser React, nous allons intéragir avec la page web avec JavaScript et [l'API DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 
 ```js
 const element = document.createElement("h1")
