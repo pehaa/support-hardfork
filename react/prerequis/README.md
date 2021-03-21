@@ -89,34 +89,26 @@ Pour mieux comprendre le fonctionnement de React, et en particulier ces méthode
 </script>
 ```
 
-```html
-<!-- Approche Native -->
-<div class="container" id="root"></div>
-<script>
-  const rootElement = document.getElementById("root-dom")
-  const paragraphEl = document.createElement("p")
-  paragraphEl.textContent = "Hello World"
-  paragraphEl.className = "bg-danger text-white"
-  rootElement.append(paragraphEl)
-</script>
+```js
+// Approche Native
+const rootElement = document.getElementById("root-dom")
+const paragraphEl = document.createElement("p")
+paragraphEl.textContent = "Hello World"
+paragraphEl.className = "bg-danger text-white"
+rootElement.append(paragraphEl)
 ```
 
-```html
-<!-- Approche React -->
-<div class="container" id="root"></div>
-<script src="https://unpkg.com/react/umd/react.development.js"></script>
-<script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
-<script>
-  const rootElement = document.getElementById("root")
-  const paragraphEl = React.createElement(
-    "p",
-    {
-      className: "bg-danger text-white",
-    },
-    "Hello World"
-  )
-  ReactDOM.render(paragraphEl, rootElement)
-</script>
+```js
+// Approche React
+const rootElement = document.getElementById("root")
+const paragraphEl = React.createElement(
+  "p",
+  {
+    className: "bg-danger text-white",
+  },
+  "Hello World"
+)
+ReactDOM.render(paragraphEl, rootElement)
 ```
 
 https://codepen.io/alyra/pen/PoNGGJM
