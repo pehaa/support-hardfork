@@ -1,10 +1,10 @@
-# React et ReactDOM premiers pas
+# Hello React
 
-React est une librairie JavaScript, open-source, créée et maintenue par Facebook, distribuée sous la licence MIT.
+React est la plus librairie JavaScript. React open-source, créée et maintenue par Facebook, distribuée sous la licence MIT.
 
-**React est une bibliothèque JavaScript pour créer de interfaces utilisateurs (UI).** React affiche est des éléments UI ainsi que gére le côté intéractif d'une application. Avec React la création des UI est basée sur les composants réutilisables et interactifs.
+**React est une bibliothèque JavaScript pour créer de interfaces utilisateurs (UI).** React affiche des éléments UI ainsi que gére le côté intéractif d'une application.
 
-Depuis quelques années, React est le choix numéro un des développeurs web. Ceci est confirmé par les sondages menés par [Stack Overflow](https://insights.stackoverflow.com/survey/2019/#technology-_-most-loved-dreaded-and-wanted-web-frameworks), [State of Frontend 2020](https://tsh.io/state-of-frontend/#frameworks) ou encore [State of JS](https://2019.stateofjs.com/front-end-frameworks/).
+Depuis quelques années, React est le choix numéro un des développeurs web. Ceci est confirmé par les sondages menés par [Stack Overflow](https://insights.stackoverflow.com/survey/2019/#technology-_-most-loved-dreaded-and-wanted-web-frameworks), [State of Frontend 2020](https://tsh.io/state-of-frontend/#frameworks) ou encore [State of JS](https://2020.stateofjs.com/en-US/technologies/front-end-frameworks/).
 
 De nombreuses grandes entreprises utilisent React en production, parmi elles bien évidemment Facebook (et Instagram), mais aussi Netflix, Airbnb, Cloudflare ou Dropbox.
 
@@ -57,7 +57,7 @@ Pour mieux comprendre le fonctionnement de React, et en particulier ces méthode
 - création d'interface utilisateur avec React et ReactDOM
 
 ```html
-<!-- Approche Vanilla -->
+<!-- Approche Native -->
 <div class="container" id="root-dom"></div>
 <script>
   const rootElement = document.getElementById("root-dom")
@@ -229,22 +229,9 @@ ReactDOM.render(element, document.getElementById("root"))
 
 https://codepen.io/alyra/pen/xxVLwgY
 
-## Réconciliation
-
-Que se passe quand on appelle la méthode `ReactDOM.render` lorsque l'élément React est déjà inséré dans le container ?  
-Au lieu de remplacer le contenu du container, `ReactDOM.render` procède à une "mise à jour". Au lieu de recréer tous les noeuds, `ReactDOM.render` utilise un algorithme de comparaison (_diffing algorithm_). Par conséquent, le DOM est modifié uniquement là où c’est strictement nécessaire. Si l'élément React n'a pas changé, le DOM ne sera pas modifié.
-
-Vous pouvez observer ce fonctionnement dans le pen suivant :
-
-https://codepen.io/alyra/pen/PoNZvgd
-
-![](https://wptemplates.pehaa.com/assets/alyra/diffing.gif)
-
-À ce stade, il n'est pas nécessaire de comprendre comment l’algorithme de comparaison fonctionne en détail, mais si cela vous intéresse, vous pouvez en lire davantage [dans la documentation.](https://fr.reactjs.org/docs/reconciliation.html)
-
 ## React.Fragment
 
-Dans tous les exemples ci-dessus, nous avons **un seul** élément parent qui a un ou plusieurs noeuds enfants . Afin d'avoir des "siblings" (👭) nous devons utiliser `React.Fragment`, un conteneur sans type ni attribut, un conteneur fantôme 👻.
+Dans tous les exemples ci-dessus, nous avons **un seul** élément parent qui a un ou plusieurs noeuds enfants. Afin d'avoir des "siblings" (👭) nous devons utiliser `React.Fragment`, un conteneur sans type ni attribut, un conteneur fantôme 👻.
 
 ```javascript
 const element = React.createElement(
