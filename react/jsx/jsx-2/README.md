@@ -380,12 +380,12 @@ Dans ce cas, on est obligé d'utiliser `<React.Fragment>` plutôt que `<>`. Il e
 
 ## Exercices
 
-- [JSX expression - hello](https://codepen.io/alyra/pen/qBZXEje) | [solution](https://codepen.io/alyra/pen/3e7e235fbb4c229a14585e3b8ef867df)
-- [JSX - expressions - logged-in](https://codepen.io/alyra/pen/RwaZNaW) | [solution](https://codepen.io/alyra/pen/43004448ad3a73d223d7f1c1eb6598e7)
-- [JSX - expressions - notifications](https://codepen.io/alyra/pen/poyrvEa) | [solution](https://codepen.io/alyra/pen/bc89eb35101c603941bdae0a9b881dfb)
-- [JSX - expressions - notifications 1](https://codepen.io/alyra/pen/JjXyxjo) | [solution](https://codepen.io/alyra/pen/bdf636434aa83dde7e1e159b4e78dccc)
-- [JSX - notifications list](https://codepen.io/alyra/pen/YzqxMEP) | [solution](https://codepen.io/alyra/pen/f7801accec0de64a8473089fd051f25d)
-- [JSX - notifications title + list](https://codepen.io/alyra/pen/bGprJaW) | [solution](https://codepen.io/alyra/pen/10413263fabe4668bf815a7d2ad05ec8)
-- [JSX button](https://codepen.io/alyra/pen/YzqxoQO) | [solution](https://codepen.io/alyra/pen/d90868a92c92e2736befa9685f38a1e4)
-- [JSX title](https://codepen.io/alyra/pen/VwaMbMP) | [solution](https://codepen.io/alyra/pen/d90868a92c92e2736befa9685f38a1e4)
-- [JSX smoothie](https://codepen.io/alyra/pen/xxVXdWZ) | [solution](https://codepen.io/alyra/pen/40a70e8ed7e387d45c8a2581e15efc4d)
+- [JSX expression - hello](https://codepen.io/alyra/pen/qBZXEje)
+- [JSX - expressions - logged-in](https://codepen.io/alyra/pen/RwaZNaW)
+- [JSX - expressions - notifications](https://codepen.io/alyra/pen/poyrvEa)
+- [JSX - expressions - notifications 1](https://codepen.io/alyra/pen/JjXyxjo)
+- [JSX - notifications list](https://codepen.io/alyra/pen/YzqxMEP)
+- [JSX - notifications title + list](https://codepen.io/alyra/pen/bGprJaW)
+- [JSX button](https://codepen.io/alyra/pen/YzqxoQO)
+- [JSX title](https://codepen.io/alyra/pen/VwaMbMP)
+- [JSX smoothie](https://codepen.io/alyra/pen/xxVXdWZ)

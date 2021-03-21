@@ -94,6 +94,7 @@ const element = React.createElement(
 )
 */
 ```
+
 ---
 
 ## BABEL
@@ -177,10 +178,10 @@ const element = <p>{/* je suis un commentaire  */}</p>
 
 ## Exercices
 
-- [JSX p](https://codepen.io/alyra/pen/OJNbKMo) | [solution](https://codepen.io/alyra/pen/29e2be325c73498465349b7eb816d4b1)
-- [JSX button](https://codepen.io/alyra/pen/MWybNyY) | [solution](https://codepen.io/alyra/pen/24c0e41e939ac4cc1773c654711bf2cd)
-- [JSX h1](https://codepen.io/alyra/pen/wvGoVGR) | [solution](https://codepen.io/alyra/pen/aa7b96a373353287f147da0cf3937fb9?editors=1010)
-- [JSX - header](https://codepen.io/alyra/pen/eYZdoWg) | [solution](https://codepen.io/alyra/pen/50bee6a7d1c810dfccba46d5e4dee82b)
-- [JSX - input](https://codepen.io/alyra/pen/MWyoLrY) | [solution](https://codepen.io/alyra/pen/cf85be5c0ae3a664db66486387b908c5)
-- [JSX - label + input](https://codepen.io/alyra/pen/GRZEzyG) | [solution](https://codepen.io/alyra/pen/3b5c8b252ef90a019d3db1c8990b6677)
-- [JSX - style](https://codepen.io/alyra/pen/vYGJrLx) | [solution](https://codepen.io/alyra/pen/5882c4df35ceb675f3e246b2829bff4a)
+- [JSX p](https://codepen.io/alyra/pen/OJNbKMo)
+- [JSX button](https://codepen.io/alyra/pen/MWybNyY)
+- [JSX h1](https://codepen.io/alyra/pen/wvGoVGR)
+- [JSX - header](https://codepen.io/alyra/pen/eYZdoWg)
+- [JSX - input](https://codepen.io/alyra/pen/MWyoLrY)
+- [JSX - label + input](https://codepen.io/alyra/pen/GRZEzyG)
+- [JSX - style](https://codepen.io/alyra/pen/vYGJrLx)
