@@ -58,7 +58,7 @@ Pour mieux comprendre le fonctionnement de React, et en particulier ces méthode
 
 ```html
 <!-- Approche Native -->
-<div class="container" id="root-dom"></div>
+<div class="container" id="root"></div>
 <script>
   const rootElement = document.getElementById("root-dom")
   // type d'élément
