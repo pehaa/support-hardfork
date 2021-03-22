@@ -2,7 +2,8 @@
 
 ## Expressions JavaScript
 
-JSX permet de faire un mixte de la structure HTML et des expressions JavaScript. Expressions JavaScript sont intégrées entre des accolades (ceci ressemble un peu aux _template literals_).
+JSX permet de faire un mixte de la structure HTML et des expressions JavaScript.  
+Dans JSX des expressions JavaScript sont intégrées entre des accolades (ceci ressemble un peu aux _template literals_).
 
 ---
 
@@ -381,11 +382,8 @@ Dans ce cas, on est obligé d'utiliser `<React.Fragment>` plutôt que `<>`. Il e
 ## Exercices
 
 - [JSX expression - hello](https://codepen.io/alyra/pen/qBZXEje)
+- [JSX button](https://codepen.io/alyra/pen/YzqxoQO)
 - [JSX - expressions - logged-in](https://codepen.io/alyra/pen/RwaZNaW)
 - [JSX - expressions - notifications](https://codepen.io/alyra/pen/poyrvEa)
-- [JSX - expressions - notifications 1](https://codepen.io/alyra/pen/JjXyxjo)
-- [JSX - notifications list](https://codepen.io/alyra/pen/YzqxMEP)
-- [JSX - notifications title + list](https://codepen.io/alyra/pen/bGprJaW)
-- [JSX button](https://codepen.io/alyra/pen/YzqxoQO)
-- [JSX title](https://codepen.io/alyra/pen/VwaMbMP)
+- [JSX - expressions - notifications 2](https://codepen.io/alyra/pen/JjXyxjo)
 - [JSX smoothie](https://codepen.io/alyra/pen/xxVXdWZ)
