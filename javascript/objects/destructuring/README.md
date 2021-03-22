@@ -1,6 +1,8 @@
-# Destructuring Assignement (fr. affectation par décomposition)
+# Destructuring Assignement
 
-Nous allons découvrir quelques secrets de la syntaxe des objets et tableaux qui rendent notre code plus court et souvent plus maintenable.
+_(fr. affectation par décomposition)_
+
+Nous allons découvrir quelques secrets de la syntaxe des objets et tableaux qui rendent notre code plus court et parfois plus maintenable.
 
 ## objects
 
