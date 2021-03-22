@@ -30,6 +30,10 @@
 - [Bootstrap - Components](./bootstrap/components)
 - [Bootstrap - Custom Build](./bootstrap/bootstrap-sass)
 
+## JavaScript
+
+- [Destructuring Assignement](./javascript/objects/destructuring)
+
 ## React
 
 - [Hello React](./react/prerequis)
