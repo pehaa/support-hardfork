@@ -150,4 +150,4 @@ const [a, b, c, d] = spices
 
 ## Exercices :
 
-[js tours - destructuring](https://jstours-destructure.netlify.app/)
+[js tours - destructuring](https://jstours-destructure.netlify.app/) - ** ⚠️ Attention aux guillemets**
