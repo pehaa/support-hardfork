@@ -23,6 +23,8 @@ const container = document.querySelector("#some-id")
 container.append(element)
 ```
 
+https://codepen.io/alyra/pen/VwPZKPY
+
 ### Exercices DOM
 
 - [Veilles intro](https://codepen.io/alyra/pen/jOVgRmz)
@@ -58,7 +60,7 @@ Pour mieux comprendre le fonctionnement de React, et en particulier ces méthode
 <!-- Approche Native -->
 <div id="root"></div>
 <script>
-  const rootElement = document.getElementById("root-dom")
+  const rootElement = document.getElementById("root")
   // type d'élément
   const paragraphEl = document.createElement("p")
   // contenu textuel
@@ -349,16 +351,16 @@ https://codepen.io/alyra/pen/PoNZvgd
 
 ![](https://wptemplates.pehaa.com/assets/alyra/diffing.gif)
 
-À ce stade, il n'est pas nécessaire de comprendre comment l’algorithme de comparaison fonctionne en détail, mais si cela vous intéresse, vous pouvez en lire davantage [dans la documentation.](https://fr.reactjs.org/docs/reconciliation.html)
+[Reconciliation dans la documentation.](https://fr.reactjs.org/docs/reconciliation.html)
 
 ---
 
 ## Exercices :
 
-- [React.createElement - p](https://codepen.io/alyra/pen/mdProPw) | [solution](https://codepen.io/alyra/pen/996c540d3b4910dd8e7f44a09bd4bbc9)
-- [React.createElement - button](https://codepen.io/alyra/pen/jOqMJZJ) | [solution](https://codepen.io/alyra/pen/c2fbab1869a4e5a3e42180cf8ac203ef)
-- [React.createElement - h1](https://codepen.io/alyra/pen/rNeMRRx) | [solution](https://codepen.io/alyra/pen/269e8a2880caa3e09477d603577244c7)
-- [React.createElement - input](https://codepen.io/alyra/pen/RwagEMo) | [solution](https://codepen.io/alyra/pen/a00f3fe1653bcff33b3e57a5bd1e1c66)
-- [React.createElement - header](https://codepen.io/alyra/pen/RwagEBK) | [solution](https://codepen.io/alyra/pen/25ecf36755944b625fcf2dd9a5f715ac)
-- [React.createElement - label + input](https://codepen.io/alyra/pen/yLOXZJd) | [solution](https://codepen.io/alyra/pen/6d2563311c69909c16d7cfb471ab7f7a)
-- [React.createElement - style](https://codepen.io/alyra/pen/JjXJqPG) | [solution](https://codepen.io/alyra/pen/848f5e1deae270f6ba3c60cf71546f3a)
+- [React.createElement - p](https://codepen.io/alyra/pen/mdProPw)
+- [React.createElement - button](https://codepen.io/alyra/pen/jOqMJZJ)
+- [React.createElement - h1](https://codepen.io/alyra/pen/rNeMRRx)
+- [React.createElement - input](https://codepen.io/alyra/pen/RwagEMo)
+- [React.createElement - header](https://codepen.io/alyra/pen/RwagEBK)
+- [React.createElement - label + input](https://codepen.io/alyra/pen/yLOXZJd)
+- [React.createElement - style](https://codepen.io/alyra/pen/JjXJqPG)

@@ -1,4 +1,4 @@
-# Syntaxe JSX en détails (2) - Notions avancées
+# Syntaxe JSX (2)
 
 ## Expressions JavaScript
 

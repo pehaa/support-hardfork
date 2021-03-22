@@ -1,4 +1,4 @@
-# JSX (1)
+# Syntaxe JSX (1)
 
 > Mais en quoi, `React.createElement` nous facilite la vie ? ... on dirait le contraire... ?
 
