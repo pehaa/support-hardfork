@@ -32,6 +32,7 @@
 
 ## JavaScript
 
+- [Types / Expressions](./javascript/types-expressions)
 - [Destructuring Assignement](./javascript/objects/destructuring)
 
 ## React
@@ -39,8 +40,4 @@
 - [Hello React](./react/prerequis)
 - JSX
   - [JSX - 1](./react/jsx/jsx-1)
-
-<!---
   - [JSX - 2](./react/jsx/jsx-2)
-
-  -->

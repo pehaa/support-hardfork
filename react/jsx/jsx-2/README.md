@@ -7,7 +7,7 @@ Dans JSX des expressions JavaScript sont intégrées entre des accolades (ceci r
 
 ---
 
-Pour rappel : **une expression JavaScript** est un un code qui donne une valeur en tant que le résultat. Autrement dit, l'expression js est un bout de code qui pourrait se trouver à droite d'un symbole `=`.
+Pour rappel : <b>une expression JavaScript</b> est un un code qui donne une valeur en tant que le résultat. Autrement dit, l'expression js est un bout de code qui pourrait se trouver à droite d'un symbole `=`.
 
 ---
 
@@ -287,18 +287,13 @@ JSX permet de rendre un _array_
 ```javascript
 const shoppingList = ["miel", "sucre", "cumin", "curry"]
 
-const element = (
-  <ul>
-    {shoppingList}
-  </ul>
-)
-*/
+const element = <ul>{shoppingList}</ul>
 ```
 
 Le code ci-dessus fonctionnera mais le rendu ne sera pas correct. Nous devons convertir chaque élément de notre `shoppingList` en un élément `li`. Pour ceci, nous allons utiliser la méthode `map` :
 
 ```javascript
-const shoppingList
+const shoppingList = ["miel", "sucre", "cumin", "curry"]
 
 const element = (
   <ul>
@@ -311,7 +306,9 @@ const element = (
 
 ### Attribut spécial `key`
 
-Chaque élément d'un array devrait avoir un attribut `key` avec des valeurs uniques, une omission de cet attribut provoquera un warning dans la console. Une clé unique pour chaque élément de la liste permet au React d'effectuer correctement et efficacement son algorithme de comparaison (_diffing algorithm_).
+Chaque élément d'un array devrait avoir un attribut `key` avec une valeur unique.  
+Une omission de cet attribut provoquera un warning dans la console.  
+Une clé unique pour chaque élément de la liste permet au React d'effectuer correctement et efficacement son algorithme de comparaison (_diffing algorithm_) utilisé pour la réconciliation.
 
 https://codepen.io/alyra/pen/MWyvGRZ
 
@@ -381,9 +378,10 @@ Dans ce cas, on est obligé d'utiliser `<React.Fragment>` plutôt que `<>`. Il e
 
 ## Exercices
 
+- [JSX expression - bienvenue](https://codepen.io/alyra/pen/abpoevR)
 - [JSX expression - hello](https://codepen.io/alyra/pen/qBZXEje)
-- [JSX button](https://codepen.io/alyra/pen/YzqxoQO)
 - [JSX - expressions - logged-in](https://codepen.io/alyra/pen/RwaZNaW)
+- [JSX button](https://codepen.io/alyra/pen/YzqxoQO)
 - [JSX - expressions - notifications](https://codepen.io/alyra/pen/poyrvEa)
 - [JSX - expressions - notifications 2](https://codepen.io/alyra/pen/JjXyxjo)
 - [JSX smoothie](https://codepen.io/alyra/pen/xxVXdWZ)
