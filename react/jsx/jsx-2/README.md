@@ -13,6 +13,7 @@ Pour rappel : <b>une expression JavaScript</b> est un un code qui donne une vale
 
 ```javascript
 const element = <p>Vous avez {10 + 1} notifications.</p>
+
 // <p>Vous avez 11 notifications.</p>
 ```
 
@@ -21,6 +22,7 @@ const lang = "en"
 const element = (
   <h1 lang={lang}>{lang === "en" ? "Hello World!" : "Bonjour le Monde !"}</h1>
 )
+
 // <h1 lang="en">Hello World!</h1>
 ```
 
@@ -29,6 +31,7 @@ const lang = "fr"
 const element = (
   <h1 lang={lang}>{lang === "en" ? "Hello World!" : "Bonjour le Monde !"}</h1>
 )
+
 // <h1 lang="fr">Bonjour le Monde !</h1>
 ```
 
@@ -38,6 +41,7 @@ function capitalize(string) {
 }
 const name = "paulIna"
 const element = <h1>Hello {capitalize(name)}</h1>
+
 // <h1>Hello Paulina</h1>
 ```
 
@@ -137,12 +141,14 @@ const element = <span>{age >= 10}</span>
 ```javascript
 const age = 10
 const element = <span>{undefined}</span>
+
 // <span></span>
 ```
 
 ```javascript
 const age = 10
 const element = <span>{null}</span>
+
 // <span></span>
 ```
 
@@ -158,6 +164,7 @@ const element = (
     {!!name && <p>Notre école s'appelle {name}</p>}
   </header>
 )
+
 /*
 <header>
   <h1>Bienvenue</h1>
@@ -177,6 +184,7 @@ const element = (
     {alien.age >= 100 && <button>Partez en mission</button>}
   </section>
 )
+
 /* 
 <section>
   <h2>Bienvenu Deej !</h1>
@@ -235,6 +243,7 @@ nous pouvons utiliser la syntaxe de décomposition (_spread syntax_) `...`
 
 ```javascript
 const element = <h1 {...props}>Hello World</h1>
+
 /*
 <h1 lang="en" id="top" class="display-1">Hello World</h1>
 */
@@ -242,13 +251,17 @@ const element = <h1 {...props}>Hello World</h1>
 
 L'utilisation de _spread_ n'exclut pas l'ajout d'autres propriétés. Regardons l'exemple suivant :
 
-```
+```javascript
 const props = {
   lang: "en",
   id: "top",
-  className: "display-1"
+  className: "display-1",
 }
-const element = <h1 className="display-4" {...props} lang="fr">Bonjour le Monde</h1>
+const element = (
+  <h1 className="display-4" {...props} lang="fr">
+    Bonjour le Monde
+  </h1>
+)
 ```
 
 Est-ce correct ? Tout à fait ! Quel sera son rendu ?
