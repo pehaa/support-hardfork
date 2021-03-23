@@ -61,8 +61,8 @@ C'est un peu comme si on écrivait du HTML directement dans JavaScript ! 🤩 Vo
 
 ```javascript
 const element = <p></p>
+
 /*
-// avant :
 const element = React.createElement("p")
 */
 ```
@@ -71,8 +71,8 @@ const element = React.createElement("p")
 
 ```javascript
 const element = <p>Bonjour !</p>
+
 /*
-// avant :
 const element = React.createElement(
   "p",
   null,
@@ -85,8 +85,8 @@ const element = React.createElement(
 
 ```javascript
 const element = <h1 lang="en">Hello World!</h1>
+
 /*
-// avant
 const element = React.createElement(
   "h1",
   {lang: "en"},
@@ -99,8 +99,7 @@ const element = React.createElement(
 
 ## BABEL
 
-Vous vous souvenez de Sass ?  
-Nous avons dit que Sass est une extension de CSS. Le navigateur ne comprend pas Sass. Le code Sass doit passer par le compilateur et être transformé en CSS. C'est pareil pour JSX, les navigateurs ne comprennent pas cette syntaxe. Comme pour Sass, nous devons utiliser un compilateur. Afin de compiler JSX en JavaScript nous allons utiliser [**babel**](https://babeljs.io).
+JSX ne fait partie du JavaScript. Les navigateurs ne comprennent pas cette syntaxe. Nnous devons utiliser un transpileur qui transformera JSX en JavaScript.Et nous allons utiliser [**babel**](https://babeljs.io).
 
 ### Comment utiliser Babel ?
 
@@ -122,7 +121,7 @@ Nous avons dit que Sass est une extension de CSS. Le navigateur ne comprend pas 
 
 https://wptemplates.pehaa.com/assets/alyra/babel.mp4
 
-4. À un moment donné, nous allons commencer à utiliser [CRA](https://fr.reactjs.org/docs/create-a-new-react-app.html) - un _starter_ pour des applications web monopage recommandé par React - babel et toute la configuration seront inclus 💫.
+4. Avec [CRA](https://fr.reactjs.org/docs/create-a-new-react-app.html) - babel et toute la configuration seront inclus 💫.
 
 ## ReactDOM.render et JSX
 
