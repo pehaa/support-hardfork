@@ -12,7 +12,11 @@ Nous venons d'apprendre que :
 - `document.querySelector` ou `document.getElementById`,
 - `el.append`
 
+---
+
 1. Il existe des libraries JavaScript (dont la plus importante ✨React✨) qui sont faites pour nous faciliter ceci.
+
+---
 
 1. L'application React "vit" dans un élément du DOM, `<div id="root"></div>"
 

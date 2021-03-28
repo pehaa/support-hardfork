@@ -41,4 +41,4 @@
 - JSX
   - [JSX - 1](./react/jsx/jsx-1)
   - [JSX - 2](./react/jsx/jsx-2)
-- [Components](./react/components)
+- [Components ](./react/components)
