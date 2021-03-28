@@ -379,22 +379,18 @@ const SchoolLink = ({ name, link }) => {
 }
 ```
 
-## return
+## Décomposition avec une valeur par défaut
 
-Component doit retourner quelque chose, par exemple élément React, un number, un string, un boolean ou `null`, un array ou un React.Fragment.
-
-React component ne peut pas retourner `undefined`, ni un objet `{...}`
+Il est aussi possible de mettre en place **une valeur par défaut** pour une des props
 
 ```javascript
-const MyComponent = () => {}
-// Uncaught Error:  Nothing was returned from render
-```
-
-```javascript
-const MyComponent = () => {
-  return null
+const Button = (props) => {
+  const {type = "button", children} = props
+  return (<button type={type} className="btn">{children})</button>)
 }
-// ceci est valide
+
+<Button>Click me</Button> // <button type="button" class="btn">Click me</button>
+<Button type="submit">Send</Button> // <button type="submit" class="btn">Send</button>
 ```
 
 ---
