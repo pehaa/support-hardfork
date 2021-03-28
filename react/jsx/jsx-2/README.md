@@ -391,8 +391,8 @@ Dans ce cas, on est obligé d'utiliser `<React.Fragment>` plutôt que `<>`. Il e
 
 ## Exercices
 
-- [JSX expression - bienvenue](https://codepen.io/alyra/pen/abpoevR)
 - [JSX expression - hello](https://codepen.io/alyra/pen/qBZXEje)
+- [JSX expression - bienvenue](https://codepen.io/alyra/pen/abpoevR)
 - [JSX - expressions - logged-in](https://codepen.io/alyra/pen/RwaZNaW)
 - [JSX button](https://codepen.io/alyra/pen/YzqxoQO)
 - [JSX - expressions - notifications](https://codepen.io/alyra/pen/poyrvEa)
