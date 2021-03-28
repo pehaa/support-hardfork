@@ -8,27 +8,37 @@ Nous venons d'apprendre que :
 
 1. Nous pouvons intéragir avec DOM (Document Object Model) via JavaScript. Autremement dit, nous pouvons créer des interfaces utilisateurs dans le navigateur avec JavaScript. Ceci est possible avec des méthodes d'API DOM telles que par exemple
 
-- `document.createElement`,
-- `document.querySelector` ou `document.getElementById`,
-- `el.append`
+   - `document.createElement`,
+   - `document.querySelector` ou `document.getElementById`,
+   - `el.append`
 
 ---
 
-1. Il existe des libraries JavaScript (dont la plus importante ✨React✨) qui sont faites pour nous faciliter ceci.
+2. Il existe des libraries JavaScript (dont la plus importante ✨React✨) qui sont faites pour nous faciliter ceci.
 
----
+   ***
 
-1. L'application React "vit" dans un élément du DOM, `<div id="root"></div>"
+3. L'application React "vit" dans un élément du DOM, `<div id="root"></div>`
 
-1. L'application React est un objet, une structure d'arborescence, un _tree_ que nous mettons en place de façon déclarative grâce à la syntaxe JSX
+   ***
 
-1. React prend soins d'intégrer ce _tree_ dans le DOM
+4. L'application React est un objet, une structure d'arborescence, un _tree_ que nous mettons en place de façon déclarative grâce à la syntaxe JSX
 
-1. Quand l'état de notre application change, React compare l'état de son _tree_ avant et après et ensuite met à jour le DOM, agissons ponctuellement sur les éléments qui ont changé
+   ***
 
-1. Nous avons appris comment créer des élément React, nous avons vu qu'un élément React peur avoir des descendants (`children`).
+5. React prend soins d'intégrer ce _tree_ dans le DOM
 
-1. Dans les exercices de la partie JSX-2 nous avons utiliser des fonctions pour créer des éléments React. Nous somment à un pas des **components**.
+   ***
+
+6. Quand l'état de notre application change, React compare l'état de son _tree_ avant et après et ensuite met à jour le DOM, agissons ponctuellement sur les éléments qui ont changé
+
+   ***
+
+7. Nous avons appris comment créer des élément React, nous avons vu qu'un élément React peur avoir des descendants (`children`).
+
+   ***
+
+8. Dans les exercices de la partie JSX-2 nous avons utiliser des fonctions pour créer des éléments React. Nous somment à un pas des **components**.
 
 ## Component step by step
 
