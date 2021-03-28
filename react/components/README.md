@@ -30,7 +30,7 @@ Nous venons d'apprendre que :
 
    ***
 
-6. Quand l'état de notre application change, React compare l'état de son _tree_ avant et après et ensuite met à jour le DOM, agissons ponctuellement sur les éléments qui ont changé.
+6. Quand l'état de notre application change, React compare l'état de son _tree_ avant et après et ensuite met à jour le DOM, agissant ponctuellement sur les éléments qui ont changé.
 
    ***
 
@@ -172,7 +172,24 @@ const School = (props) => {
 }
 ```
 
-ensuite nous pouvons l'appeler comme ceci `School({name: "Alyra", link: "https://alyra.fr", description: "Une école au coeur de la blockchain..."})` ou **plutôt comme ci-dessous** ✨ :
+ensuite nous pouvons l'appeler comme ceci :
+
+```javascript
+const element = (
+  <section className="container">
+    <h1 className="my-3 text-center">Ma liste des écoles à recommander</h1>
+    <div className="row">
+      <div className="col-md-6">
+        {School({name: "Alyra", link: "https://alyra.fr", description: "Une école au coeur de la blockchain..."})}
+      </div>
+      <div className="col-md-6">
+        {School({name: "Simplon", link: "https://simplon.co", description: "Un réseau de Fabriques solidaires et inclusives..."})}
+      </div>
+    </div>
+  </section>
+```
+
+ou **plutôt comme ci-dessous** ✨ :
 
 ```javascript
 const element = (
@@ -397,10 +414,10 @@ const Button = (props) => {
 
 ## Exercices
 
-- [Components Welcome](https://codepen.io/alyra/pen/yLOzzpw) | [solution](https://codepen.io/alyra/pen/b1c47bb3d5f57cdc71846e81e04a3417)
-- [Components 404](https://codepen.io/alyra/pen/LYNzaEy) | [solution](https://codepen.io/alyra/pen/37312356f794026ae368fd81d2d056e4)
-- [Components - conditional - dashboard](https://codepen.io/alyra/pen/wvGrPRv) | [solution](https://codepen.io/alyra/pen/f453f82222b1bc2548d5fa9426f87182)
-- [Components - conditional -admin](https://codepen.io/alyra/pen/VwaMrPX) | [solution](https://codepen.io/alyra/pen/397a299a010c3ab389905b3ca3b24e85)
-- [Components - conditional - notifications](https://codepen.io/alyra/pen/VwaMyWJ) | [solution](https://codepen.io/alyra/pen/0c661571511cf77eda61a36eea6cc666)
-- [Components - button](https://codepen.io/alyra/pen/WNwZmjq) | [solution](https://codepen.io/alyra/pen/202e3fce09a39d4835e6d81b4f9e40c4)
-- [Components - Gradients](https://codepen.io/alyra/pen/qBZqjmb) | [solution](https://codepen.io/alyra/pen/fc101924ee4348e9a009d295e80b266b)
+- [Components Welcome](https://codepen.io/alyra/pen/yLOzzpw)
+- [Components 404](https://codepen.io/alyra/pen/LYNzaEy)
+- [Components - conditional - dashboard](https://codepen.io/alyra/pen/wvGrPRv)
+- [Components - conditional -admin](https://codepen.io/alyra/pen/VwaMrPX)
+- [Components - conditional - notifications](https://codepen.io/alyra/pen/VwaMyWJ)
+- [Components - button](https://codepen.io/alyra/pen/WNwZmjq)
+- [Components - Gradients](https://codepen.io/alyra/pen/qBZqjmb)
