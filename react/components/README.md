@@ -404,9 +404,3 @@ const Button = (props) => {
 - [Components - conditional - notifications](https://codepen.io/alyra/pen/VwaMyWJ) | [solution](https://codepen.io/alyra/pen/0c661571511cf77eda61a36eea6cc666)
 - [Components - button](https://codepen.io/alyra/pen/WNwZmjq) | [solution](https://codepen.io/alyra/pen/202e3fce09a39d4835e6d81b4f9e40c4)
 - [Components - Gradients](https://codepen.io/alyra/pen/qBZqjmb) | [solution](https://codepen.io/alyra/pen/fc101924ee4348e9a009d295e80b266b)
-
---
-
-- [Component Card](https://codepen.io/alyra/pen/YzqEWjv) | [solution](https://codepen.io/alyra/pen/fdff1bc181fc6847092b07fe1ab1a309)
-- [Components - LabelTextInput](https://codepen.io/alyra/pen/ExKbyjK) | [solution](https://codepen.io/alyra/pen/3fe809fdf569707c7041ef12e9c44d93)
-- [Components - Gradients + GradientsList](https://codepen.io/alyra/pen/GRZOJBM) | [solution](https://codepen.io/alyra/pen/58bf816e5cdc601f6aedf09b5a6db992)
