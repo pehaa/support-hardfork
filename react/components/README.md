@@ -417,7 +417,7 @@ const Button = (props) => {
 - [Components Welcome](https://codepen.io/alyra/pen/yLOzzpw)
 - [Components 404](https://codepen.io/alyra/pen/LYNzaEy)
 - [Components - conditional - dashboard](https://codepen.io/alyra/pen/wvGrPRv)
-- [Components - conditional -admin](https://codepen.io/alyra/pen/VwaMrPX)
+- [Components - conditional - admin](https://codepen.io/alyra/pen/VwaMrPX)
 - [Components - conditional - notifications](https://codepen.io/alyra/pen/VwaMyWJ)
 - [Components - button](https://codepen.io/alyra/pen/WNwZmjq)
 - [Components - Gradients](https://codepen.io/alyra/pen/qBZqjmb)
