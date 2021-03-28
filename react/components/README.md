@@ -116,18 +116,10 @@ ReactDOM.render(element, document.getElementById("root"))
 
 `schoolAlyra` et `schoolSimplon` (ainsi que d'autres écoles que j'ajouterai dans l'avenir) partagent le même markup avec des différences dans le nom, la description et le lien vers l'école.
 
-Pour ne pas me répéter (le principe _DRY = don't repeat yourself_), nous pouvons créer une fonction qui prend comme paramètres le nom, le lien et la décription et retourne notre article. Voici à quoi auraient pu ressembler une telle fonction et son application :
+Nous pouvons créer une fonction qui prend comme paramètres le nom, le lien et la décription et retourne notre article. Voici à quoi auraient pu ressembler une telle fonction et son application :
 
 ```javascript
 const school = (name, link, description) => {
-  /*
-  props = {
-    name: "Alyra",
-    link: "https://alyra.fr",
-    description:
-    "Une école au coeur de la blockchain. Fondée par des passionnés et ouverte à toutes et tous.",
-  }
-  */
   return (
     <article className="p-3 mb-3 border shadow">
       <h2 className="text-center">{name}</h2>
@@ -180,7 +172,7 @@ const School = (props) => {
 }
 ```
 
-ensuite nous pouvons l'appeler comme ceci :
+ensuite nous pouvons l'appeler comme ceci `School({name: "Alyra", link: "https://alyra.fr", description: "Une école au coeur de la blockchain..."})` ou **plutôt comme ci-dessous** ✨ :
 
 ```javascript
 const element = (
@@ -289,7 +281,7 @@ const SchoolLink = (props) => {
   )
 }
 
-const element = (
+const App = () => (
   <section className="container">
     <h1 className="my-3 text-center">Ma liste des écoles à recommander</h1>
     <School name="Alyra" link="https://alyra.fr">
@@ -303,7 +295,55 @@ const element = (
   </section>
 )
 
-ReactDOM.render(element, document.getElementById("root"))
+ReactDOM.render(<App />, document.getElementById("root"))
+```
+
+ou comme ceci :
+
+```javascript
+const School = (props) => {
+  const { name, children } = props
+  return (
+    <article className="p-3 mb-3 border shadow">
+      <h2 className="text-center">{name}</h2>
+      {children}
+    </article>
+  )
+}
+
+const SchoolLink = (props) => {
+  const { name, link } = props
+  return (
+    link && (
+      <a
+        href={props.link}
+        className="btn btn-primary btn-sm"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        En savoir plus sur {name}
+      </a>
+    )
+  )
+}
+
+const App = () => (
+  <section className="container">
+    <h1 className="my-3 text-center">Ma liste des écoles à recommander</h1>
+    <School name="Alyra" link="https://alyra.fr">
+      <p>
+        Une école au coeur de <b>la blockchain</b>...
+      </p>
+      <SchoolLink name="Alyra" link="https://alyra.fr" />
+    </School>
+    <School name="Simplon" link="https://simplon.co">
+      <p>Un réseau de Fabriques solidaires et inclusives...</p>
+      <SchoolLink name="Simplon" link="https://simplon.co" />
+    </School>
+  </section>
+)
+
+ReactDOM.render(<App />, document.getElementById("root"))
 ```
 
 https://codepen.io/alyra/pen/LYxZzdm
