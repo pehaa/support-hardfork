@@ -6,11 +6,11 @@
 
 Nous venons d'apprendre que :
 
-1. Nous pouvons intéragir avec DOM (Document Object Model) via JavaScript. Autremement dit, nous pouvons créer des interfaces utilisateurs dans le navigateur avec JavaScript. Ceci est possible avec des méthodes d'API DOM telles que par exemple
+1. Nous pouvons intéragir avec DOM (Document Object Model) via JavaScript. Autremement dit, nous pouvons créer des interfaces utilisateurs dans le navigateur avec JavaScript. Ceci est possible avec des méthodes d'API DOM telles que par exemple :
 
-   - `document.createElement`,
-   - `document.querySelector` ou `document.getElementById`,
-   - `el.append`
+   - `document.createElement` (pour créer)
+   - `document.querySelector` ou `document.getElementById` (pour sélectionner)
+   - `el.append` (pour insérer)
 
 ---
 
@@ -18,27 +18,27 @@ Nous venons d'apprendre que :
 
    ***
 
-3. L'application React "vit" dans un élément du DOM, `<div id="root"></div>`
+3. L'application React "vit" dans un élément du DOM, `<div id="root"></div>`.
 
    ***
 
-4. L'application React est un objet, une structure d'arborescence, un _tree_ que nous mettons en place de façon déclarative grâce à la syntaxe JSX
+4. L'application React est un objet des objets, une structure d'arborescence, un _tree_ que nous mettons en place de façon déclarative grâce à la syntaxe JSX.
 
    ***
 
-5. React prend soins d'intégrer ce _tree_ dans le DOM
+5. React prend soins d'intégrer ce _tree_ dans le DOM.
 
    ***
 
-6. Quand l'état de notre application change, React compare l'état de son _tree_ avant et après et ensuite met à jour le DOM, agissons ponctuellement sur les éléments qui ont changé
+6. Quand l'état de notre application change, React compare l'état de son _tree_ avant et après et ensuite met à jour le DOM, agissons ponctuellement sur les éléments qui ont changé.
 
    ***
 
-7. Nous avons appris comment créer des élément React, nous avons vu qu'un élément React peur avoir des descendants (`children`).
+7. Nous avons appris comment créer des éléments React. Nous avons vu qu'un élément React peut avoir des descendants (`children`).
 
    ***
 
-8. Dans les exercices de la partie JSX-2 nous avons utiliser des fonctions pour créer des éléments React. Nous somment à un pas des **components**.
+8. Dans les exercices de la partie JSX-2 nous avons utilisé des fonctions pour créer des éléments React. Nous somment alors à un pas de la notion des **components**.
 
 ## Component step by step
 
@@ -59,6 +59,8 @@ const Simplon = {
     "Un réseau de Fabriques solidaires et inclusives qui proposent des formations gratuites aux métiers techniques du numérique.",
 }
 ```
+
+https://codepen.io/alyra/pen/xxgOXoz
 
 Voici comment nous souhaitons afficher l'information sur Alyra :
 
@@ -102,8 +104,10 @@ Afin d'afficher les écoles dans un document HTML nous créons un `element` comm
 const element = (
   <section className="container">
     <h1 className="my-3 text-center">Ma liste des écoles à recommander</h1>
-    {schoolAlyra}
-    {schoolSimplon}
+    <div className="row">
+      <div className="col-md-6">{schoolAlyra}</div>
+      <div className="col-md-6">{schoolSimplon}</div>
+    </div>
   </section>
 )
 
@@ -112,19 +116,18 @@ ReactDOM.render(element, document.getElementById("root"))
 
 `schoolAlyra` et `schoolSimplon` (ainsi que d'autres écoles que j'ajouterai dans l'avenir) partagent le même markup avec des différences dans le nom, la description et le lien vers l'école.
 
-Pour ne pas me répéter (le principe _DRY = don't repeat yourself_), nous pouvons créer une fonction qui retourne notre article. Voici à quoi auraient pu ressembler une telle fonction et son application :
+Pour ne pas me répéter (le principe _DRY = don't repeat yourself_), nous pouvons créer une fonction qui prend comme paramètres le nom, le lien et la décription et retourne notre article. Voici à quoi auraient pu ressembler une telle fonction et son application :
 
 ```javascript
-const school = (props) => {
-  /* 
+const school = (name, link, description) => {
+  /*
   props = {
     name: "Alyra",
     link: "https://alyra.fr",
     description:
     "Une école au coeur de la blockchain. Fondée par des passionnés et ouverte à toutes et tous.",
-  } 
+  }
   */
-  const { name, link, description } = props
   return (
     <article className="p-3 mb-3 border shadow">
       <h2 className="text-center">{name}</h2>
@@ -139,37 +142,28 @@ const school = (props) => {
 const element = (
   <section className="container">
     <h1 className="my-3 text-center">Ma liste des écoles à recommander</h1>
-    {school(Alyra)}
-    {school(Simplon)}
+    <div className="row">
+      <div className="col-md-6">
+        {school("Alyra", "https://alyra.fr", "Une école au coeur de la blockchain...")}
+      </div>
+      <div className="col-md-6">
+        {school("Simplon", "https://simplon.com", "Un réseau de Fabriques solidaires....")}
+      </div>
   </section>
 )
 
 ReactDOM.render(element, document.getElementById("root"))
 ```
 
-On y est presque. Avec React nous pouvons aller plus loin. Nous pouvons créer notre propre nouvelle "balise" `<School />`. Notre balise devrait afficher l'article sur l'école. On passera des props (`name` et `link`) en tant que ses "attributs", et la `description` en tant que son contenu.
+Mais, nous n'allons pas faire ceci. Nous allons créer notre premier **component** React.
 
-Voici ce que nous voudrons pouvoir écrire :
+**Component React est une fonction**
 
-```javascript
-const element = (
-  <section className="container">
-    <h1 className="my-3 text-center">Ma liste des écoles à recommander</h1>
-    <School name="Alyra" link="https://alyra.fr">
-      Une école au coeur de la blockchain. Fondée par des passionnés et ouverte
-      à toutes et tous.
-    </School>
-    <School name="Simplon" link="https://simplon.co">
-      Un réseau de Fabriques solidaires et inclusives qui proposent des
-      formations gratuites aux métiers techniques du numérique.
-    </School>
-  </section>
-)
-```
+- qui prend comme paramètre un objet (par convention nommé toujours `props`)
+- dont le nom commence toujours par une lettre en majuscule
+- qui retourne un élément React (un component peur retourner aussi un `string`, `number`, `boolean`, `null`, un Array des ceci.)
 
-### Comment alors créer un component ?
-
-Nous l'avons déjà fait, à un caractère près. Il suffit de changer le "s" dans notre fonction `school` pour un "S" majuscule. Nous venons de créer notre premier component.
+Nous allons alors créer un component `School`
 
 ```javascript
 const School = (props) => {
@@ -184,20 +178,30 @@ const School = (props) => {
     </article>
   )
 }
+```
 
+ensuite nous pouvons l'appeler comme ceci :
+
+```javascript
 const element = (
   <section className="container">
     <h1 className="my-3 text-center">Ma liste des écoles à recommander</h1>
-    <School
-      name="Alyra"
-      link="https://alyra.fr"
-      description="Une école au coeur de la blockchain"
-    />
-    <School
-      name="Simplon"
-      link="https://simplon.co"
-      description="Un réseau de Fabriques solidaires et inclusives..."
-    />
+    <div className="row">
+      <div className="col-md-6">
+        <School
+          name="Alyra"
+          link="https://alyra.fr"
+          description="Une école au coeur de la blockchain"
+        />
+      </div>
+      <div className="col-md-6">
+        <School
+          name="Simplon"
+          link="https://simplon.co"
+          description="Un réseau de Fabriques solidaires et inclusives..."
+        />
+      </div>
+    </div>
   </section>
 )
 
@@ -241,9 +245,7 @@ const element = (
   <section className="container">
     <h1 className="my-3 text-center">Ma liste des écoles à recommander</h1>
     <School name="Alyra" link="https://alyra.fr">
-      <p>
-        Une école au coeur de <b>la blockchain</b>...
-      </p>
+      <p>Une école au coeur de la blockchain...</p>
     </School>
     <School name="Simplon" link="https://simplon.co">
       <p>Un réseau de Fabriques solidaires et inclusives...</p>
@@ -256,7 +258,7 @@ ReactDOM.render(element, document.getElementById("root"))
 
 Avec cette approche nous pouvons inclure dans notre description des balises HTML ou imbriquer d'autres components React.
 
-https://codepen.io/alyra/pen/GRZNRqE
+https://codepen.io/alyra/pen/yLgJzja
 
 ## Nesting components
 
@@ -304,7 +306,7 @@ const element = (
 ReactDOM.render(element, document.getElementById("root"))
 ```
 
-https://codepen.io/alyra/pen/poyNoeG
+https://codepen.io/alyra/pen/LYxZzdm
 
 ## Décomposition au niveau d'argument
 
@@ -355,41 +357,6 @@ const MyComponent = () => {
 // ceci est valide
 ```
 
-## Class components
-
-On peut aussi créer des components en utilisant la syntaxe des classes. Nous n'allons pas utiliser cette approche mais il est important de la connaître pour savoir lire le code existant.
-
-```javascript
-class School extends React.Component {
-  render() {
-    return (
-      <article className="p-3 mb-3 border shadow">
-        <h2 className="text-center">{this.props.name}</h2>
-        {this.props.children}
-        <SchoolLink name={this.props.name} link={this.props.link} />
-      </article>
-    )
-  }
-}
-
-class SchoolLink extends React.Component {
-  render() {
-    return (
-      !!this.props.link && (
-        <a
-          href={this.props.link}
-          className="btn btn-primary btn-sm"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          En savoir plus sur {this.props.name}
-        </a>
-      )
-    )
-  }
-}
-```
-
 ---
 
 ## Exercices
@@ -407,6 +374,3 @@ class SchoolLink extends React.Component {
 - [Component Card](https://codepen.io/alyra/pen/YzqEWjv) | [solution](https://codepen.io/alyra/pen/fdff1bc181fc6847092b07fe1ab1a309)
 - [Components - LabelTextInput](https://codepen.io/alyra/pen/ExKbyjK) | [solution](https://codepen.io/alyra/pen/3fe809fdf569707c7041ef12e9c44d93)
 - [Components - Gradients + GradientsList](https://codepen.io/alyra/pen/GRZOJBM) | [solution](https://codepen.io/alyra/pen/58bf816e5cdc601f6aedf09b5a6db992)
-- [Components Dashboard - class](https://codepen.io/alyra/pen/PoNOqgR) | [solution](https://codepen.io/alyra/pen/f4e0e4e46ae2f7dcd17885218fe67e7d)
-- [Components Notifications - class](https://codepen.io/alyra/pen/vYGWNbV) | [solution](https://codepen.io/alyra/pen/cd6bd1f539c3a00b1e94a29212e71cdd)
-- [Components Button - class](https://codepen.io/alyra/pen/zYqPvVE) | [solution](https://codepen.io/alyra/pen/e6ab2d03049f36972aafdc6cd25dd807)
