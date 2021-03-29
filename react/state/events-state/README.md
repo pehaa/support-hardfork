@@ -20,29 +20,49 @@ const Button = () => {
 
 Comme vous pouvez l'observer et ce qui sera **à retenir** :
 
-- Les événements de React sont nommés **en camelCase** : `onClick`, `onChange`, `onSubmit`, `onKeyUp`,...
+- Les événements de React sont nommés **en camelCase** :
+
+  - `onClick`,
+  - `onChange`,
+  - `onSubmit`,
+  - `onFocus`,
+  - `onBlur`,
+  - `onKeyUp`,
+  - `onMouseOver`,
+  - ...
+
 - En JSX on passe **une fonction** dans _event handler_ (gestionnaire d’événements)
 
 ![](https://wptemplates.pehaa.com/assets/alyra/events-react.png)
 
 ---
 
-Dans l'exemple suivant nous allons un pas plus loin. La fonction passée dans _event handler_ a par défaut accès à l'objet `event`.
+Dans l'exemple suivant nous allons un pas plus loin. La fonction passée dans _event handler_ a accès à l'objet `event`.
 
 ```javascript
-<Button onClick={(event) => {...}} />
+<Button
+  onClick={(event) => {
+    console.log(event)
+  }}
+/>
 ```
 
 ou
 
 ```javascript
 const handleButtonClick = (event) => {
-  ...
+  console.log(event)
+  /* ... */
 }
+...
 <Button onClick={handleButtonClick} />
 ```
 
-En particulier, nous pouvons profiter de `event.target` pour avoir l'accès à l'élément qui a déclenché _event_. Nous pouvons lire la valeur du champs `input` avec `event.target.value`.
+Ceci dit React a accès aux certaines informations concernant l'évènement/
+
+En particulier, nous pouvons profiter de `event.target` pour avoir l'accès à l'élément qui a déclenché _event_.
+
+Par exemple, nous pouvons lire la valeur du champs `input` avec `event.target.value`.
 
 ```javascript
 const Input = () => {
@@ -229,17 +249,17 @@ https://codepen.io/alyra/pen/NWNXBdL
 
 https://codepen.io/alyra/pen/rNepaOy
 
-## React Hooks et ses règles 
+## React Hooks et ses règles
 
 `useState` est un des hooks de React. Nous appelons hooks dans les components React (ou dans les hooks personnalisés). Nous allons bientôt découvrir d'autres hooks (`useContext`, `useEffect`). Les hooks sont des fonctions JavaScript, mais des fonctions un peu spéciales. Ceci dit nous devons suivre certaines règles d'utilisation.
 
 Pour assurer leur fonctionnement correct, hooks doivent être appelés dans le même ordre à chaque affichage du composant. Par conséquent, hooks ne peuvent pas être utilisés :
- - à l’intérieur de boucles
- - à l’intérieur de code conditionnel
- - à l’intérieur de fonctions imbriquées. 
- 
- Les Hooks devraient être utilisés au niveau racine d'un component React.
- 
+
+- à l’intérieur de boucles
+- à l’intérieur de code conditionnel
+- à l’intérieur de fonctions imbriquées.
+
+Les Hooks devraient être utilisés au niveau racine d'un component React.
 
 ## Class Components
 
