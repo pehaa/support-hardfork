@@ -42,4 +42,6 @@
   - [JSX - 1](./react/jsx/jsx-1)
   - [JSX - 2](./react/jsx/jsx-2)
 - [Components ](./react/components)
-- [CRA ](./react/cra/cra-premiers-pas)
+- [CRA](./react/cra/cra-premiers-pas)
+- [State](./react/state/events-state)
+- [State - Shopping List](./react/state/shopping-list-example)
