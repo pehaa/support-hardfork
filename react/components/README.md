@@ -350,7 +350,7 @@ const App = () => (
       <p>
         Une école au coeur de <b>la blockchain</b>...
       </p>
-      <MoreLink name="Alyra" />
+      <MoreLink name="Alyra" link="https://alyra.fr" />
     </School>
     <School name="Simplon">
       <p>Un réseau de Fabriques solidaires et inclusives...</p>
