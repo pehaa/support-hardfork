@@ -6,7 +6,7 @@
 
 Nous venons d'apprendre que :
 
-1. Nous pouvons intéragir avec DOM (Document Object Model) via JavaScript. Autremement dit, nous pouvons créer des interfaces utilisateurs dans le navigateur avec JavaScript. Ceci est possible avec des méthodes d'API DOM telles que par exemple :
+1. Nous pouvons intéragir avec DOM (Document Object Model) via JavaScript. Autremement dit, nous pouvons créer des interfaces utilisateurs dans le navigateur avec JavaScript. Ceci est possible avec des méthodes de l'API DOM telles que par exemple :
 
    - `document.createElement` (pour créer)
    - `document.querySelector` ou `document.getElementById` (pour sélectionner)
@@ -42,7 +42,7 @@ Nous venons d'apprendre que :
 
 ## Component step by step
 
-Imaginons que nous souhaitions mettre en place un catalogue des écoles. Nous commençons à réunir des données :
+Imaginons que nous souhaitions mettre en place [un catalogue des écoles.](https://cdpn.io/alyra/debug/yLgJzja) Nous commençons à réunir des données :
 
 ```javascript
 const Alyra = {
@@ -116,7 +116,7 @@ ReactDOM.render(element, document.getElementById("root"))
 
 `schoolAlyra` et `schoolSimplon` (ainsi que d'autres écoles que j'ajouterai dans l'avenir) partagent le même markup avec des différences dans le nom, la description et le lien vers l'école.
 
-Nous pouvons créer une fonction qui prend comme paramètres le nom, le lien et la décription et retourne notre article. Voici à quoi auraient pu ressembler une telle fonction et son application :
+Nous pouvons créer une fonction qui prend comme paramètres le nom, le lien et la décription et retourne notre article. Voici à quoi aurait pu ressembler une telle fonction et son application :
 
 ```javascript
 const school = (name, link, description) => {
@@ -153,7 +153,7 @@ Mais, nous n'allons pas faire ceci. Nous allons créer notre premier **component
 
 - qui prend comme paramètre un objet (par convention nommé toujours `props`)
 - dont le nom commence toujours par une lettre en majuscule
-- qui retourne un élément React (un component peur retourner aussi un `string`, `number`, `boolean`, `null`, un Array des ceci.)
+- qui retourne un élément React (un component peut retourner aussi un `string`, un `number`, un `boolean`, un Array de ces derniers ou `null`).
 
 Nous allons alors créer un component `School`
 
@@ -222,7 +222,6 @@ ReactDOM.render(element, document.getElementById("root"))
 ### Component et props
 
 `props` vient de propriétés, `props` est un objet qui regroupe toutes les propriétés de notre component.
-Il ne faut **jamais** modifier `props` dans le component.
 
 #### props.children
 
@@ -278,12 +277,12 @@ const School = (props) => {
     <article className="p-3 mb-3 border shadow">
       <h2 className="text-center">{name}</h2>
       {children}
-      <SchoolLink name={name} link={link} />
+      <MoreLink name={name} link={link} />
     </article>
   )
 }
 
-const SchoolLink = (props) => {
+const MoreLink = (props) => {
   return (
     props.link && (
       <a
@@ -328,7 +327,7 @@ const School = (props) => {
   )
 }
 
-const SchoolLink = (props) => {
+const MoreLink = (props) => {
   const { name, link } = props
   return (
     link && (
@@ -347,15 +346,15 @@ const SchoolLink = (props) => {
 const App = () => (
   <section className="container">
     <h1 className="my-3 text-center">Ma liste des écoles à recommander</h1>
-    <School name="Alyra" link="https://alyra.fr">
+    <School name="Alyra">
       <p>
         Une école au coeur de <b>la blockchain</b>...
       </p>
-      <SchoolLink name="Alyra" link="https://alyra.fr" />
+      <MoreLink name="Alyra" />
     </School>
-    <School name="Simplon" link="https://simplon.co">
+    <School name="Simplon">
       <p>Un réseau de Fabriques solidaires et inclusives...</p>
-      <SchoolLink name="Simplon" link="https://simplon.co" />
+      <MoreLink name="Simplon" link="https://simplon.co" />
     </School>
   </section>
 )
@@ -375,12 +374,12 @@ const School = ({ name, link, children }) => {
     <article className="p-3 mb-3 border shadow">
       <h2 className="text-center">{name}</h2>
       {children}
-      <SchoolLink name={name} link={link} />
+      <MoreLink name={name} link={link} />
     </article>
   )
 }
 
-const SchoolLink = ({ name, link }) => {
+const MoreLink = ({ name, link }) => {
   return (
     !!link && (
       <a
@@ -402,12 +401,14 @@ Il est aussi possible de mettre en place **une valeur par défaut** pour une des
 
 ```javascript
 const Button = (props) => {
-  const {type = "button", children} = props
-  return (<button type={type} className="btn">{children})</button>)
+  const {type = "button", variant="primary" children} = props
+  const className = `btn btn-${variant}`
+  return (<button type={type} className={className}>{children})</button>)
 }
 
-<Button>Click me</Button> // <button type="button" class="btn">Click me</button>
-<Button type="submit">Send</Button> // <button type="submit" class="btn">Send</button>
+<Button>Click me</Button> // <button type="button" class="btn btn-primary">Click me</button>
+<Button type="submit">Send</Button> // <button type="submit" class="btn btn-primary">Send</button>
+<Button type="submit" variant="success">Send</Button> // <button type="submit" class="btn btn-success">Send</button>
 ```
 
 ---
