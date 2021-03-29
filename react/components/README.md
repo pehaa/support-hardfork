@@ -233,7 +233,7 @@ Le rendu ne change pas, mais regardons les `props` dans la console, props contie
 
 ![](https://assets.codepen.io/4515922/props-children.png)
 
-Dans notre component, nous avons accès à ses éléments enfants. Ceci nous permet de définir notre component un peu différemment, avec plus de flexibilité.
+Dans notre component, nous avons accès à son contenu. Ceci nous permet de définir notre component un peu différemment, avec plus de flexibilité.
 
 ```javascript
 const School = (props) => {
@@ -401,14 +401,33 @@ Il est aussi possible de mettre en place **une valeur par défaut** pour une des
 
 ```javascript
 const Button = (props) => {
-  const {type = "button", variant="primary" children} = props
+  const { type = "button", variant = "primary", children }  = props
   const className = `btn btn-${variant}`
   return (<button type={type} className={className}>{children})</button>)
 }
 
-<Button>Click me</Button> // <button type="button" class="btn btn-primary">Click me</button>
-<Button type="submit">Send</Button> // <button type="submit" class="btn btn-primary">Send</button>
-<Button type="submit" variant="success">Send</Button> // <button type="submit" class="btn btn-success">Send</button>
+<Button>Click me</Button>
+// <button type="button" class="btn btn-primary">Click me</button>
+<Button type="submit">Send</Button>
+// <button type="submit" class="btn btn-primary">Send</button>
+<Button type="submit" variant="success">Send</Button>
+// <button type="submit" class="btn btn-success">Send</button>
+```
+
+ou
+
+```javascript
+const Button = ({ type = "button", variant = "primary", children })  => {
+  const className = `btn btn-${variant}`
+  return (<button type={type} className={className}>{children})</button>)
+}
+
+<Button>Click me</Button>
+// <button type="button" class="btn btn-primary">Click me</button>
+<Button type="submit">Send</Button>
+// <button type="submit" class="btn btn-primary">Send</button>
+<Button type="submit" variant="success">Send</Button>
+// <button type="submit" class="btn btn-success">Send</button>
 ```
 
 ---
