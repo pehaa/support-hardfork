@@ -131,6 +131,16 @@ https://wptemplates.pehaa.com/assets/alyra/state-article.mp4
 
 ## `React.useState` hook
 
+`React.useState` est une fonction de React qui met en place un mécanisme pour les variables de _state_.
+
+```javascript
+const [stateValue, setStateValue] = React.useState(initialStateValue)
+```
+
+- Nous l'utilisons dans le corps de notre component (avant le `return`).
+- `React.useState` prend un seul paramètre - la valeur initiale de notre variable de _state_
+- `React.useState` retourne un array de 2 éléments (la valeur en cours de notre variable state) et la fonction qui servira à mettre à jour notre variable `setStateValue(newStateValue)`
+
 https://codepen.io/alyra/pen/vYgXPew
 
 ```javascript
@@ -143,8 +153,9 @@ et pareil pour `name`
 const [name, setName] = React.useState("Inconnu")
 ```
 
-On appelle `React.useState` avec la valeur initiale de la variable state.
-`React.useState` **retourne un array,** son premier élément est la valeur en cours de notre variable, la seconde est la fonction pour modifier sa valeur.
+```javascript
+const [like, setLike] = React.useState(false)
+```
 
 ```javascript
 const App = () => {
@@ -175,7 +186,7 @@ ReactDOM.render(<App />, document.getElementById("root"))
 
 https://codepen.io/alyra/pen/xxVRPYw
 
-### Simple Counter
+### VoteCounter
 
 https://codepen.io/alyra/pen/NWNXBdL
 
@@ -185,7 +196,7 @@ https://codepen.io/alyra/pen/rNepaOy
 
 ## React Hooks et ses règles
 
-`useState` est un des hooks de React. Nous appelons hooks dans les components React (ou dans les hooks personnalisés). Nous allons bientôt découvrir d'autres hooks (`useContext`, `useEffect`). Les hooks sont des fonctions JavaScript, mais des fonctions un peu spéciales. Ceci dit nous devons suivre certaines règles d'utilisation.
+`useState` est un des hooks de React. Nous appelons hooks dans les components React (ou dans les hooks personnalisés). Nous allons bientôt découvrir d'autres hooks (par exemple `useEffect`, `useContext`). Les hooks sont des fonctions JavaScript, mais des fonctions un peu spéciales. Ceci dit nous devons suivre certaines règles d'utilisation.
 
 Pour assurer leur fonctionnement correct, hooks doivent être appelés dans le même ordre à chaque affichage du composant. Par conséquent, hooks ne peuvent pas être utilisés :
 
