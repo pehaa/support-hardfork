@@ -139,15 +139,15 @@ const [stateValue, setStateValue] = React.useState(initialStateValue)
 
 - Nous l'utilisons dans le corps de notre component (avant le `return`).
 - `React.useState` prend un seul paramètre - la valeur initiale de notre variable de _state_
-- `React.useState` retourne un array de 2 éléments (la valeur en cours de notre variable state) et la fonction qui servira à mettre à jour notre variable `setStateValue(newStateValue)`
+- `React.useState` retourne un array de 2 éléments :
+  1. la valeur en cours de notre variable state)
+  2. la fonction qui servira à mettre à jour notre variable `setStateValue(newStateValue)`
 
 https://codepen.io/alyra/pen/vYgXPew
 
 ```javascript
 const [count, setCount] = React.useState(0)
 ```
-
-et pareil pour `name`
 
 ```javascript
 const [name, setName] = React.useState("Inconnu")
