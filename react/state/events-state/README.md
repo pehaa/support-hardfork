@@ -40,11 +40,13 @@ Comme vous pouvez l'observer et ce qui sera **à retenir** :
 Dans l'exemple suivant nous allons un pas plus loin. La fonction passée dans _event handler_ a accès à l'objet `event`.
 
 ```javascript
-<Button
+<button
   onClick={(event) => {
     console.log(event)
   }}
-/>
+>
+  Click me
+</button>
 ```
 
 ou
@@ -55,7 +57,7 @@ const handleButtonClick = (event) => {
   /* ... */
 }
 ...
-<Button onClick={handleButtonClick} />
+<button onClick={handleButtonClick}>..</button>
 ```
 
 Ceci dit React a accès aux certaines informations concernant l'évènement.
