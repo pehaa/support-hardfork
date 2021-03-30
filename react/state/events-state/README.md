@@ -210,9 +210,9 @@ Les Hooks devraient être utilisés au niveau racine d'un component React.
 
 ## Exercices :
 
-- [Events - select change](https://codepen.io/alyra/pen/zYqzxgv) | [solution](https://codepen.io/alyra/pen/5a51da89910b5b8aa9e33e55e64450c2)
-- [Events - select change](https://codepen.io/alyra/pen/oNxwXWG) | [solution](https://codepen.io/alyra/pen/683f280874ff466121c5115dd0d20943)
-- [State - Fix me - click count](https://codepen.io/alyra/pen/jOqYOQN) | [solution](https://codepen.io/alyra/pen/5f1330ce589c02ee762400ee9579e427)
-- [Clicks countdown](https://codepen.io/alyra/pen/GRZyWxb) | [solution](https://codepen.io/alyra/pen/19bc3ca167473f4a385088681fcd4011)
-- [Clicks compteurs](https://codepen.io/alyra/pen/NWNXper) | [solution](https://codepen.io/alyra/pen/4039761b2dceb4365b22730e69e9de04)
-- [State - en lire plus](https://codepen.io/alyra/pen/KKzNoNx) | [solution](https://codepen.io/alyra/pen/ac7586841147fe68381f340d7dc2d46b)
+- [Events - select change](https://codepen.io/alyra/pen/zYqzxgv)
+- [Events - select change](https://codepen.io/alyra/pen/oNxwXWG)
+- [State - Fix me - click count](https://codepen.io/alyra/pen/jOqYOQN)
+- [Clicks countdown](https://codepen.io/alyra/pen/GRZyWxb)
+- [Clicks compteurs](https://codepen.io/alyra/pen/NWNXper)
+- [State - en lire plus](https://codepen.io/alyra/pen/KKzNoNx)
