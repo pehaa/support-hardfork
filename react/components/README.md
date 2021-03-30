@@ -403,7 +403,7 @@ Il est aussi possible de mettre en place **une valeur par défaut** pour une des
 const Button = (props) => {
   const { type = "button", variant = "primary", children }  = props
   const className = `btn btn-${variant}`
-  return (<button type={type} className={className}>{children})</button>)
+  return (<button type={type} className={className}>{children}</button>)
 }
 
 <Button>Click me</Button>
