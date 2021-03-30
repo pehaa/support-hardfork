@@ -131,19 +131,10 @@ https://wptemplates.pehaa.com/assets/alyra/state-article.mp4
 
 ## `React.useState` hook
 
-Afin de mettre en place un component interactif nous devons nous poser la question suivante :
-
-> Quelle est la variable qui potentiellement change la valeur et ce changement devrait déclencher re-render ?
-
-Dans notre cas ce sont `name` et `like`.
-
-Nous allons déclarer `name` et `like` en tant que variables de _state_. React nous donne en disposition un mécanisme qui permet de lier la mise à jour de la valeur d'une variable et la mise de l'affichage du component sur la page (re-render)
-
-Au lieu de déclarer la variable `like` de la façon normale `const like = false`
-nous allons faire :
+https://codepen.io/alyra/pen/vYgXPew
 
 ```javascript
-const [like, setLike] = React.useState(false)
+const [count, setCount] = React.useState(0)
 ```
 
 et pareil pour `name`
@@ -153,7 +144,7 @@ const [name, setName] = React.useState("Inconnu")
 ```
 
 On appelle `React.useState` avec la valeur initiale de la variable state.
-`React.useState` **retourne un array,** son premier élément est une clé de state variable, la seconde est la fonction pour modifier la valeur de notre state variable (setter).
+`React.useState` **retourne un array,** son premier élément est la valeur en cours de notre variable, la seconde est la fonction pour modifier sa valeur.
 
 ```javascript
 const App = () => {
