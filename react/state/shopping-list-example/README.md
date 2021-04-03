@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Nous allons créer une liste des courses. L'utilisateur a 2 possibilité d'ajouter des produits. Il ajoute des produits à acheter via un simple formulaire. Il peut aussi ajouter un des produits presélectionnés (produits "populaires") (ici: pain, lait, pizza, salade ou oranges) en cliquant sur le bouton.
+Nous allons créer une [liste des courses](https://alyra-shopping-list.netlify.app/). L'utilisateur a 2 possibilité d'ajouter des produits. Il ajoute des produits à acheter via un simple formulaire. Il peut aussi ajouter un des produits presélectionnés (produits "populaires") (ici: pain, lait, pizza, salade ou oranges) en cliquant sur le bouton.
 
 Ensuite, en faisant des courses, l'utilisateur peu enlever un produit de la liste en cliquant un bouton "✖️ ok"
 
@@ -37,7 +37,7 @@ src
 ├── App.js
 ├── components
 │   ├── AddProductForm.js
-│   ├── AddPopularPoduct.js
+│   ├── AddPopularProduct.js
 │   ├── Header.js
 │   ├── Product.js
 │   ├── ShoppingApp.js
@@ -48,7 +48,7 @@ src
 ```bash
 mkdir src/components
 touch src/components/AddProductForm.js
-touch src/components/AddPopularPoduct.js
+touch src/components/AddPopularProduct.js
 touch src/components/Header.js
 touch src/components/Product.js
 touch src/components/ShoppingApp.js
@@ -178,6 +178,8 @@ export default ShoppingApp
 
 ### ShoppingList
 
+Dans notre application nous allons prendre soin d'avoir la liste des produits uniques. Grâce à cela nous pouvons utiliser `{product}` pour l'attribut `key`.
+
 ```js
 // src/components/ShoppingList.js
 import Product from "./Product"
@@ -188,10 +190,10 @@ const ShoppingList = (props) => {
     <>
       <h2 className="mb-3 h4">Produits à acheter ({shopping.length}):</h2>
       <ul className="list-group mb-3 shadow">
-        {shopping.map((el) => {
+        {shopping.map((product) => {
           return (
             <li className="list-group-item" key={el}>
-              <Product product={el} />
+              <Product product={product} />
             </li>
           )
         })}
@@ -290,71 +292,149 @@ export default AddPopularProduct
 
 Le but de cette application est d'afficher la liste des courses. Cette liste est alimentée à chaque fois où un nouveau produit est ajouté via le formulaire. On peut aussi retirer chaque produit de la liste en cliquant sur son bouton "done!"
 
-Notre variable de state (appelons-la `shopping`) sera un array avec des éléments de type `"string"`. Mettons-la en place :
+Notre variable de state (appelons-la `shopping`) sera un array avec des éléments de type `"string"`.
 
-```javascript
-const ShoppingApp = () => {
-  const [shopping, setShopping] = useState(["cumin", "curry", "poivre"])
+Nous allons la mettre en place comme ceci :
+
+```js
+const [shopping, setShopping] = React.useState([])
+```
+
+Mais où (dans quel fichier) doit-on placer ce code ?
+
+---
+
+## _State lifting_
+
+React est conçu de cette façon que les informations passent dans un seul sens, uniqument depuis le component parent vers les components enfants. En apelle cela _unidirectional data flow_. Un component parent passe les informations à ses enfants via les props. Quand nous mettons en place une variable de state dans un component, son component parent n'aura pas d'accès à cette variable.
+
+```js
+const Article = () => {
   return (
-    <section>
-      <h2>My shopping List</h2>
-      <ol></ol>
-      <AddProductForm />
-    </section>
+    <article>
+      <h2>Votre super article</h2>
+      <p>Nous avons déjà ... 🤔😳 likes </p>
+      <LoveButton {/* compte le nombre de likes*/} />
+    </article>
   )
 }
 ```
 
-La valeur initiale peut être un array vide `[]`, ici je l'ai préremplie de quelques produits afin qu'on puisse plus rapidement travailler avec le rendu.
+Nous allons alors définir la variable de state si haut dans l'arborescence que c'est nécessaire et utiliser props pour la passer plus bas.
 
-## Rendu des produits de la liste `shopping`
-
-Les produits dans `shopping` seront affichés au sein de la liste numérotée `ol`.
-Le markup pour chaque produit est prévu comme ceci :
-
-```html
-<li class="mb-2">
-  <div class="d-flex align-items-center justify-content-between">
-    lait
-    <button type="button" class="btn btn-sm btn-warning">done!</button>
-  </div>
-</li>
+```js
+const Article = () => {
+  const [likes, setLikes] = React.useState(0)
+  return (
+    <article>
+      <h2>Votre super article</h2>
+      <p>Nous avons déjà {likes} 🤔😳 likes </p>
+      <LoveButton likes={likes} setLikes={setLikes} />
+    </article>
+  )
+}
 ```
 
-Nous allons parcourir notre _array_ `shopping` avec la méthode `.map` :
+https://codepen.io/alyra/pen/poRPLwm
+
+![](https://wptemplates.pehaa.com/assets/alyra/state-lifting.png)
+
+---
+
+![](https://wptemplates.pehaa.com/assets/alyra/shopping-app-common.png)
+
+## State in ShoppingApp
 
 ```javascript
+import { useState } from "react"
+import AddPopularProduct from "./AddPopularProduct"
+import ShoppingList from "./ShoppingList"
+import AddProductForm from "./AddProductForm"
+
 const ShoppingApp = () => {
-  const [shopping, setShopping] = useState(["cumin", "curry", "poivre"])
+  const [shopping, setShopping] = useState([])
+
+  const addToShoppingList = (product) => {
+    setShopping([...shopping, product])
+  }
+
+  const removeFromShoppingList = (product) => {
+    setShopping(shopping.filter((el) => el !== product))
+  }
   return (
-    <section>
-      <h2>My shopping List</h2>
-      <ol>
+    <main className="row">
+      <section className="col-lg-8">
+        <ShoppingList
+          shopping={shopping}
+          removeFromShoppingList={removeFromShoppingList}
+        />
+      </section>
+      <section className="col-lg-4">
+        <div className="bg-light border p-4">
+          <h2 className="mb-3 h4">Ajouter un produit :</h2>
+          <AddProductForm
+            shopping={shopping}
+            addToShoppingList={addToShoppingList}
+          />
+          <AddPopularProduct
+            shopping={shopping}
+            addToShoppingList={addToShoppingList}
+          />
+        </div>
+      </section>
+    </main>
+  )
+}
+
+export default ShoppingApp
+```
+
+Ensuite nous allons utiliser `shopping` et `setShopping` dans `ShoppingList` et ensuite `Product`
+
+```js
+const ShoppingList = (props) => {
+  const { shopping, removeFromShoppingList } = ["cumin", "curry"]
+  return (
+    <>
+      <h2 className="mb-3 h4">Produits à acheter ({shopping.length}):</h2>
+      <ul className="list-group mb-3 shadow">
         {shopping.map((product) => {
-          /* 
-            Pour chaque élément de la liste nous allons utiliser le markup prévu pour <li>
-            Pour le mettre compatible avec jsx nous devons :
-            - changer class pour className
-            - ajouter l'attribut spécial key
-            - remplacer lait  par {product}
-          */
-          ;<li key={product} className="mb-2">
-            <div className="d-flex align-items-center justify-content-between">
-              {product}
-              <button type="button" className="btn btn-sm btn-warning">
-                done!
-              </button>
-            </div>
-          </li>
+          return (
+            <li className="list-group-item" key={el}>
+              <Product
+                product={product}
+                removeFromShoppingList={removeFromShoppingList}
+              />
+            </li>
+          )
         })}
-      </ol>
-      <AddProductForm />
-    </section>
+      </ul>
+    </>
   )
 }
 ```
 
-Dans notre application nous allons prendre soin d'avoir la liste des produits uniques. Grâce à cela nous pouvons utiliser `{product}` pour l'attribut `key`.
+```js
+const Product = (props) => {
+  const { product, removeFromShopping } = props
+
+  const handleButtonClick = () => {
+    removeFromShopping(product)
+  }
+
+  return (
+    <div className="d-flex align-items-center justify-content-between">
+      {product}
+      <button className="btn btn-sm btn-warning" onClick={handleButtonClick}>
+        <span role="img" aria-hidden>
+          ✖️
+        </span>{" "}
+        ok
+      </button>
+    </div>
+  )
+}
+```
 
 ## Formulaire et `onSubmit`
 
@@ -362,9 +442,9 @@ Nous allons maintenant donner la possibilité d'ajouter des produits notre liste
 
 ```javascript
 const AddProductForm = (props) => {
-  const { shopping, setShopping } = props
+  const { shopping, addToShoppingList } = props
   const handleFormSubmit = (event) => {
-    // nous devons empêcher action par défaut de notre formulaire, js prend la relève !
+    // nous devons empêcher l'action par défaut de notre formulaire
     event.preventDefault()
     // récupérer la valeur depuis le champ input#product
     const newProduct = event.target.elements.product.value
@@ -372,84 +452,14 @@ const AddProductForm = (props) => {
     if (shopping.includes(newProduct)) {
       alert(`${newProduct} est déjà sur la liste`)
     } else {
-      // on n'a pas le droit d'utiliser push sur shopping !!!! puisque push modifie shopping, nous devons retourner une nouvelle array
-      setShopping([...shopping, newProduct])
+      addToShoppingList(newProduct)
     }
     // vider l'input (remettre le formulaire à zéro)
     event.target.reset()
   }
-  return (
-    <form onSubmit={handleFormSubmit}>
-      <div className="input-group mb-2">
-        <label className="input-group-text" htmlFor="product">
-          Ajouter sur la liste
-        </label>
-        <input className="form-control" id="product" required />
-      </div>
-      <button type="submit" className="btn btn-primary">
-        J'ajoute !
-      </button>
-    </form>
-  )
+  return <form onSubmit={handleFormSubmit}>{/* ... */}</form>
 }
 ```
-
-## Buttons "done!"
-
-Nous allons ajouter `onClick` aux boutons 'done!'. Avec _click_ le produit en question devrait être retiré de l'array `shopping`. Nous allons passer `product` en tant que paramètre dans `handleDoneClick`.
-
-```javascript
-<button
-  onClick={() => handleDoneClick(product)}
-  type="button"
-  className="btn btn-sm btn-warning"
->
-  done!
-</button>
-```
-
-```javascript
-const ShoppingApp = () => {
-  const [shopping, setShopping] = useState(["cumin", "curry", "poivre"])
-  return (
-    <section>
-      <h2>My shopping List</h2>
-      <ol>
-        {shopping.map((product) => {
-          /* 
-            jsx pour chaque élément de la liste
-            nous allons utilisé le markup de <li>
-            - changer class pour className
-            - ajouter key
-            - remplacer lait  par {product}
-          */
-          ;<li key={product} className="mb-2">
-            <div className="d-flex align-items-center justify-content-between">
-              {product}
-              <button type="button" className="btn btn-sm btn-warning">
-                done!
-              </button>
-            </div>
-          </li>
-        })}
-      </ol>
-      <AddProductForm />
-    </section>
-  )
-}
-```
-
-La dernière chose est de définir `handleDoneClick`. Nous pouvons utiliser la méthode `filter`,`shopping.filter((el) => el !== product)` retourne la liste où nous gardons tous les éléments différents que `product`.
-
-```javascript
-const handleDoneClick = (product) => {
-  setShopping(shopping.filter((el) => el !== product))
-}
-```
-
-Vous trouverez le code final ici :
-
-https://codepen.io/alyra/pen/jOqYggy
 
 ---
 
