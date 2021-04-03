@@ -13,6 +13,23 @@ Nous allons mettre en pratique, ce que nous avons appris jusqu'à ce moment, en 
 - `React.useState` hook,
 - Bootstrap v5
 
+## Installation
+
+```
+npx create-react-app alyra-shopping-list
+cd alyra-shopping-list
+yarn add bootstrap@next
+```
+
+```js
+// ./index.js
+import React from "react"
+import ReactDOM from "react-dom"
+import "bootstrap/dist/css/bootstrap.css"
+import "./index.css"
+/* ... */
+```
+
 ## Structure du projet
 
 ```bash
@@ -26,6 +43,16 @@ src
 │   ├── ShoppingApp.js
 │   └── ShoppingList.js
 ...
+```
+
+```bash
+mkdir src/components
+touch src/components/AddProductForm.js
+touch src/components/AddPopularPoduct.js
+touch src/components/Header.js
+touch src/components/Product.js
+touch src/components/ShoppingApp.js
+touch src/components/ShoppingList.js
 ```
 
 ![](https://wptemplates.pehaa.com/assets/alyra/shopping-app.png)
@@ -87,41 +114,23 @@ https://codepen.io/alyra/pen/dyNWJYK?editors=1010
 ![](https://wptemplates.pehaa.com/assets/alyra/shopping-list-topo.png)
 
 ```javascript
-const ShoppingApp = () => {
-  return (
-    <section>
-      <h2>My shopping List</h2>
-      <ol></ol>
-      <AddProductForm />
-    </section>
-  )
-}
+// src/App.js
+import ShoppingApp from "./components/ShoppingApp"
+import Header from "./components/Header"
 
-const AddProductForm = (props) => {
+function App() {
   return (
-    <form>
-      <div className="input-group mb-2">
-        <label className="input-group-text" htmlFor="product">
-          Ajouter sur la liste
-        </label>
-        <input className="form-control" id="product" required="" />
-      </div>
-      <button type="submit" className="btn btn-primary">
-        J'ajoute !
-      </button>
-    </form>
-  )
-}
-
-const App = () => {
-  return (
-    <div className="container my-3">
+    <div className="container">
+      <header className="text-center my-5">
+        <h1>Ma liste des courses</h1>
+        <p lang="en">Let's go shopping! Yay !!</p>
+      </header>
       <ShoppingApp />
     </div>
   )
 }
 
-ReactDOM.render(<App />, document.getElementById("root"))
+export default App
 ```
 
 Et, comme d'habitude nous utilisons le fichier style de boostrap5.
