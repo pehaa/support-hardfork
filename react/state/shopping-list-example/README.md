@@ -337,7 +337,7 @@ const Article = () => {
 
 https://codepen.io/alyra/pen/poRPLwm
 
-![](https://wptemplates.pehaa.com/assets/alyra/state-lifting.png)
+![](https://wptemplates.pehaa.com/assets/alyra/state-lifiting.png)
 
 ---
 
