@@ -44,9 +44,8 @@ src
       <ol class="list-group mb-3 shadow">
         <li class="list-group-item">
           <div class="d-flex align-items-center justify-content-between">
-            cumin<button class="btn btn-sm btn-warning">
-              <span role="img" aria-hidden="true">✖️</span> ok
-            </button>
+            cumin
+            <button class="btn btn-sm btn-warning">ok</button>
           </div>
         </li>
       </ol>
@@ -82,6 +81,10 @@ src
   </main>
 </div>
 ```
+
+https://codepen.io/alyra/pen/dyNWJYK?editors=1010
+
+![](https://wptemplates.pehaa.com/assets/alyra/shopping-list-topo.png)
 
 ```javascript
 const ShoppingApp = () => {
