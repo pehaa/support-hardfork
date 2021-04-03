@@ -461,11 +461,95 @@ const AddProductForm = (props) => {
 }
 ```
 
----
+## AddPopularProduct
 
-## Exercices :
+```js
+const AddPopularProduct = (props) => {
+  const { shopping, addToShoppingList } = props
+  const populars = [
+    /* ... */
+  ]
 
-- [State - wallet](https://codepen.io/alyra/pen/LYNeYeL) | [solution](https://codepen.io/alyra/pen/e338ac3c0b89e075037141ae852c6023)
-- [State settings](https://codepen.io/alyra/pen/bGpaRJJ) | [solution](https://codepen.io/alyra/pen/2379640ca179a5c55839e338c28b679f)
-- [State alien](https://codepen.io/alyra/pen/zYqpdGw) | [solution](https://codepen.io/alyra/pen/b4a10fb49de21fbaa6e0f7daa229ee4c)
-- [State shopping list](https://codepen.io/alyra/pen/rNepXRY) | [solution](https://codepen.io/alyra/pen/a4bb96fcc8c2c5dcba3eb2b1720db479)
+  return (
+    <section>
+      <h3 className="h5">Avez vous besoin de ?</h3>
+      <div className="mb-3 d-flex flex-wrap align-items-center">
+        {populars.map((el) => (
+          <button
+            key={el.text}
+            className="btn btn-outline-success me-2 mb-2 d-flex align-items-center"
+            onClick={() => addToShoppingList(el.text)}
+            disabled={shopping.includes(el.text)}
+          >
+            {/* ... */}
+          </button>
+        ))}
+      </div>
+    </section>
+  )
+}
+```
+
+## Bonus - Filtering - Recherche dans les produits de la liste
+
+```js
+const ShoppingList = (props) => {
+  const { shopping, removeFromShoppingList } = (props[
+    (filter, setFilter)
+  ] = useState(""))
+
+  const filteredList = shopping.filter((el) =>
+    el.trim().toLowerCase().startsWith(filter.trim().toLowerCase())
+  )
+  return (
+    <>
+      <h2 className="mb-3 h4">Produits à acheter ({shopping.length}):</h2>
+      <div className="input-group mb-3">
+        <span role="img" aria-label="search" className="input-group-text">
+          🔎
+        </span>
+        <input
+          type="search"
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+          placeholder="Rechercher dans votre liste des courses ..."
+          aria-label="Chercher"
+          className="form-control"
+        />
+      </div>
+      {filter && (
+        <>
+          <p className="d-flex justify-content-between">
+            <span>
+              Produits qui commencent par <i>{filter}</i>
+            </span>
+            <button
+              className="btn btn-light btn-sm"
+              onClick={() => setFilter("")}
+            >
+              <span role="img" aria-hidden>
+                🔄
+              </span>{" "}
+              Réinitialiser
+            </button>
+          </p>
+        </>
+      )}
+      <ol className="list-group mb-3 shadow">
+        {filteredList.map((el) => {
+          return (
+            <li className="list-group-item" key={el}>
+              <Product
+                product={el}
+                removeFromShoppingList={removeFromShoppingList}
+              />
+            </li>
+          )
+        })}
+      </ol>
+    </>
+  )
+}
+
+export default ShoppingList
+```
