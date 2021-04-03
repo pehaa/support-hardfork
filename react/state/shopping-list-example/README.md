@@ -113,6 +113,8 @@ https://codepen.io/alyra/pen/dyNWJYK?editors=1010
 
 ![](https://wptemplates.pehaa.com/assets/alyra/shopping-list-topo.png)
 
+### App.js
+
 ```javascript
 // src/App.js
 import ShoppingApp from "./components/ShoppingApp"
@@ -121,16 +123,28 @@ import Header from "./components/Header"
 function App() {
   return (
     <div className="container">
-      <header className="text-center my-5">
-        <h1>Ma liste des courses</h1>
-        <p lang="en">Let's go shopping! Yay !!</p>
-      </header>
+      <Header />
       <ShoppingApp />
     </div>
   )
 }
 
 export default App
+```
+
+### Header.js
+
+```js
+const Header = () => {
+  return (
+    <header className="text-center my-5">
+      <h1>Ma liste des courses</h1>
+      <p lang="en">Let's go shopping! Yay !!</p>
+    </header>
+  )
+}
+
+export default Header
 ```
 
 Et, comme d'habitude nous utilisons le fichier style de boostrap5.
