@@ -135,6 +135,7 @@ export default App
 ### Header.js
 
 ```js
+// src/components/Header.js
 const Header = () => {
   return (
     <header className="text-center my-5">
@@ -147,9 +148,143 @@ const Header = () => {
 export default Header
 ```
 
-Et, comme d'habitude nous utilisons le fichier style de boostrap5.
+### ShoppingApp.js
 
-https://codepen.io/alyra/pen/PoNQWGJ
+```js
+// src/components/ShoppingApp.js
+import ShoppingList from "./ShoppingList"
+import AddPopularProducts from "./AddPopularProducts"
+import AddProductForm from "./AddProductForm"
+
+const ShoppingApp = () => {
+  return (
+    <main className="row">
+      <section className="col-lg-8">
+        <ShoppingList />
+      </section>
+      <section className="col-lg-4">
+        <div className="bg-light border p-4">
+          <h2 className="mb-3 h4">Ajouter un produit :</h2>
+          <AddProductForm />
+          <AddPopularProducts />
+        </div>
+      </section>
+    </main>
+  )
+}
+
+export default ShoppingApp
+```
+
+### ShoppingList
+
+```js
+// src/components/ShoppingList.js
+import Product from "./Product"
+
+const ShoppingList = (props) => {
+  const shopping = ["cumin", "curry"]
+  return (
+    <>
+      <h2 className="mb-3 h4">Produits à acheter ({shopping.length}):</h2>
+      <ul className="list-group mb-3 shadow">
+        {shopping.map((el) => {
+          return (
+            <li className="list-group-item" key={el}>
+              <Product product={el} />
+            </li>
+          )
+        })}
+      </ul>
+    </>
+  )
+}
+
+export default ShoppingList
+```
+
+### Product
+
+```js
+// src/components/Product.js
+const Product = (props) => {
+  const { product } = props
+
+  return (
+    <div className="d-flex align-items-center justify-content-between">
+      {product}
+      <button className="btn btn-sm btn-warning">
+        <span role="img" aria-hidden>
+          ✖️
+        </span>{" "}
+        ok
+      </button>
+    </div>
+  )
+}
+
+export default Product
+```
+
+### AddProductForm
+
+```js
+// src/components/AddProductForm.js
+const AddProductForm = (props) => {
+  return (
+    <form className="mb-5" onSubmit={handleFormSubmit}>
+      <div className="input-group mb-2">
+        <input
+          id="product"
+          className="form-control"
+          aria-label="Ajouter sur la liste"
+          required
+        />
+        <button type="submit" className="btn btn-success btn-lg">
+          J'ajoute !
+        </button>
+      </div>
+    </form>
+  )
+}
+
+export default AddProductForm
+```
+
+### AddPopularProduct
+
+```js
+// src/components/AddPopularProduct.js
+const AddPopularProduct = (props) => {
+  const populars = [
+    { text: "pain", emoji: "🥖" },
+    { text: "lait", emoji: "🥛" },
+    { text: "pizza", emoji: "🍕" },
+    { text: "salade", emoji: "🥬" },
+    { text: "oranges", emoji: "🍊" },
+  ]
+  return (
+    <section>
+      <h3 className="h5">Avez vous besoin de ?</h3>
+      <div className="mb-3 d-flex flex-wrap align-items-center">
+        {populars.map((el) => (
+          <button
+            key={el.text}
+            className="btn btn-outline-success me-2 mb-2 d-flex align-items-center"
+          >
+            {el.text}{" "}
+            <span className="fs-1" role="img" aria-hidden>
+              {el.emoji}
+            </span>
+          </button>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+export default AddPopularProduct
+```
 
 ## Variable de state
 
