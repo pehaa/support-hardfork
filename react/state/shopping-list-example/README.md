@@ -1,13 +1,86 @@
-# Shopping List - live coding
+# Shopping List (1)
 
-## Introduction et prérequis
+## Objectif
 
-Dans ce cours, nous allons mettre en pratique, ce que nous avons appris, en particulier `useState`. Nous allons créer une _shopping list_ - une liste des courses interactive. Nous allons démarrer avec [le code suivant (lien vers le pen de départ).](https://codepen.io/alyra/pen/PoNQWGJ)
+Nous allons créer une liste des courses. L'utilisateur a 2 possibilité d'ajouter des produits. Il ajoute des produits à acheter via un simple formulaire. Il peut aussi ajouter un des produits presélectionnés (produits "populaires") (ici: pain, lait, pizza, salade ou oranges) en cliquant sur le bouton.
+
+Ensuite, en faisant des courses, l'utilisateur peu enlever un produit de la liste en cliquant un bouton "✖️ ok"
+
+Nous allons mettre en pratique, ce que nous avons appris jusqu'à ce moment, en particulier :
+
+- React componenents,
+- Create React App,
+- `React.useState` hook,
+- Bootstrap v5
+
+## Structure du projet
+
+```bash
+src
+├── App.js
+├── components
+│   ├── AddProductForm.js
+│   ├── AddPopularPoduct.js
+│   ├── Header.js
+│   ├── Product.js
+│   ├── ShoppingApp.js
+│   └── ShoppingList.js
+...
+```
+
+![](https://wptemplates.pehaa.com/assets/alyra/shopping-app.png)
+
+## Static markup (bootstrap)
 
 ```html
-<div id="root"></div>
-<script crossorigin src="https://unpkg.com/react/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+<div class="container">
+  <header class="text-center my-5">
+    <h1>Ma liste des courses</h1>
+    <p lang="en">Let's go shopping! Yay !!</p>
+  </header>
+  <main class="row">
+    <section class="col-lg-8">
+      <h2 class="mb-3 h4">Produits à acheter (1):</h2>
+      <ol class="list-group mb-3 shadow">
+        <li class="list-group-item">
+          <div class="d-flex align-items-center justify-content-between">
+            cumin<button class="btn btn-sm btn-warning">
+              <span role="img" aria-hidden="true">✖️</span> ok
+            </button>
+          </div>
+        </li>
+      </ol>
+    </section>
+    <section class="col-lg-4">
+      <div class="bg-light border p-4">
+        <h2 class="mb-3 h4">Ajouter un produit :</h2>
+        <form class="mb-5">
+          <div class="input-group mb-2">
+            <input
+              id="product"
+              class="form-control"
+              aria-label="Ajouter sur la liste"
+              required=""
+            /><button type="submit" class="btn btn-success btn-lg">
+              J'ajoute !
+            </button>
+          </div>
+        </form>
+        <section>
+          <h3 class="h5">Avez vous besoin de ?</h3>
+          <div class="mb-3 d-flex flex-wrap align-items-center">
+            <button
+              class="btn btn-outline-success me-2 mb-2 d-flex align-items-center"
+            >
+              pain
+              <span class="fs-1" role="img" aria-hidden="true">🥖</span>
+            </button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+</div>
 ```
 
 ```javascript
@@ -54,11 +127,9 @@ https://codepen.io/alyra/pen/PoNQWGJ
 
 ## Variable de state
 
-
 Le but de cette application est d'afficher la liste des courses. Cette liste est alimentée à chaque fois où un nouveau produit est ajouté via le formulaire. On peut aussi retirer chaque produit de la liste en cliquant sur son bouton "done!"
 
 Notre variable de state (appelons-la `shopping`) sera un array avec des éléments de type `"string"`. Mettons-la en place :
-
 
 ```javascript
 const ShoppingApp = () => {
@@ -89,7 +160,7 @@ Le markup pour chaque produit est prévu comme ceci :
 </li>
 ```
 
-Nous allons parcourir notre *array* `shopping` avec la méthode `.map` :
+Nous allons parcourir notre _array_ `shopping` avec la méthode `.map` :
 
 ```javascript
 const ShoppingApp = () => {
@@ -106,7 +177,7 @@ const ShoppingApp = () => {
             - ajouter l'attribut spécial key
             - remplacer lait  par {product}
           */
-          <li key={product} className="mb-2">
+          ;<li key={product} className="mb-2">
             <div className="d-flex align-items-center justify-content-between">
               {product}
               <button type="button" className="btn btn-sm btn-warning">
@@ -126,7 +197,7 @@ Dans notre application nous allons prendre soin d'avoir la liste des produits un
 
 ## Formulaire et `onSubmit`
 
-Nous allons maintenant donner la possibilité d'ajouter des produits notre liste via le formulaire. Pour ceci nous devons mettre en place un *handler* d'événement `submit` à notre élément `form`, `onSubmit={handleFormSubmit}`. En même temps nous devons définir la fonction `handleFormSubmit`.
+Nous allons maintenant donner la possibilité d'ajouter des produits notre liste via le formulaire. Pour ceci nous devons mettre en place un _handler_ d'événement `submit` à notre élément `form`, `onSubmit={handleFormSubmit}`. En même temps nous devons définir la fonction `handleFormSubmit`.
 
 ```javascript
 const AddProductForm = (props) => {
