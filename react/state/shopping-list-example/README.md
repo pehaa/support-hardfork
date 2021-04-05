@@ -341,9 +341,9 @@ https://codepen.io/alyra/pen/poRPLwm
 
 ---
 
-![](https://wptemplates.pehaa.com/assets/alyra/shopping-app-common.png)
-
 ## State in ShoppingApp
+
+![](https://wptemplates.pehaa.com/assets/alyra/shopping-app-common.png)
 
 ```javascript
 import { useState } from "react"
@@ -466,9 +466,7 @@ const AddProductForm = (props) => {
 ```js
 const AddPopularProduct = (props) => {
   const { shopping, addToShoppingList } = props
-  const populars = [
-    /* ... */
-  ]
+  const populars = [...]
 
   return (
     <section>
@@ -518,22 +516,20 @@ const ShoppingList = (props) => {
         />
       </div>
       {filter && (
-        <>
-          <p className="d-flex justify-content-between">
-            <span>
-              Produits qui commencent par <i>{filter}</i>
-            </span>
-            <button
-              className="btn btn-light btn-sm"
-              onClick={() => setFilter("")}
-            >
-              <span role="img" aria-hidden>
-                🔄
-              </span>{" "}
-              Réinitialiser
-            </button>
-          </p>
-        </>
+        <p className="d-flex justify-content-between">
+          <span>
+            Produits qui commencent par <i>{filter}</i>
+          </span>
+          <button
+            className="btn btn-light btn-sm"
+            onClick={() => setFilter("")}
+          >
+            <span role="img" aria-hidden>
+              🔄
+            </span>{" "}
+            Réinitialiser
+          </button>
+        </p>
       )}
       <ol className="list-group mb-3 shadow">
         {filteredList.map((el) => {
