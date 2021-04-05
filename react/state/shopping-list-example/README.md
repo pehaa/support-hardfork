@@ -2,15 +2,15 @@
 
 ## Objectif
 
-Nous allons créer une [liste des courses](https://alyra-shopping-list.netlify.app/). L'utilisateur a 2 possibilité d'ajouter des produits. Il ajoute des produits à acheter via un simple formulaire. Il peut aussi ajouter un des produits presélectionnés (produits "populaires") (ici: pain, lait, pizza, salade ou oranges) en cliquant sur le bouton.
+Nous allons créer une [liste des courses](https://alyra-shopping-list.netlify.app/). L'utilisateur a deux possibilités d'ajouter des produits. Il ajoute des produits à acheter via un simple formulaire. Il peut aussi ajouter un des produits présélectionnés (produits "populaires", dans notre cas pain, lait, pizza, salade ou oranges) en cliquant sur le bouton.
 
-Ensuite, en faisant des courses, l'utilisateur peu enlever un produit de la liste en cliquant un bouton "✖️ ok"
+Ensuite, en faisant ces courses, l'utilisateur peut enlever un produit de la liste en cliquant le bouton "✖️ ok".
 
 Nous allons mettre en pratique, ce que nous avons appris jusqu'à ce moment, en particulier :
 
 - React componenents,
 - Create React App,
-- `React.useState` hook,
+- le hook `React.useState`,
 - Bootstrap v5
 
 ## Installation
@@ -304,7 +304,7 @@ Mais où (dans quel fichier) doit-on placer ce code ?
 
 ---
 
-## _State lifting_
+## _Lifting State Up_
 
 React est conçu de cette façon que les informations passent dans un seul sens, uniqument depuis le component parent vers les components enfants. En apelle cela _unidirectional data flow_. Un component parent passe les informations à ses enfants via les props. Quand nous mettons en place une variable de state dans un component, son component parent n'aura pas d'accès à cette variable.
 
@@ -321,6 +321,10 @@ const Article = () => {
 ```
 
 Nous allons alors définir la variable de state si haut dans l'arborescence que c'est nécessaire et utiliser props pour la passer plus bas.
+
+> Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor. Let’s see how this works in action.
+
+> Plusieurs composants ont souvent besoin de refléter les mêmes données dynamiques. Nous conseillons de faire remonter l’état partagé dans leur ancêtre commun le plus proche. Voyons comment ça marche.
 
 ```js
 const Article = () => {
