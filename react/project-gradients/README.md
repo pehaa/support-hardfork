@@ -60,11 +60,12 @@ src
 
 ## À faire :
 
-1. Afficher tous les gradients.
+1. Afficher tous les 25 gradients.
 
 <details>
   <summary>Comment ? 🤔 (cliquer ici pour quelques astuces)</summary>
-  <p>✨ Pour ceci il faurait importer la variable <code>gradient</code> et la parcourir avec la méthode <code>map</code> Vou pouvez utiliser la propriété <code>name</code> pour l'attribut <code>key</code> </p>
+  <p>✨ Pour ceci il faurait importer la variable <code>gradient</code> et la parcourir avec la méthode <code>map</code>.</p>
+  <p>✨ Vous pouvez utiliser la propriété <code>name</code> pour l'attribut <code>key</code>.</p>
 </details>
 
 ---
@@ -78,9 +79,9 @@ src
 3. Ajouter le component `GradientsSelect`. Il devrait contenir un élément `<select>` qui permettera de filtrer les dégradés par tag ('tous', 'gris', 'vers', ...).
 
 <details>
-  <summary>Comment ? 🤔 (cliquer ici pour quelques astuces)</summary>
-  <p>✨ Vous pouvez importer la variable <code></code> depuis <code>./gradients.js</code></p>
-  <p>N'hésitez pas à "inspecter élément" pour retrouver le markup correct.</p>
+  <summary>Comment ? 🤔</summary>
+  <p>✨ Vous devez importer la variable <code>uniqueTags</code> depuis <code>./gradients.js</code></p>
+  <p>🕵 N'hésitez pas à "inspecter élément" pour retrouver le markup de cette partie de la page.</p>
 </details>
 
 ---
@@ -88,7 +89,7 @@ src
 4. Ajouter le component `GradientsHeader`
 
 <details>
-  <summary>🤔 (cliquer ici pour quelques astuces)</summary>
+  <summary>🤔</summary>
   <p>✨ Vous pouvez vous servir de <a href="https://codepen.io/alyra/pen/rNepaOy" target="_blank" rel="noopenr">ce pen.</a></p>
 </details>
 
@@ -97,7 +98,7 @@ src
 5. Mettre en place la possibilité de filtrer par tag.
 
 <details>
-  <summary>🤔 (cliquer ici pour quelques astuces)</summary>
+  <summary>🤔</summary>
   <p>✨ Ce qui définit le <i>state</i> de notre application est la valeur de filtre (autrement le tag choisi). Ce pourait être alors
   <code>const [filter, useFilter] = React.state("tous")</code>
   </p>
@@ -109,15 +110,15 @@ src
 
 ---
 
-## Validation :
+## Validation (/10):
 
 - rendu sur GitHub et déploiement sur Netlify
-- la structure est respecté (/2)
-- tous les dégradés sont affichés dans la page
+- la structure est respectée (/2)
+- tous les 25 dégradés sont affichés correctement dans la page (/1)
 - le header est fonctionnel (/3)
-  - refresh est fonctionnel (1/3)
-  - next/prev fonctionnels (2/3)
-- le select fonctionnel et permet de filter des dégradés par tag (/1)
+  - le bouton _"refresh"_ est fonctionnel (1/3)
+  - les boutons _"next/prev"_ sont fonctionnels (2/3)
+- le select est fonctionnel et permet de filter des dégradés par tag (/2)
 - les boutons sont fonctionnels et permettent de filter des dégradés par tag (/1)
-- il n'y a pas de warning depuis la console dans VSCode, ni dans la console du navigateur (/2)
+- il n'y a pas de warning depuis la console dans VSCode, ni dans la console du navigateur (/1)
 - [le html est valide (validator w3c)](https://validator.w3.org/nu/)
