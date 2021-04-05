@@ -6,7 +6,7 @@ Vous pouvez utiliser [ce repo]() pour démarrer (fork, clone & yarn). Ci-dessous
 
 ## CRA - configuration initiale
 
-- Bootstrap est déjà installé est intégré (`./index.js`)
+- Bootstrap est déjà installé et intégré (`./index.js`)
 - La partie "meta" (title, lang, etc.) est déjà mise en place (`./public/index.html`)
 - Le fichier `./gradient.js` exporte deux variables `gradients` et `uniqueTags`.
 
@@ -60,13 +60,13 @@ src
 
 ![](https://wptemplates.pehaa.com/assets/alyra/gradient.png)
 
-En respectant la structure des components comme ci-dessus réaliser les étapes suivantes :
+En respectant la structure des components comme ci-dessus, réaliser les étapes suivantes :
 
 1. Afficher tous les 25 gradients.
 
 <details>
   <summary>Comment ? 🤔 (cliquer ici pour quelques astuces)</summary>
-  <p>✨ Pour ceci il faurait importer la variable <code>gradient</code> et la parcourir avec la méthode <code>map</code>.</p>
+  <p>✨ Pour ceci il faudrait importer la variable <code>gradient</code> et la parcourir avec la méthode <code>map</code>.</p>
   <p>✨ Vous pouvez utiliser la propriété <code>name</code> pour l'attribut <code>key</code>.</p>
 </details>
 
@@ -83,7 +83,7 @@ En respectant la structure des components comme ci-dessus réaliser les étapes 
 <details>
   <summary>Comment ? 🤔</summary>
   <p>✨ Vous devez importer la variable <code>uniqueTags</code> depuis <code>./gradients.js</code></p>
-  <p>🕵 N'hésitez pas à "inspecter élément" pour retrouver le markup de cette partie de la page.</p>
+  <p>🕵 N'hésitez pas à "inspecter l'élément" pour retrouver le markup de cette partie de la page.</p>
 </details>
 
 ---
@@ -92,12 +92,12 @@ En respectant la structure des components comme ci-dessus réaliser les étapes 
 
 <details>
   <summary>🤔</summary>
-  <p>✨ Vous pouvez vous servir de <a href="https://codepen.io/alyra/pen/rNepaOy" target="_blank" rel="noopenr">ce pen.</a></p>
+  <p>✨ Vous pouvez vous servir de <a href="https://codepen.io/alyra/pen/rNepaOy" target="_blank" rel="noopener">ce pen.</a></p>
 </details>
 
 ---
 
-5. Mettre en place la fonctionnalité de filtrer par tag.
+5. Mettre en place la fonctionnalité **"filtrer par tag".**
 
 <details>
   <summary>🤔</summary>
@@ -118,7 +118,7 @@ https://codepen.io/alyra/pen/MWJoVVM
 
 - rendu sur GitHub et déploiement sur Netlify
 - la structure des components est respectée (/1)
-- le design est respectée (/1)
+- le design est respecté (/1)
 - tous les 25 dégradés sont affichés correctement dans la page (/1)
 - le header est fonctionnel (/3)
   - le bouton _"refresh"_ est fonctionnel (1/3)
