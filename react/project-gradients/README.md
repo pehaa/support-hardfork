@@ -36,7 +36,7 @@ Vous pouvez utiliser [ce repo]() pour démarrer (fork, clone & yarn). Ci-dessous
 
 ---
 
-- Structure initialle de projet
+- Structure initiale de projet
 
 ```bash
 src
@@ -54,11 +54,13 @@ src
 ...
 ```
 
+## À faire :
+
 ![](https://wptemplates.pehaa.com/assets/alyra/gradients-app.png)
 
 ![](https://wptemplates.pehaa.com/assets/alyra/gradient.png)
 
-## À faire :
+En respectant la structure des components comme ci-dessus réaliser les étapes suivantes :
 
 1. Afficher tous les 25 gradients.
 
