@@ -99,7 +99,7 @@ src
 
 <details>
   <summary>🤔</summary>
-  <p>✨ Ce qui définit le <i>state</i> de notre application est la valeur de filtre (autrement le tag choisi). Ce pourait être alors
+  <p>✨ Ce qui définit le <i>state</i> de notre application est la valeur de filtre (le tag choisi). Ce pourait être alors
   <code>const [filter, useFilter] = React.state("tous")</code>
   </p>
 </details>
