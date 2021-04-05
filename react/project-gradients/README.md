@@ -97,7 +97,7 @@ En respectant la structure des components comme ci-dessus réaliser les étapes 
 
 ---
 
-5. Mettre en place la possibilité de filtrer par tag.
+5. Mettre en place la fonctionnalité de filtrer par tag.
 
 <details>
   <summary>🤔</summary>
@@ -106,16 +106,19 @@ En respectant la structure des components comme ci-dessus réaliser les étapes 
   </p>
 </details>
 
----
+👇 Voici comment utiliser un élément `<select>` avec state :
 
-**Vous pouvez voir le site de référence [ici](https://alyra-gradients-bonus.netlify.app/)**
+https://codepen.io/alyra/pen/MWJoVVM
 
 ---
 
 ## Validation (/10):
 
+**[le site de référence](https://alyra-gradients-bonus.netlify.app/)**
+
 - rendu sur GitHub et déploiement sur Netlify
-- la structure est respectée (/2)
+- la structure des components est respectée (/1)
+- le design est respectée (/1)
 - tous les 25 dégradés sont affichés correctement dans la page (/1)
 - le header est fonctionnel (/3)
   - le bouton _"refresh"_ est fonctionnel (1/3)
