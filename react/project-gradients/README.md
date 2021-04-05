@@ -9,11 +9,58 @@ Vous pouvez utiliser [ce repo]() pour démarrer (fork, clone & yarn). Ci-dessous
 - Bootstrap est déjà installé est intégré (`./index.js`)
 - La partie "meta" (title, lang, etc.) est déjà mise en place (`./public/index.html`)
 - Le fichier `./gradient.js` exporte deux variables `gradients` et `uniqueTags`.
+
+  ```js
+  export const gradients = [
+    {
+      name: "Grade Grey",
+      start: "rgb(189, 195, 199)",
+      end: "rgb(44, 62, 80)",
+      tags: ["gris"],
+    },
+    {
+      name: "Harvey",
+      start: "rgb(31, 64, 55)",
+      end: "rgb(153, 242, 200)",
+      tags: ["vert"],
+    },
+    {
+      name: "Rainbow Blue",
+      start: "rgb(0, 242, 96)",
+      end: "rgb(5, 117, 230)",
+      tags: ["vert", "bleu"],
+    },
+    ...
+  ]
+  ```
+
+---
+
 - Structure initialle de projet
+
+```bash
+src
+├── App.js
+├── components
+│   ├── Footer.js
+│   ├── Gradient.js
+│   ├── GradientCode.js
+│   ├── GradientPill.js
+│   ├── GradientTitle.js
+│   ├── GradientsApp.js
+│   ├── GradientsList.js
+│   └── GradientsSelect.js
+├── gradients.js
+...
+```
+
+![](https://wptemplates.pehaa.com/assets/alyra/gradients-app.png)
+
+![](https://wptemplates.pehaa.com/assets/alyra/gradient.png)
 
 ## À faire :
 
-1. Afficher tous les gradients. 
+1. Afficher tous les gradients.
 
 <details>
   <summary>Comment ? 🤔 (cliquer ici pour quelques astuces)</summary>
@@ -36,7 +83,7 @@ Vous pouvez utiliser [ce repo]() pour démarrer (fork, clone & yarn). Ci-dessous
   <p>N'hésitez pas à "inspecter élément" pour retrouver le markup correct.</p>
 </details>
 
---- 
+---
 
 4. Ajouter le component `GradientsHeader`
 
@@ -49,36 +96,12 @@ Vous pouvez utiliser [ce repo]() pour démarrer (fork, clone & yarn). Ci-dessous
 
 5. Mettre en place la possibilité de filtrer par tag.
 
-
-
-## Structure du projet
-
-Mettez en place un dossier `src/components` avec la structure comme ceci. C’est une structure recommandée, mais elle peut varier un peu 😉.
-
-```bash
-src
-├── App.js
-├── App.test.js
-├── components
-│   ├── Footer.js
-│   ├── Gradient.js
-│   ├── GradientCode.js
-│   ├── GradientPill.js
-│   ├── GradientTags.js
-│   ├── GradientTitle.js
-│   ├── Gradients.js # (**)
-│   ├── GradientsHeader.js
-│   ├── GradientsList.js
-│   └── GradientsSelect.js
-├── gradients.js
-├── index.css
-├── index.js
-├── serviceWorker.js
-└── setupTests.js
-```
-
-(`*`) - contient le component `Gradient`  
-(`**`) - component parent, contient `GradientsList` et `GradientsSelect`
+<details>
+  <summary>🤔 (cliquer ici pour quelques astuces)</summary>
+  <p>✨ Ce qui définit le <i>state</i> de notre application est la valeur de filtre (autrement le tag choisi). Ce pourait être alors
+  <code>const [filter, useFilter] = React.state("tous")</code>
+  </p>
+</details>
 
 ---
 
