@@ -62,7 +62,7 @@ src
 
 En respectant la structure des components comme ci-dessus, réaliser les étapes suivantes :
 
-1. Afficher tous les 25 gradients.
+1. Afficher tous les gradients (25).
 
 <details>
   <summary>Comment ? 🤔 (cliquer ici pour quelques astuces)</summary>
@@ -119,7 +119,7 @@ https://codepen.io/alyra/pen/MWJoVVM
 - rendu sur GitHub et déploiement sur Netlify
 - la structure des components est respectée (/1)
 - le design est respecté (/1)
-- tous les 25 dégradés sont affichés correctement dans la page (/1)
+- l'ensemble des dégradés sont affichés correctement dans la page (/1)
 - le header est fonctionnel (/3)
   - le bouton _"refresh"_ est fonctionnel (1/3)
   - les boutons _"next/prev"_ sont fonctionnels (2/3)
