@@ -1,28 +1,24 @@
 # Projet Gradients
 
-Le temps du projet est arrivé ! Dans ce challenge vous avez pour but de construire une application web _monopage_ [comme celle-ci.](https://alyra-gradients-bonus.netlify.app/)
+Dans ce challenge vous avez pour but de construire une application web _monopage_ [comme celle-ci.](https://alyra-gradients-bonus.netlify.app/)
 
-Vous devez utiliser CRA en tant que starter. Ci-dessous, vous trouverez quelques indications qui vous aideront à structurer votre projet.
+Vous pouvez utiliser [ce repo]() pour démarrer (fork, clone & yarn). Ci-dessous, vous trouverez quelques indications qui vous aideront à structurer votre projet.
 
 ## CRA - configuration initiale
 
-```bash
-npx create-react-app react-alyra-gradients
-```
+- Bootstrap est déjà installé est intégré (`./index.js`)
+- La partie "meta" (title, lang, etc.) est déjà mise en place (`./public/index.html`)
+- Le fichier `./gradient.js` exporte deux variables `gradients` et `uniqueTags`.
+- Structure initialle de projet
 
-### Installer Bootstrap5 et mettre en place Bootstrap5
+## À faire :
 
-```bash
-yarn add bootstrap@next
-```
+1. Afficher tous le gradients. 
 
-### Head
-
-Configurez la partie head, en particulier :
-
-- title
-- lang
-- meta
+<details>
+  <summary>Comment ?</summary>
+  <p>Pour ceci il faurait importer la variable `gradient` et la parcourir avec la méthode `map`</p>
+</details>
 
 Vous devez aussi remplacer les icônes et configurez `manifest.json`.
 
@@ -60,23 +56,8 @@ src
 
 ### src/gradients.js
 
-Ce fichier devrait exporter les variables `gradients` et `uniqueTags`. Vous pouvez vous [le contenu de ce fichier](https://codepen.io/alyra/pen/73e755888ff0a8fa07d0561d108537ac.js)
 
-### src/components/GradientPill/gradient.css
 
-Le fichier `src/components/Gradient/gradient.css` devrait contenir
-
-```css
-.card-gradient {
-  width: 5rem;
-  height: 5rem;
-}
-code {
-  color: grey;
-}
-```
-
-ce fichier devrait être importé dans `src/components/GradientPill.js`
 
 ### src/App.js
 
