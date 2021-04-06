@@ -505,7 +505,7 @@ const AddPopularProduct = (props) => {
 ```js
 const ShoppingList = (props) => {
   const { shopping, removeFromShoppingList } = props
-  const [filter, setFilter] = useState(""))
+  const [filter, setFilter] = useState("")
 
   const filteredList = shopping.filter((el) =>
     el.trim().toLowerCase().startsWith(filter.trim().toLowerCase())
