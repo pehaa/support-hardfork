@@ -26,6 +26,7 @@ yarn add bootstrap@next @fontsource/kiwi-maru
 import React from "react"
 import ReactDOM from "react-dom"
 import "bootstrap/dist/css/bootstrap.css"
+import "@fontsource/kiwi-maru"
 import "./index.css"
 /* ... */
 ```
