@@ -412,7 +412,7 @@ const ShoppingList = (props) => {
       <ul className="list-group mb-3 shadow">
         {shopping.map((product) => {
           return (
-            <li className="list-group-item" key={el}>
+            <li className="list-group-item" key={product}>
               <Product
                 product={product}
                 removeFromShoppingList={removeFromShoppingList}
