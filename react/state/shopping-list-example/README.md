@@ -16,18 +16,25 @@ Nous allons mettre en pratique, ce que nous avons appris jusqu'à ce moment, en 
 ## Installation
 
 ```
-npx create-react-app alyra-shopping-list
+npx create-react-app alyra-shopping-list @fontsource/kiwi-maru
 cd alyra-shopping-list
 yarn add bootstrap@next
 ```
 
 ```js
-// ./index.js
+// ./src/index.js
 import React from "react"
 import ReactDOM from "react-dom"
 import "bootstrap/dist/css/bootstrap.css"
 import "./index.css"
 /* ... */
+```
+
+```css
+/* ./src/index.css */
+body {
+  font-family: "Kiwi Maru", sans-serif;
+}
 ```
 
 ## Structure du projet
@@ -324,7 +331,7 @@ Nous allons alors définir la variable de state si haut dans l'arborescence que 
 
 > Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor. Let’s see how this works in action.
 
-> Plusieurs composants ont souvent besoin de refléter les mêmes données dynamiques. Nous conseillons de faire remonter l’état partagé dans leur ancêtre commun le plus proche. Voyons comment ça marche.
+> [fr] Plusieurs composants ont souvent besoin de refléter les mêmes données dynamiques. Nous conseillons de faire remonter l’état partagé dans leur ancêtre commun le plus proche. Voyons comment ça marche.
 
 ```js
 const Article = () => {

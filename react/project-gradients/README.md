@@ -2,13 +2,13 @@
 
 Dans ce challenge vous avez pour but de construire une application web _monopage_ [comme celle-ci.](https://alyra-gradients-bonus.netlify.app/)
 
-Vous pouvez utiliser [ce repo]() pour démarrer (fork, clone & yarn). Ci-dessous, vous trouverez quelques indications qui vous aideront à structurer votre projet.
+**Vous devez utiliser [ce repo](https://github.com/pehaa/gradients-project-start) pour démarrer** (fork, clone & yarn). Ci-dessous, vous trouverez quelques indications qui vous aideront à structurer votre projet.
 
 ## CRA - configuration initiale
 
-- Bootstrap est déjà installé et intégré (`./index.js`)
+- Bootstrap est déjà installé et intégré (`./src/index.js`)
 - La partie "meta" (title, lang, etc.) est déjà mise en place (`./public/index.html`)
-- Le fichier `./gradient.js` exporte deux variables `gradients` et `uniqueTags`.
+- Le fichier `./src/gradient.js` exporte deux variables `gradients` et `uniqueTags`.
 
   ```js
   export const gradients = [
@@ -66,7 +66,7 @@ En respectant la structure des components comme ci-dessus, réaliser les étapes
 
 <details>
   <summary>Comment ? 🤔 (cliquer ici pour quelques astuces)</summary>
-  <p>✨ Pour ceci il faudrait importer la variable <code>gradient</code> et la parcourir avec la méthode <code>map</code>.</p>
+  <p>✨ Pour ceci il faudrait importer la variable <code>gradient</code> depuis <code>./src/gradients.js</code> et la parcourir avec la méthode <code>map</code>.</p>
   <p>✨ Vous pouvez utiliser la propriété <code>name</code> pour l'attribut <code>key</code>.</p>
 </details>
 
@@ -82,7 +82,7 @@ En respectant la structure des components comme ci-dessus, réaliser les étapes
 
 <details>
   <summary>Comment ? 🤔</summary>
-  <p>✨ Vous devez importer la variable <code>uniqueTags</code> depuis <code>./gradients.js</code></p>
+  <p>✨ Vous devez importer la variable <code>uniqueTags</code> depuis <code>./src/gradients.js</code></p>
   <p>🕵 N'hésitez pas à "inspecter l'élément" pour retrouver le markup de cette partie de la page.</p>
 </details>
 
