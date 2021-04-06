@@ -160,7 +160,7 @@ export default Header
 ```js
 // src/components/ShoppingApp.js
 import ShoppingList from "./ShoppingList"
-import AddPopularProducts from "./AddPopularProducts"
+import AddPopularProduct from "./AddPopularProduct"
 import AddProductForm from "./AddProductForm"
 
 const ShoppingApp = () => {
@@ -173,7 +173,7 @@ const ShoppingApp = () => {
         <div className="bg-light border p-4">
           <h2 className="mb-3 h4">Ajouter un produit :</h2>
           <AddProductForm />
-          <AddPopularProducts />
+          <AddPopularProduct />
         </div>
       </section>
     </main>
@@ -199,7 +199,7 @@ const ShoppingList = (props) => {
       <ul className="list-group mb-3 shadow">
         {shopping.map((product) => {
           return (
-            <li className="list-group-item" key={el}>
+            <li className="list-group-item" key={product}>
               <Product product={product} />
             </li>
           )
@@ -503,16 +503,15 @@ const AddPopularProduct = (props) => {
 
 ```js
 const ShoppingList = (props) => {
-  const { shopping, removeFromShoppingList } = (props[
-    (filter, setFilter)
-  ] = useState(""))
+  const { shopping, removeFromShoppingList } = props
+  const [filter, setFilter] = useState(""))
 
   const filteredList = shopping.filter((el) =>
     el.trim().toLowerCase().startsWith(filter.trim().toLowerCase())
   )
   return (
     <>
-      <h2 className="mb-3 h4">Produits à acheter ({shopping.length}):</h2>
+      <h2 className="mb-3 h4">Produits à acheter ({shopping.length}) :</h2>
       <div className="input-group mb-3">
         <span role="img" aria-label="search" className="input-group-text">
           🔎
