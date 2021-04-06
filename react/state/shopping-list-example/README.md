@@ -16,9 +16,9 @@ Nous allons mettre en pratique, ce que nous avons appris jusqu'à ce moment, en 
 ## Installation
 
 ```
-npx create-react-app alyra-shopping-list @fontsource/kiwi-maru
+npx create-react-app alyra-shopping-list
 cd alyra-shopping-list
-yarn add bootstrap@next
+yarn add bootstrap@next @fontsource/kiwi-maru
 ```
 
 ```js
