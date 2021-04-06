@@ -45,4 +45,3 @@
 - [CRA](./react/cra/cra-premiers-pas)
 - [State](./react/state/events-state)
 - [State - Shopping List](./react/state/shopping-list-example)
-- [Projet Gradients](./react/project-gradients)
