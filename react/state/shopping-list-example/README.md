@@ -75,14 +75,14 @@ touch src/components/ShoppingList.js
   <main class="row">
     <section class="col-lg-8">
       <h2 class="mb-3 h4">Produits à acheter (1):</h2>
-      <ol class="list-group mb-3 shadow">
+      <ul class="list-group mb-3 shadow">
         <li class="list-group-item">
           <div class="d-flex align-items-center justify-content-between">
             cumin
             <button class="btn btn-sm btn-warning">ok</button>
           </div>
         </li>
-      </ol>
+      </ul>
     </section>
     <section class="col-lg-4">
       <div class="bg-light border p-4">
