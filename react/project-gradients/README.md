@@ -78,7 +78,7 @@ En respectant la structure des components comme ci-dessus, réaliser les étapes
 
 ---
 
-3. Ajouter le component `GradientsSelect`. Il devrait contenir un élément `<select>` qui permettera de filtrer les dégradés par tag ('tous', 'gris', 'vers', ...).
+3. Ajouter le component `GradientsSelect`. Il devrait contenir un élément `<select>` qui permettera de filtrer les dégradés par tag ("tous", "gris", "vert", ...).
 
 <details>
   <summary>Comment ? 🤔</summary>
@@ -105,10 +105,6 @@ En respectant la structure des components comme ci-dessus, réaliser les étapes
   <code>const [filter, useFilter] = React.state("tous")</code>
   </p>
 </details>
-
-👇 Voici comment utiliser un élément `<select>` avec state :
-
-https://codepen.io/alyra/pen/MWJoVVM
 
 ---
 
