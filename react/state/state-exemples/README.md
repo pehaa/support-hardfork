@@ -11,7 +11,7 @@ Si `darkMode` est `true` notre élément section prend des classes `bg-dark text
 
 Le bouton "Toggle mode" permet de _switcher_ le mode.
 
-https://codepen.io/alyra/pen/RwKQMwe
+https://codepen.io/alyra/pen/gOgvzvg
 
 ## Ex. Dark mode (2)
 
@@ -25,7 +25,7 @@ https://codepen.io/alyra/pen/RwKQMVv
 
 ## Ex. Dark mode (4) - Controlled component
 
-https://codepen.io/alyra/pen/RwKQMVv
+https://codepen.io/alyra/pen/jOyZzdB
 
 ## Ex. Select (uncontrolled)
 
