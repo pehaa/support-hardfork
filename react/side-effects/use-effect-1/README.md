@@ -191,7 +191,7 @@ Nous appelons cela _lazy initial state_ ou état local initial paresseux.
 Nous allons éviter à utiliser le code suivant :
 
 ```javascript
-pas bien 👎
+// pas très bien 👎
 const [variable, setVariable] = useState(expensiveOperationFunction()) //
 ```
 
@@ -205,7 +205,7 @@ const [variable, setVariable] = useState(() => expensiveOperationFunction())
 ou simplement
 
 ```javascript
-bien 👍
+// bien 👍
 const [variable, setVariable] = useState(expensiveOperationFunction) //
 ```
 
