@@ -191,19 +191,22 @@ Nous appelons cela _lazy initial state_ ou état local initial paresseux.
 Nous allons éviter à utiliser le code suivant :
 
 ```javascript
-const [variable, setVariable] = useState(expensiveOperationFunction()) // pas bien 👎
+pas bien 👎
+const [variable, setVariable] = useState(expensiveOperationFunction()) //
 ```
 
 par contre :
 
 ```javascript
-const [variable, setVariable] = useState(() => expensiveOperationFunction()) //  bien 👍
+//  bien 👍
+const [variable, setVariable] = useState(() => expensiveOperationFunction())
 ```
 
 ou simplement
 
 ```javascript
-const [variable, setVariable] = useState(expensiveOperationFunction) //  bien 👍
+bien 👍
+const [variable, setVariable] = useState(expensiveOperationFunction) //
 ```
 
 ---
