@@ -2,17 +2,15 @@
 
 ## Side effects (effets bord)
 
-L'application React "vit" dans un élément de la page `<div id="root"></div>`. React crée une arborescence des éléments qu'il gère et injecte un markup dans root. Le markup peut être mis à jour si une variable de state change sa valeur. Dans ce cas la une partie de l'arborescence de React est re-evaluée.
-
 Pour l'instant nous n'avons pas parler des _side effects_ (en français: effets de bord). Par _side effects_ nous allons comprendre tout ce qui n'est pas directement lié à notre arborescence, tout ce qui se passe en dehors de notre `<div id="root"></div>`.
 
 Prenons quelques examples :
 
-- Nous enregistrons la liste des courses dans une bonne des données (pour que ce soit efficace, l'enregistrement est effectué à chaque changement de la liste)
+- Nous enregistrons la liste des courses dans une base des données (pour que ce soit efficace, l'enregistrement est effectué à chaque changement de la liste)
 - Nous enregistrons la mode couleur choisie dans un système de stockage du navigateur (`localStorage`)
-- Nous faisons une requette HTTP
-- Nous récévons une réponse (asynchrone) suite à notre requette HTTP
-- Nous réagissone aux events qui sont "attachés" en dehors de `<div id="root"></div>`, en particulier les events qui sont attaché à l'objet `window` (par exemple scroll)
+- Nous faisons une requête HTTP
+- Nous recevons une réponse (asynchrone) suite à notre requête HTTP
+- Nous réagissons aux events qui sont "attachés" en dehors de `<div id="root"></div>`, en particulier les events qui sont attaché à l'objet `window` (par exemple scroll)
 - Nous utilisons `setTimeout` ou `setInterval`
 - Nous modifions le `document` en dehors de notre component ou même toute notre application (en dehors de notre `<div id="root"></div>`), par exemple `document.title`
 
@@ -20,11 +18,13 @@ Prenons quelques examples :
 
 Pour mettre en place des _side effects_, React nous met en disposition un hook `useEffect`.
 
-Pourquoi avons nous besoin d'un hook ? Regardons l'exemple suivant
+Pourquoi avons nous besoin d'un hook ? Regardons l'exemple suivant (🚫)
 
-https://codepen.io/alyra/pen/RwKvMrq
+https://codepen.io/alyra/pen/VwPgXJJ
 
-Nous avons besoin d'un méchanisme qui permet de gérer _side effects_ avec plus de contrôle :
+https://codepen.io/alyra/pen/zYNeaOO
+
+Nous avons besoin d'un mécanisme qui permet de gérer _side effects_ avec plus de contrôle :
 
 - pouvoir executer uniquement quand le components "mounts" (1 fois)
 - pouvoir executer uniquement quand une variable change
@@ -44,21 +44,13 @@ useEffect(() => {
 
 https://codepen.io/alyra/pen/gOrzKyO
 
-### au montage (_mount_, initial render)
+### on _mount_, initial render
 
 ```javascript
 useEffect(() => {
-  console.log("je viens de monter!!!")
+  console.log("I've juste mounted")
 }, [])
 ```
-
-Ex. 1
-
-https://codepen.io/alyra/pen/PoNeaMq
-
-Ex. 2
-
-https://codepen.io/alyra/pen/jOqxKjB
 
 ### quand state ou props change
 
@@ -109,28 +101,19 @@ React.useEffect(() => {
 }, [])
 ```
 
-```javascript
-React.useEffect(() => {
-  console.log("render")
-  return () => {
-    console.log("cleanup before re-render")
-  }
-})
-```
+https://codepen.io/alyra/pen/RwKvMrq
 
-https://codepen.io/alyra/pen/BaKxxpx
+https://codepen.io/alyra/pen/qBRgYoB
 
 ## useEffect, localStorage et _lazy initial state_
 
-Nous avons enfin les outils pour mettre en place `localStorage` dans nos applications _Shopping List_ et _ToDo List._
+Nous avons enfin les outils pour mettre en place `localStorage` dans notre applications _Shopping List_.
 Nous allons démarrer avec [ce repo](https://github.com/pehaa/alyra-shopping-list-useeffect) et utiliser `useEffect` pour rendre élément `title` dynamique, mais surtout pour enregistrer la liste des courses et le thème choisi par l'utilisateur dans le navigateur.
 
 ### document.title
 
 Nous allons modifier `document.title` en fonction du nombre des produits sur la liste des courses.
 Nous allons y mettre soit 'Préparez votre liste des courses' (si elle est vide), soit 'Vous avez .. produit(s) sur votre liste des courses'.
-
-L'élément `title` se trouve dans la partie `head` de notre document HTML. C'est en dehors du _scope_ de notre application. Le titre devrait se mettre à jour à chaque fois où le nombre de produits sur la liste change. Nous allons dons utiliser le hook `useEffect` avec le deuxième paramètre `[shopping.length]`.
 
 ```javascript
 // src/components/ShoppingApp.js
@@ -147,22 +130,22 @@ const ShoppingApp = ({mode}) => {
       shopping.length === 0
         ? `Préparez vos courses`
         : `${shopping.length} produit(s) sur votre liste des courses`
-  }, [shopping.length])
+  }, [shopping])
 
   return /* comme avant */
 
 export default ShoppingApp
 ```
 
-Maintenant à chaque fois que `ShoppingApp` _render_ le titre du document est modifié
+Maintenant à chaque fois que `ShoppingApp` _render_ le titre du document est modifié.
 
 ---
 
 ### localStorage
 
-Nous avons utilisé `localStorage` afin d'enregistrer dans la mémoire du navigateur notre liste des courses et la récupérer à la prochaine visite (après rechargement de la page).
+Nous allons utilisé `localStorage` afin d'enregistrer dans la mémoire du navigateur notre liste des courses et la récupérer à la prochaine visite (après rechargement de la page).
 
-Un petit rappel sur l'utilisation de `localStorage` :
+Un petit point sur l'utilisation de `localStorage` :
 
 - `localStorage.setItem("colorMode", mode)` - enregistre la valeur de mode dans l'objet `localStorage`
 - `localStorage.getItem("colorMode")` - permet de récupérer la valeur enregistrée sous la clé `"colorMode"`
@@ -193,7 +176,7 @@ Alors :
 const [shopping, setShopping] = useState( JSON.parse(localStorage.getItem('myShoppingList')) || [] )`
 ```
 
-La valeur initiale de shopping est utilisée uniquement une fois, au moment ou le component monte. Néanmoins, l'expression `JSON.parse(localStorage.getItem('myShoppingList')) || []` sera évaluée à chaque render. Pour y remédier et améliorer la performance (l'échange avec `localStorage` peuvent être coûteuse au niveau de la performance), nous allons passer une fonction dans `useState` :
+La valeur initiale de shopping est utilisée uniquement une fois, au moment ou le component monte. Néanmoins, l'expression `JSON.parse(localStorage.getItem('myShoppingList')) || []` sera évaluée à chaque render. Pour y remédier et améliorer la performance (l'échange avec `localStorage` est synchrone), nous allons passer une fonction dans `useState` :
 
 ```javascript
 const [shopping, setShopping] = useState(
@@ -227,5 +210,4 @@ const [variable, setVariable] = useState(expensiveOperationFunction) //  bien �
 
 ## Exercices :
 
-- Utiliser la même approche et modifier le fichier `src/context/ModeContext.js` afin de profiter de localStorage pour stocker la valeur de `mode`.
 - [Todos App - localStorage et compagnie](https://github.com/pehaa/alyra-todos-localstorage)
