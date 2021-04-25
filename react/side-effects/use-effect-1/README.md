@@ -108,7 +108,7 @@ https://codepen.io/alyra/pen/qBRgYoB
 ## useEffect, localStorage et _lazy initial state_
 
 Nous avons enfin les outils pour mettre en place `localStorage` dans notre applications _Shopping List_.
-Nous allons démarrer avec [ce repo](https://github.com/pehaa/alyra-shopping-list-useeffect) et utiliser `useEffect` pour rendre élément `title` dynamique, mais surtout pour enregistrer la liste des courses et le thème choisi par l'utilisateur dans le navigateur.
+Nous allons démarrer avec [ce repo](https://github.com/pehaa/alyra-shopping-list-useeffect) et utiliser `useEffect` pour rendre élément `title` dynamique, mais surtout pour enregistrer la liste des courses dans le stockage du navigateur.
 
 ### document.title
 
@@ -117,7 +117,7 @@ Nous allons y mettre soit 'Préparez votre liste des courses' (si elle est vide)
 
 ```javascript
 // src/components/ShoppingApp.js
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 /* comme avant */
 
 const ShoppingApp = ({mode}) => {
