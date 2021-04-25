@@ -47,3 +47,4 @@
 - [State - Shopping List](./react/state/shopping-list-example)
 - [State - Exemples](./react/state/state-exemples)
 - [Project Gradients](./react/project-gradients)
+- [Side Effects](./react/side-effects/use-effect-1)
