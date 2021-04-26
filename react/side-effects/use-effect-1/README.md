@@ -2,7 +2,7 @@
 
 ## Side effects (effets bord)
 
-Pour l'instant nous n'avons pas parler des _side effects_ (en français: effets de bord). Par _side effects_ nous allons comprendre tout ce qui n'est pas directement lié à notre arborescence, tout ce qui se passe en dehors de notre `<div id="root"></div>`.
+Pour l'instant nous n'avons pas parler des _side effects_ (en français: effets de bord). Par _side effects_ nous allons comprendre tout ce qui n'est pas directement lié à notre arborescence, mais ce qui se passe en dehors de notre `<div id="root"></div>`.
 
 Prenons quelques examples :
 
@@ -10,15 +10,15 @@ Prenons quelques examples :
 - Nous enregistrons la mode couleur choisie dans un système de stockage du navigateur (`localStorage`)
 - Nous faisons une requête HTTP
 - Nous recevons une réponse (asynchrone) suite à notre requête HTTP
-- Nous réagissons aux events qui sont "attachés" en dehors de `<div id="root"></div>`, en particulier les events qui sont attaché à l'objet `window` (par exemple scroll)
+- Nous réagissons aux events qui sont "attachés" en dehors de `<div id="root"></div>`
 - Nous utilisons `setTimeout` ou `setInterval`
-- Nous modifions le `document` en dehors de notre component ou même toute notre application (en dehors de notre `<div id="root"></div>`), par exemple `document.title`
+- Nous modifions le `document` en dehors de notre `<div id="root"></div>`, par exemple nous ,modifion `document.title`
 
 ## <code>React.useEffect()</code>
 
 Pour mettre en place des _side effects_, React nous met en disposition un hook `useEffect`.
 
-Pourquoi avons nous besoin d'un hook ? Regardons l'exemple suivant (🚫)
+Pourquoi avons nous besoin d'un hook ? Regardons des exemples suivants 🚫
 
 https://codepen.io/alyra/pen/VwPgXJJ
 
@@ -56,8 +56,8 @@ useEffect(() => {
 
 ```javascript
 useEffect(() => {
-  console.log(`myVar1 vient d'être modifiée`, myVar1)
-}, [myVar1])
+  console.log(`myVar1 vient d'être modifiée`, myVariable)
+}, [myVariable])
 ```
 
 Comparons ces 2 exemples :
@@ -90,7 +90,7 @@ Ici, `title` est re-rendu uniquement si la valeur de la variable `like` change.
 
 https://codepen.io/alyra/pen/VwjPvgG
 
-### avec nettoyage
+### Avec cleanup (nettoyage)
 
 ```javascript
 React.useEffect(() => {
@@ -101,9 +101,9 @@ React.useEffect(() => {
 }, [])
 ```
 
-https://codepen.io/alyra/pen/RwKvMrq
-
 https://codepen.io/alyra/pen/qBRgYoB
+
+https://codepen.io/alyra/pen/RwKvMrq
 
 ## useEffect, localStorage et _lazy initial state_
 
