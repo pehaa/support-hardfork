@@ -6,7 +6,7 @@ const [myValue, setMyValue] = React.useState(initialValue)
 
 ## Ex. Dark mode (1)
 
-Dans cette exemple la variable `darkMode` est de type `boolean`.  
+Dans cet exemple la variable `darkMode` est de type `boolean`.  
 Si `darkMode` est `true` notre élément section prend des classes `bg-dark text-white`, dans le cas contraire il prend uniquement la class `bg-light`.
 
 Le bouton "Toggle mode" permet de _switcher_ le mode.
