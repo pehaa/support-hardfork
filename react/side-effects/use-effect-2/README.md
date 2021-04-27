@@ -2,7 +2,7 @@
 
 ## Fetch API
 
-Nous allons utiliser une API `Fetch`, disponible nativement dans le navigateur. Dans nos projets web nous n'avons pas besoin d'installer _axios_.
+Nous allons utiliser l'API `Fetch`, disponible nativement dans le navigateur. Dans nos projets web nous n'avons pas besoin d'installer _axios_.
 
 L'api `Fetch` nous fournit la méthode `fetch` qui permet de récupérer des ressources à travers le réseau de manière asynchrone (comme `axios.get`).
 
