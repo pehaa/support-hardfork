@@ -136,4 +136,4 @@ https://codepen.io/alyra/pen/mdRomQx
 
 ## Exercices :
 
-- Créer CRA et réproduire [Starwars Planets](https://stupefied-wozniak-d85a53.netlify.app/) - toute créativité est bienvenue
+- Créer CRA et reproduire [Starwars Planets](https://stupefied-wozniak-d85a53.netlify.app/) - toute créativité est bienvenue
