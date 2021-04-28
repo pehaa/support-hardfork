@@ -74,9 +74,9 @@ https://codepen.io/alyra/pen/oNBOPEV
 useEffect( () => {
   /* some side effects code */
   return () => {
-  /* some clean up code */
+    /* some clean up code */
   }
-}, [dependecies])
+}, [dependencies])
 ```
 
 `useEffect` est également évalué à CHAQUE render. Si `/* some side effects code */` n'est pas enveloppé dans une fonction, il va être directement exécuté et nous perdons tout le contrôle sur les side effects. 
