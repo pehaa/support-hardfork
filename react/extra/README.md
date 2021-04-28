@@ -1,30 +1,30 @@
 # Focus sur "l'anatomie" de `useEffect` et lazy state initialisation 
 a.k.a. Réponse à la question de Christophe
 
-Tous le hooks utilisés dans un component React sont appelés à CHAQUE render de ce component. C'est un comportement tout à fait naturel. Les hooks doivent être dans le body du component, jamais derrière une condition, justement pour assurer qu'ils soient exécutés à chaque render.
+Tous le hooks utilisés dans un component React sont appelés à CHAQUE render de ce component. Les hooks doivent être dans le body du component, jamais derrière une condition, justement pour assurer qu'ils soient exécutés à chaque render.
 
-Comme une fonction est exécuté, son paramètre est évalué peu importe s'il est ensuite utilisé ou pas. 
+Quand une fonction est exécuté, son paramètre est évalué peu importe s'il est ensuite utilisé ou pas :
 
 ```js
 const functionWithUselessParameter = (p) => null
 const somethingToEvaluate = () => {
-  console.log("If you read this, I did run.");
-};
+  console.log("If you read this, I did run.")
+}
 
-functionWithUselessParameter(somethingToEvaluate());
+functionWithUselessParameter(somethingToEvaluate())
 // "If you read this, I did run."
 ```
 
 https://codepen.io/alyra/pen/OJWGBPW
 
 
-Un autre exemple plus proche à `useState` où le paramètre n'est utilisé qu'une seule fois :
+L'exemple suivant est plus proche à `useState` où le paramètre n'est utilisé qu'une seule fois :
 
 ```js
-let initialrender = false;
+let initialRender = true
 const functionWithMostlyUselessParameter = (p) => {
-  if (initialrender) {
-    initialrender = false
+  if (initialRender) {
+    initialRender = false
     return p
   }
   return null
@@ -44,26 +44,26 @@ https://codepen.io/alyra/pen/ZELZqYM
 En permettant de passer une fonction en tant que paramètre. Exactement comme c'est fait dans `useState` - avec le _lazy state initialisation._
 
 ```js
-let initialrender = true;
+let initialRender = true
 const somethingToEvaluate = () => {
-  console.log("If you read this, I did run.");
-};
+  console.log("If you read this, I did run.")
+}
 
 const betterFunctionWithMostlyUselessParameter = (p) => {
-  if (initialrender) {
-    initialrender = false;
+  if (initialRender) {
+    initialRender = false
     if (typeof p === "function") {
-      return p();
+      return p()
     }
-    return p;
+    return p
   }
-  return null;
-};
+  return null
+}
 
 // somethingToEvaluate runs et est utilisé
-betterFunctionWithMostlyUselessParameter(somethingToEvaluate);
+betterFunctionWithMostlyUselessParameter(somethingToEvaluate)
 // somethingToEvaluate does not run
-betterFunctionWithMostlyUselessParameter(somethingToEvaluate);
+betterFunctionWithMostlyUselessParameter(somethingToEvaluate)
 ```
 
 https://codepen.io/alyra/pen/oNBOPEV
