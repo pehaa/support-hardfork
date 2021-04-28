@@ -81,7 +81,7 @@ useEffect( () => {
 
 `useEffect` est également évalué à CHAQUE render. Si `/* some side effects code */` n'est pas enveloppé dans une fonction, il va être directement exécuté et nous perdons tout le contrôle sur les side effects. 
 
-Pareil pour la fonction de "clean up". Si `/* some clean up code */`  n'est pas enveloppé dans une fonction, `/* some clean up code */` va être exécuté au moment ou sideEffect est évalué.
+Pareil pour la fonction de "clean up". Si `/* some clean up code */`  n'est pas enveloppé dans une fonction, `/* some clean up code */` va être exécuté au moment ou sideEffect  (`/* some side effects code */`) est évalué.
 
 En ce qui concerne les paramètres à passer dans ces fonctions ? Que pourrait on vouloir y passer ? `useEffect` a pour la tâche de synchroniser "state of the world" avec "state of the component". Les fonction "callback" et "clean up" ont déjà accès à toutes les valeurs de state du component (c'est dans leur global scope).
 
