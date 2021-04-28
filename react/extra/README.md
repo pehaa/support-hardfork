@@ -1,9 +1,9 @@
-# Focus sur "l'anatomie" de `useEffect` et lazy state intiatialisation 
+# Focus sur "l'anatomie" de `useEffect` et lazy state initialisation 
 a.k.a. Réponse à la question de Christophe
 
-Tous le hooks utilisés dans un component React sont appelés à CHAQUE render de ce component. C'est un comportement tout à fait naturel. Les hooks doivent être dans le body du component, jamais derrière une condition, justement pour assurer qu'ils soient executés à chaque render.
+Tous le hooks utilisés dans un component React sont appelés à CHAQUE render de ce component. C'est un comportement tout à fait naturel. Les hooks doivent être dans le body du component, jamais derrière une condition, justement pour assurer qu'ils soient exécutés à chaque render.
 
-Comme une fonction est executé, son paramète est evalué peu importe s'il est ensuite utilisé ou pas. 
+Comme une fonction est exécuté, son paramètre est évalué peu importe s'il est ensuite utilisé ou pas. 
 
 ```js
 const functionWithUselessParameter = (p) => null
@@ -41,7 +41,7 @@ https://codepen.io/alyra/pen/ZELZqYM
 
 ## Comment pouvons nous optimiser ça ?
 
-En permettant de passer une fonction en tant que paramètre. Exactement comme c'est fait dans `useState` - avec le _lazy state initialization._
+En permettant de passer une fonction en tant que paramètre. Exactement comme c'est fait dans `useState` - avec le _lazy state initialisation._
 
 ```js
 let initialrender = true;
@@ -81,11 +81,10 @@ useEffect( () => {
 
 `useEffect` est également évalué à CHAQUE render. Si `/* some side effects code */` n'est pas enveloppé dans une fonction, il va être directement exécuté et nous perdons tout le contrôle sur les side effects. 
 
-Pareil pour la fonction de "clean up". Si `/* some clean up code */`  n'est pas enveloppé dans une fonction, `/* some clean up code */` va être executé au moment ou sideEffect est évalué.
+Pareil pour la fonction de "clean up". Si `/* some clean up code */`  n'est pas enveloppé dans une fonction, `/* some clean up code */` va être exécuté au moment ou sideEffect est évalué.
 
 En ce qui concerne les paramètres à passer dans ces fonctions ? Que pourrait on vouloir y passer ? `useEffect` a pour la tâche de synchroniser "state of the world" avec "state of the component". Les fonction "callback" et "clean up" ont déjà accès à toutes les valeurs de state du component (c'est dans leur global scope).
 
-Aussi, c'est naturel que useEffect lui même ne retourne rien. Il est là pour des side effects donc retourner qqch n'a pas beaucoup de sens.
+Aussi, c'est naturel que useEffect lui même ne retourne rien. Il est là pour des side effects donc retourner quelque-chose n'a pas beaucoup de sens.
 
 J'espère que ça fait sens.
-
