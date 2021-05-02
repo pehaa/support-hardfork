@@ -2,14 +2,14 @@
 
 ## Fetch API
 
-Nous allons utiliser une API `Fetch`, disponible nativement dans le navigateur - pas besoin d'installer des bibliothèque (comme axios par exemple).
+Nous allons utiliser l'API `Fetch`, disponible nativement dans le navigateur. Dans nos projets web nous n'avons pas besoin d'installer _axios_.
 
-L'api Fetch nous fournit la méthode `fetch` qui permet de récupérer des ressources à travers le réseau de manière asynchrone (comme `axios.get`).
+L'api `Fetch` nous fournit la méthode `fetch` qui permet de récupérer des ressources à travers le réseau de manière asynchrone (comme `axios.get`).
 
 - `fetch` retourne une promise
-- la promise retournée par fetch _resolves_ avec `response`, `response` ne contient pas encore des données, c'est une réponse générique (ok, status, ...)
+- la promise retournée par fetch _resolves_ avec `response` qui ne contient pas encore des données, c'est une réponse générique (ok, status, ...)
 - pour obtenir les données nous allons appeler `response.json()` qui aussi retourne une promise
-- La promesse retournée par fetch () ne _rejects_ pas si le status de la réponse HTTP est 40x ou 50x. Par contre elle _resolves_ en `response` avec `ok: false`
+- la promesse retournée par fetch () ne _rejects_ pas si le status de la réponse HTTP est 40x ou 50x. Par contre elle _resolves_ en `response` avec `ok: false`
 
 ```javascript
 fetch("https://css-tricks.com/wp-json/wp/v2/posts")
@@ -25,6 +25,44 @@ fetch("https://css-tricks.com/wp-json/wp/v2/posts")
   .catch((error) => {
     console.error(error.message)
   })
+```
+
+## `fetch` dans `useEffect`
+
+```js
+useEffect(() => {
+  fetch("https://myfake.api")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("something went wrong")
+      }
+      return response.json()
+    })
+    .then((data) => {
+      console.log(data)
+    })
+    .catch((error) => {
+      console.error(error.message)
+    })
+}, [])
+```
+
+```js
+useEffect(() => {
+  fetch(`https://myfake.api?param1=${myParam1}&param2=${myParam2}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("something went wrong")
+      }
+      return response.json()
+    })
+    .then((data) => {
+      console.log(data)
+    })
+    .catch((error) => {
+      console.error(error.message)
+    })
+}, [myParam1, myParam2])
 ```
 
 https://codepen.io/alyra/pen/OJWqmmv
@@ -87,8 +125,15 @@ const Blog = () => {
 
 https://codepen.io/alyra/pen/mdRomQx
 
-##
+## Weather App
+
+- [Demo](https://hardfork-weather.netlify.app/)
+- [Starter repo](https://github.com/pehaa/alyra-weather-app-start)
+- [fetch](https://codepen.io/alyra/pen/eYgXbdV)
+- [Preview data React](https://codepen.io/alyra/pen/oNBVJxm)
+
+
 
 ## Exercices :
 
--
+- Créer CRA et reproduire [Starwars Planets](https://stupefied-wozniak-d85a53.netlify.app/) - toute créativité est bienvenue
