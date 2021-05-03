@@ -51,3 +51,4 @@
 - [Side Effects 2](./react/side-effects/use-effect-2)
 - [Hooks anatomy](./react/extra)
 - [Fetching Data & what can go wrong?](./react/fetching-data)
+- [Project Google Fonts](./react/project-google-fonts)

@@ -1,15 +1,19 @@
 # Fetching Data & what can go wrong?
 
-Voici notre point de départ
+Voici notre point de départ, vous pouvez démarrer [avec ce repo.](https://github.com/pehaa/starwars-planets-starter)
 
 ```js
-// src/App.js
+const App = () => {
+  return (
+    <section className="container p-3">
+      <h1>Planètes dans l'univers Star Wars</h1>
+      <Planets />
+    </section>
+  );
+}
 ```
 
 ```js
-import { useState } from "react"
-import Planet from "./Planet"
-
 const Planets = () => {
   const [planets, setPlanets] = useState([])
 
@@ -24,13 +28,11 @@ const Planets = () => {
   )
 }
 
-export default Planets
 ```
 
 Notre component `Planet` est comme ceci :
 
 ```js
-// src/components/Planet.js
 const Planet = ({ planet }) => {
   const { name, population, climate } = planet
   return (
@@ -47,15 +49,12 @@ const Planet = ({ planet }) => {
     </div>
   )
 }
-
-export default Planet
 ```
 
 ## Step 1 - Fetch on mount
 
-our commencer, nous allons afficher 10 premiers planètes, en utilisant cet URL `https://swapi.dev/api/planets/?page=1`
 
-Nous allons utiliser
+Pour commencer, nous allons afficher 10 premiers planètes, en utilisant cet URL `https://swapi.dev/api/planets/?page=1`
 
 https://codepen.io/alyra/pen/yLgmyrg
 
@@ -71,8 +70,9 @@ Pour pouvoir "visionner" notre "loading" nous pouvons ralentir l'arrivée de not
 
 ```js
 fetch(...)
-// ⚠️ à copier-coller es surtout NE PAS OUBLIER d'ENLEVER 😂
+// ⚠️ à copier-coller es surtout NE PAS OUBLIER d'ENLEVER ⚠️
   .then(response => {
+    console.log("don't forget me here!!!")
     return new Promise((resolved) => {
       setTimeout(() => resolved(response), 2000)
     })
@@ -83,7 +83,7 @@ fetch(...)
 alternativement dans la syntaxe `async/await`
 
 ```js
-// ⚠️ à copier-coller es surtout NE PAS OUBLIER d'ENLEVER 😂
+// ⚠️ à copier-coller es surtout NE PAS OUBLIER d'ENLEVER ⚠️
 await new Promise(resolved => {
   setTimeout(() => resolved(), 2000)
 })
@@ -93,7 +93,7 @@ https://codepen.io/alyra/pen/ExZqaBQ
 
 ## Step 3 - Affichage des erreurs
 
-<div style="width:100%;height:0;padding-bottom:38%;position:relative;"><iframe src="https://giphy.com/embed/dvD0OAETRfCXC" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+<div style="width:100%;height:0;padding-bottom:38%;position:relative;"><iframe src="https://giphy.com/embed/dvD0OAETRfCXC" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p></p>
 
 Il est également important d'informer l'utilisateur si son action a échoué. Il est peu probable que l'utilisateur a son console ouverte - cette information devrait se trouver sur l'écran.
 
@@ -117,11 +117,11 @@ https://codepen.io/alyra/pen/MWJNwmO
 
 https://codepen.io/alyra/pen/dyNxoKx
 
-## Step 6 - Unmounting components pendant le fetch
+## Step 6* - Unmounting components pendant le fetch
 
 https://codepen.io/alyra/pen/ZELgGXr
 
-## Step 7 - Aborting fetch
+## Step 7** - Aborting fetch
 
 Nous allons utiliser [l'API `AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController)
 

@@ -1,4 +1,4 @@
-# Focus sur "l'anatomie" de `useEffect` et lazy state initialisation 
+# Focus sur "l'anatomie" de <code>useEffect</code> et lazy state initialisation 
 a.k.a. Réponse à la question de Christophe
 
 Tous le hooks utilisés dans un component React sont appelés à CHAQUE render de ce component. Les hooks doivent être dans le body du component, jamais derrière une condition, justement pour assurer qu'ils soient exécutés à chaque render.
