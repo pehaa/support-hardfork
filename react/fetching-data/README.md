@@ -159,3 +159,7 @@ useEffect(() => {
   }
 }, [url])
 ```
+
+Avec `useRef` mount/unmount
+
+https://codepen.io/alyra/pen/wvgVmae
