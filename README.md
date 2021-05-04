@@ -52,3 +52,4 @@
 - [Hooks anatomy](./react/extra)
 - [Fetching Data & what can go wrong?](./react/fetching-data)
 - [Project Google Fonts](./react/project-google-fonts)
+- [useReducer](./react/usereducer)
