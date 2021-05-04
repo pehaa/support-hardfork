@@ -1,8 +1,25 @@
 # <code>useReducer</code> hook
 
-Le hook `useReducer` permet de gérer le _state_, il est une alternative **plus flexible** (**plus configurable** mais aussi **plus complexe**) pour `useState`.
+`useReducer` est une alternative à `useState` (plus flexible, plus configurable). `useReducer` Accepte un _reducer_ de type `(state, action) => newState`, et renvoie _current state_ accompagné d’une méthode dispatch.
+
+> `useReducer` est souvent préférable à useState quand vous avez une logique d’état local complexe qui comprend plusieurs sous-valeurs, ou quand l’état suivant dépend de l’état précédent.
 
 Typiquement, nous utilisons `useReducer` pour réunir ensemble la gestion de quelques variables de state qui sont reliées entre elles.
+
+```js
+const [stateVar1, setStateVar1] = useState(initialVar1)
+const [stateVar2, setStateVar2] = useState(initialVar2)
+const [stateVar3, setStateVar3] = useState(initialVar3)
+```
+
+```js
+const initialState = {
+  var1: initialVar1,
+  var2: initialVar2,
+  var3: initialVar3,
+}
+const [state, dispatch] = useReducer(reducer, initialState)
+```
 
 ## Anatomie
 
@@ -15,23 +32,20 @@ const reducer = (state, action) => {
 }
 
 const [state, dispatch] = React.useReducer(reducer, initialState, init)
-// ...
+
+// Ensuite quand nous appellons
 dispatch(action)
-// --->
+//React execute
 reducer(state, action)
 ```
 
-Comme dans l'API de `useState`, `useReducer` retourne un array, le premier élément est notre state, le deuxième est une fonction (`dispatch`).
+- Comme dans l'API de `useState`, `useReducer` retourne un array, le premier élément est notre state, le deuxième est une fonction (`dispatch`).
 
-Nous appelons la fonction `dispatch` à chaque fois où nous allons mettre à jour `state`. Pourtant la fonction `dispatch` ne modifie pas `state` directement. Elle délègue ceci à la fonction `reducer`.
+- Nous appelons la fonction `dispatch` à chaque fois où nous allons mettre à jour `state`. Pourtant la fonction `dispatch` ne modifie pas `state` directement. Elle délègue ceci à la fonction `reducer`.
 
-La fonction `reducer` retourne une nouvelle valeur de state et si la modification de state est détectée le re-render est déclenché.
+- La fonction `reducer` retourne une nouvelle valeur de state et si la modification de state est détectée le re-render est déclenché.
 
-La dénomination `dispatch`, `action` et `reducer` est tout à fait facultative et suit une certaine convention provenant de `Redux`.
-
-Dans notre premier exemple, pour voir plus clairement le passage de `useState` vers `useReducer`, nous n'allons pas utiliser les noms `dispatch` ou `action`.
-
-https://codepen.io/alyra/pen/eYgqLRJ
+- La dénomination `dispatch`, `action` et `reducer` est tout à fait facultative et suit une certaine convention provenant de `Redux`.
 
 ## Exemple Counter
 
@@ -39,16 +53,16 @@ https://codepen.io/alyra/pen/eYgqLRJ
 // avec useState
 const Counter = () => {
   const [count, setCount] = React.useState(0)
-  const handleButtonClick = () => {
-    setCount(count + 1)
-  }
   return (
     <>
       <button type="button" onClick={() => setCount(count + 1)}>
-        +1
+        -1
       </button>
       <button type="button" onClick={() => setCount(count + 1)}>
-        -1
+        +1
+      </button>
+      <button type="button" onClick={() => setCount(0)}>
+        Reset
       </button>
       {count}
     </>
@@ -56,309 +70,183 @@ const Counter = () => {
 }
 ```
 
+https://codepen.io/alyra/pen/LYWPEBO
+
 ```javascript
 // avec useReducer
-const reducer = (count, action) => {
+const reducer = (state, action) => {
   switch (action.type) {
+    case "INCREMENT":
+      return state + 1
+    case "DECREMENT":
+      return state - 1
+    case "RESET":
+      return 0
+    default:
+      throw new Error(`Unsupported action type: ${action.type}`)
   }
 }
 const Counter = () => {
-  const [count, setCount] = React.useReducer(reducer, 0)
-  const handleButtonClick = () => {
-    setCount(count + 1)
-    // setCount(count + 1) délègue et appelle reducer(count, count + 1)
-  }
+  const [state, dispatch] = React.useReducer(reducer, 0)
   return (
-    <button type="button" onClick={handleButtonClick}>
-      {count}
-    </button>
+    <>
+      <button type="button" onClick={() => dispatch({ type: "DECREMENT" })}>
+        -1
+      </button>
+      <button type="button" onClick={() => dispatch({ type: "INCREMENT" })}>
+        +1
+      </button>
+      <button type="button" onClick={() => dispatch({ type: "RESET" })}>
+        Rest
+      </button>
+      {state}
+    </>
   )
 }
 ```
 
-Nous pouvons observer que le code suivant :
-
 ```javascript
-const [state, setState] = React.useState(initialState)
+/* avant :
+setCount(count + 1)
+*/
+dispatch({ type: "INCREMENT" })
 ```
 
-est équivalent à :
-
 ```javascript
-const reducer = (state, newState) => newState
-const [state, setState] = React.useReducer(reducer, initialState)
+/* avant :
+setCount(count - 1)
+*/
+dispatch({ type: "DECREMENT" })
 ```
 
-où nous ajoutons un étape supplémentaire - `reducer`.
+```javascript
+/* avant :
+setCount(0)
+*/
+dispatch({ type: "RESET" })
+```
+
+https://codepen.io/alyra/pen/rNyBazx
 
 ---
 
-**Digression (optionnelle) :** Pour être plus précis, il faudrait prendre en compte aussi qu'avec l'API de `useState`, `setCount` peut avoir une _fonction_ comme paramètre, par exemple `setCount(count => count + 1)`. Le code ci-dessous fonctionne correctement dans les 2 cas `setCount(count + 1)` et `setCount(count => count + 1)` :
+## Exemple - Sandwicherie React
+
+https://codepen.io/alyra/pen/VwPoBev
+
+https://codepen.io/alyra/pen/eYgqLRJ
 
 ```javascript
-const reducer = (count, newCount) =>
-  typeof newCount === "function" ? newCount(count) : newCount
-const [count, setCount] = React.useReducer(reducer, 0)
+/* avant :
+setTaken([...taken, ingredient]);
+setToTake(toTake.filter((el) => el !== ingredient));
+setPrice(price + 0.5);
+*/
+dispatch({ type: "ADD", payload: ingredient })
 ```
 
----
-
-Pour résumer, `useReducer` est comme `useState` avec en un complément, la fonction `reducer`.
-
-Voici le code complet :
-
-https://codepen.io/alyra/pen/Pozeedw
-
-Est-ce que cet exemple est plus simple, plus lisible, plus maintenable avec `useReducer` qu'avec `useState` ? Non, et nous allons pas utiliser `useReducer` dans ce type des cas.
-
-Nous allons maintenant passer aux exemples où l'utilisation de `useReducer` est justifiée (notre code deviendra plus lisible, plus court, plus maintenable). Nous allons voir dans les exemples suivants que nous pouvons tailler `reducer` selon nos besoins. Par conséquent, nous avons aussi plus de liberté au niveau de la fonction `dispatch`.
-
-## Exemple 2 - Font Preview Widget
-
-https://codepen.io/alyra/pen/vYKjmvg
-
 ```javascript
-const [text, setText] = React.useState(
-  "Portez ce vieux whisky au juge blond qui fume !? 0123456789"
-)
-const [size, setSize] = React.useState("20")
-const [italic, setItalic] = React.useState(false)
+/* avant :
+setTaken(taken.filter((el) => el !== ingredient));
+setToTake([...toTake, ingredient]);
+setPrice(price - 0.5);
+*/
+dispatch({ type: "REMOVE", payload: ingredient })
 ```
 
-et nous utilisons ensuite :
+## Exemple - Star Wars Planets (<code>useReducer</code> & <code>fetch</code>)
 
-- `setText(event.target.value)`,
-- `setSize(event.target.value)`
-- `setItalic(event.target.checked)`
-
-Voici un exemple d'une version avec `React.useReducer`
+https://codepen.io/alyra/pen/mdWbyYa
 
 ```javascript
-const initialState = {
-  text: "Portez ce vieux whisky au juge blond qui fume !? 0123456789",
-  size: "20",
-  italic: false,
-}
-const [state, setState] = React.useReducer(reducer, initialState)
-```
-
-Notre fonction `reducer` est définie comme ci-dessous :
-
-```javascript
-const reducer = (state, newState) => {
-  return {
-    ...state,
-    ...newState,
-  }
-}
-```
-
-et les mises à jour de state appelées comme ceci :
-
-- `setState({ text: event.target.value })` => `reducer` modifiera la clé `text`,
-- `setState({ size: event.target.value })` => `reducer` modifiera la clé `size`
-- `setState({ italic: event.target.checked })` => `reducer` modifiera la clé `italic`
-
-Vous trouverez le code complet dans le pen suivant :
-
-https://codepen.io/alyra/pen/OJXZgJQ
-
-## Exemple 3 - Shopping List
-
-https://codepen.io/alyra/pen/zYBjade
-
-```javascript
-const ShoppingApp = () => {
-  const initialShopping = ["cumin", "curry", "poivre"]
-  const [shopping, setShopping] = React.useState(initialShopping)
-
-  const handleDoneClick = product => {
-    // action "REMOVE"
-    setShopping(shopping.filter(el => el !== product))
-  }
-
-  return (
-    <section>
-      <h2>My shopping List</h2>
-      <ol>
-        {shopping.map(product => {
-          return (
-            <li key={product}>
-              {product}
-              <button onClick={() => handleDoneClick(product)}>done!</button>
-            </li>
-          )
-        })}
-      </ol>
-      <AddProductForm shopping={shopping} setShopping={setShopping} />
-    </section>
-  )
-}
-
-const AddProductForm = props => {
-  const { shopping, setShopping } = props
-
-  const handleFormSubmit = event => {
-    event.preventDefault()
-    const newProduct = event.target.elements.product.value
-
-    if (shopping.includes(newProduct)) {
-      alert(`${newProduct} est déjà sur la liste`)
-    } else {
-      // action "ADD"
-      setShopping([...shopping, newProduct])
-    }
-    event.target.reset()
-  }
-
-  return (
-    <form onSubmit={handleFormSubmit}>
-      <label htmlFor="product">Ajouter sur la liste</label>
-      <input id="product" required />
-      <button type="submit">J'ajoute !</button>
-    </form>
-  )
-}
-```
-
-Dans l'exemple ci-dessus nous appelons `setShopping` pour effectuer une des deux actions :
-
-- ajouter un nouveau produit sur la liste (nous pouvons appeler cette action "ADD")
-- retirer un produit de la liste ("REMOVE")
-
-Par convention les noms des actions sont souvent en majuscules.
-
-Voici comment nous allons remplacer `useState` :
-
-```javascript
-// const initialShopping = ["cumin", "curry", "poivre"]
-// avant : const [shopping, setShopping] = React.useState(initialShopping);
-const initialShopping = ["cumin", "curry", "poivre"]
-const [shopping, dispatch] = React.useReducer(shoppingReducer, initialShopping)
-```
-
-Et voici la fonction `shoppingReducer` :
-
-```javascript
-const shoppingReducer = (shopping, action) => {
-  switch (action.type) {
-    case "ADD":
-      return [...shopping, action.product]
-    case "REMOVE":
-      return shopping.filter(el => el !== action.product)
-    default:
-      throw new Error(`Unsupported action type ${action.type}`)
-  }
-}
-```
-
-Quand la fonction `dispatch` est appelée, `shoppingReducer` est exécutée. Les arguments de `shoppingReducer` est state (`shopping`) dans notre cas, 2e paramètre (`action`) reprend l'argument passé à `dispatch`.
-
-Nous devons alors passer `type` et `product` dans `dispatch`.
-
-```javascript
-// avant setShopping(shopping.filter((el) => el !== product))
-dispatch({ type: "REMOVE", product })
-// avant setShopping([...shopping, newProduct])
-dispatch({ type: "ADD", product: newProduct })
-```
-
-Vous trouverez le code complet ici :
-
-https://codepen.io/alyra/pen/jOrxZov
-
-## Exemple 4 - Star Wars Planets (<code>useReducer</code> & <code>fetch</code>)
-
-Analysez l'exemple ci-dessous qui fusionne l'approche d'exemple 2 et d'exemple 3
-
-Vous trouverez le code de départ (fonctionnel mais utilisant `useState`) ici :
-
-https://codepen.io/alyra/pen/VwaBvqZ
-
-Essayez de faire le refactoring vous-même, vous devez alors mettre en place une variable `state` avec la valeur initiale
-
-```javascript
+/* avant
+const [planets, setPlanets] = useState([]);
+const [loading, setLoading] = useState(false);
+const [error, setError] = useState("");
+const [page, setPage] = useState(1);
+const [hasNext, setHasNext] = useState(null);
+*/
 const initialState = {
   planets: [],
   loading: false,
+  error: "",
   page: 1,
-  hasNext: true,
-  error: false,
+  hasNext: null,
 }
+const [state, dispatch] = useReducer(reducer, initialState)
 ```
 
-Notre fonction `reducer` supportera 4 actions "LOADING", "NEXT PAGE", "RESOLVED" et "ERROR".
+Notre fonction `reducer` supportera 4 actions
+
+- `"FETCH_INIT"`
+- `"FETCH_SUCCESS"`
+- `"FETCH_FAILURE"`
+- `"NEXT PAGE"`
 
 ```javascript
 const reducer = (state, action) => {
   switch (action.type) {
-    case "LOADING":
+    case "FETCH_INIT":
       return {
         ...state,
         loading: true,
+      }
+    case "FETCH_SUCCESS":
+      return {
+        ...state,
+        loading: false,
+        hasNext: !!action.payload.next,
+        planets: [...state.planets, ...action.payload.results],
+      }
+    case "FETCH_FAILURE":
+      return {
+        ...state,
+        error: action.payload,
       }
     case "NEXT PAGE":
       return {
         ...state,
         page: state.page + 1,
       }
-    case "RESOLVED":
-      return {
-        ...state,
-        loading: false,
-        hasNext: !!action.data.next,
-        planets: [...state.planets, ...action.data.results],
-      }
-    case "ERROR":
-      return {
-        ...state,
-        error: action.error,
-      }
     default:
       throw new Error(`Unsupported action type ${action.type}`)
   }
 }
 ```
 
-et nous allons remplacer chaque state "setter" comme ceci :
-
 ```javascript
 /* avant :
-// action type "NEXT PAGE"
-setPage(page + 1)
-*/
-dispatch({ type: "NEXT PAGE" })
-```
-
-```javascript
-/* avant :
-// action type "LOADING"
 setLoading(true);
 */
-dispatch({ type: "LOADING" })
+dispatch({ type: "FETCH_INIT" })
 ```
 
 ```javascript
 /* avant :
-// action type "RESOLVED"
 setLoading(false);
 setPlanets([...planets, ...data.results]);
 setHasNext(!!data.next);
 */
-dispatch({ type: "RESOLVED", data })
+dispatch({ type: "FETCH_SUCCESS", payload: data })
 ```
 
 ```javascript
-/*
-// action type "ERROR"
+/* avant :
 setError(error.message);
 */
-dispatch({ type: "ERROR", error: error.message })
+dispatch({ type: "ERROR", payload: error.message })
+```
+
+```javascript
+/* avant :
+setPage(page + 1)
+*/
+dispatch({ type: "NEXT_PAGE" })
 ```
 
 Vous trouverez le code complet ici :
 
-https://codepen.io/alyra/pen/GRqdxrQ
+https://codepen.io/alyra/pen/ZEezYgB
 
 ---
 
@@ -367,15 +255,17 @@ https://codepen.io/alyra/pen/GRqdxrQ
 Vous vous rappelez de "lazy initial state" dans l'API de `useState` ?
 
 ```javascript
-const [shopping, setShopping] = useState(expensiveOperationFunction()) // pas bien 👎
+// pas très bien 👎
+const [shopping, setShopping] = useState(expensiveOperationFunction())
 ```
 
 React a besoin du résultat de `expensiveOperationFunction` une fois seulement, lorsque le component est monté, pour initier `shopping`. Cependant avec le code présenté ci-dessus, la fonction `expensiveOperationFunction` sera exécutée à chaque re-render.
 
-Pour remédier à ce problème et empêcher la re-évaluation d'une fonction coûteuse, nous passons **cette fonction** (sans l'appeler) en tant qu' "initial state".
+Pour remédier à ce problème et empêcher la re-évaluation d'une fonction coûteuse, nous passons **cette fonction** en tant qu' "initial state".
 
 ```javascript
-const [shopping, setShopping] = useState(expensiveOperationFunction) //  bien 👍 ici nous passons la fonction, mais nous ne l'appelons pas
+// bien 👍 ici nous passons la fonction, mais nous ne l'appelons pas
+const [shopping, setShopping] = useState(expensiveOperationFunction)
 ```
 
 **L'API de `useReducer`** nous permet également d'initier state uniquement au premier "render". Pour cela nous devons utiliser le 3 argument de `useReducer`, par exemple :
@@ -390,3 +280,51 @@ const init = initialState => {
 }
 const [shopping, dispatch] = React.useReducer(reducer, [], init)
 ```
+
+---
+
+## Implementer `useState` avec `useReducer`
+
+Nous pouvons observer que le code suivant :
+
+```javascript
+const [count, setCount] = useState(0)
+```
+
+est équivalent à :
+
+```js
+const reducer = (count, newCount) => newCount
+const [count, setCount] = React.useReducer(reducer, 0)
+```
+
+```js
+const reducer = (state, action) => action
+const useState = initialState => {
+  return React.useReducer(reducer, initialState)
+}
+```
+
+Voici l'implementanion complete prennant en compte la possibilité de passer des fonctions en tant qu'initial state ou dans la fonction "update" :
+
+```javascript
+const reducer = (state, action) => {
+  if (typeof action === "function") {
+    return action(state)
+  }
+  return action
+}
+
+const init = initialState => {
+  if (typeof initiaState === "function") {
+    return initialState()
+  }
+  return initialState
+}
+
+const useState = initialState => {
+  return React.useReducer(reducer, initialState, init)
+}
+```
+
+---
