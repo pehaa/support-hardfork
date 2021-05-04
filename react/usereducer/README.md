@@ -279,8 +279,10 @@ const init = (initialState) => {
   }
   return initialState
 }
-const [shopping, dispatch] = React.useReducer(reducer, [], init)
+const [state, dispatch] = React.useReducer(reducer, [], init)
 ```
+
+https://codepen.io/alyra/pen/jOrxZov
 
 ---
 
