@@ -232,7 +232,8 @@ dispatch({ type: "FETCH_SUCCESS", payload: data })
 
 ```javascript
 /* avant :
-setError(error.message);
+setError(error.message)
+setLoading(false)
 */
 dispatch({ type: "ERROR", payload: error.message })
 ```
@@ -271,7 +272,7 @@ const [shopping, setShopping] = useState(expensiveOperationFunction)
 **L'API de `useReducer`** nous permet également d'initier state uniquement au premier "render". Pour cela nous devons utiliser le 3 argument de `useReducer`, par exemple :
 
 ```javascript
-const init = initialState => {
+const init = (initialState) => {
   // initialState = le 2e param de useReducer
   if (localStorage.getItem("shopping")) {
     return JSON.parse(localStorage.getItem("shopping"))
@@ -300,7 +301,7 @@ const [count, setCount] = React.useReducer(reducer, 0)
 
 ```js
 const reducer = (state, action) => action
-const useState = initialState => {
+const useState = (initialState) => {
   return React.useReducer(reducer, initialState)
 }
 ```
@@ -315,14 +316,14 @@ const reducer = (state, action) => {
   return action
 }
 
-const init = initialState => {
+const init = (initialState) => {
   if (typeof initiaState === "function") {
     return initialState()
   }
   return initialState
 }
 
-const useState = initialState => {
+const useState = (initialState) => {
   return React.useReducer(reducer, initialState, init)
 }
 ```
