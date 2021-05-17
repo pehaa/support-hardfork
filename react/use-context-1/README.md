@@ -172,7 +172,7 @@ const GradientsList = props => {
         const { name, start, end, tags = [] } = el
         return (
           <Gradient
-            key={el.name}
+            key={name}
             colorStart={start}
             colorEnd={end}
             name={name}
