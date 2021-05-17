@@ -196,7 +196,7 @@ Nous allons enlever `filter` et `setFilter` en tant que props.
 ```javascript
 // src/components/Gradient/GradientTagButton.js
 import { useContext } from "react"
-import { FilterContext } from "./../../context/FilterContext"
+import { FilterContext } from "../context/FilterContext"
 
 const GradientTagButton = ({ tag }) => {
   const { filter, setFilter } = useContext(FilterContext)
@@ -211,8 +211,8 @@ export default GradientTagButton
 ```javascript
 // src/components/GradientsSelect.js
 import { useContext } from "react"
-import { uniqueTags } from "../gradients"
-import { FilterContext } from "./../context/FilterContext"
+import { uniqueTags as tags } from "../gradients"
+import { FilterContext } from "../context/FilterContext"
 
 const GradientsSelect = () => {
   const { filter, setFilter } = useContext(FilterContext)
@@ -235,11 +235,9 @@ import { createContext, useState, useContext } from "react"
 // créer FilterContext object
 const FilterContext = createContext()
 
-/* le component-provider qui embrassera la partie de notre app où on utilise ce context */
-
 export const useFilter = () => {
   const context = useContext(FilterContext)
-  if (context === "undefined") {
+  if (context === undefined) {
     throw new Error(
       `It seems that you are trying to use FilterContext outside of its provider`
     )
@@ -290,7 +288,7 @@ export const TodosDispatchContext = createContext()
 
 export const useTodosDispatch = () => {
   const context = useContext(TodosDispatchContext)
-  if (context === "undefined") {
+  if (context === undefined) {
     throw new Error("useTodosDispatch within TodosDispachContext.Provider")
   }
   return context
