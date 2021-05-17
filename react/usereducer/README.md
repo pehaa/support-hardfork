@@ -181,7 +181,7 @@ Notre fonction `reducer` supportera 4 actions
 - `"FETCH_INIT"`
 - `"FETCH_SUCCESS"`
 - `"FETCH_FAILURE"`
-- `"NEXT PAGE"`
+- `"NEXT_PAGE"`
 
 ```javascript
 const reducer = (state, action) => {
@@ -203,7 +203,7 @@ const reducer = (state, action) => {
         ...state,
         error: action.payload,
       }
-    case "NEXT PAGE":
+    case "NEXT_PAGE":
       return {
         ...state,
         page: state.page + 1,
