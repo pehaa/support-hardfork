@@ -1,5 +1,16 @@
 # React Context API et <code>useContext</code> hook
 
+Dans la programmation, le mot _context_ peut être interprété comme "l'information pertinente". On utilise _context_ dans React si une information est pertinente pour plusieurs components en même temps, à plusieurs niveau de l'arborescence.
+
+
+
+> Dans une application React typique, les données sont passées de haut en bas (du parent à l’enfant) via les props, mais cela peut devenir lourd pour certains types de props (ex. les préférences régionales, le thème de l’interface utilisateur) qui s’avèrent nécessaires pour de nombreux composants au sein d’une application. L'API Context offre un moyen de partager des valeurs comme celles-ci entre des composants sans avoir à explicitement passer une prop à chaque niveau de l’arborescence.
+
+> En utilisant l'API Context, nous pouvons éviter de passer les props à travers des éléments intermédiaires.
+
+
+![](https://wptemplates.pehaa.com/assets/alyra/context.png)
+
 ## Exemple 1 (Gradients et FilterContext)
 
 Nous allons découvrir l’API Context de React en procédant à un refactoring. Notre point de départ est [ce repo GitHub](https://github.com/pehaa/alyra-gradients-context).
@@ -36,16 +47,6 @@ Ensuite nous passons `filter` et `setFilter` en tant que props dans `GradientsSe
 Nous devons aussi poursuivre tout le chemin entre `Gradients` vers `GradientTagButton` en passant à chaque fois des props `filter` et `setFilter`.
 
 ---
-
-Dans la programmation, le mot _context_ peut être interprété comme "l'information pertinente". On utilise _context_ dans React si une information est pertinente pour plusieurs components en même temps, à plusieurs niveau de l'arborescence.
-
-Les exemples type sont : theme (_dark_ vs. _light_), language (version 'FR' ou 'EN'), le choix de devise dans une application e-commerce.
-
-Voici un extrait de la documentation officielle de React
-
-> Dans une application React typique, les données sont passées de haut en bas (du parent à l’enfant) via les props, mais cela peut devenir lourd pour certains types de props (ex. les préférences régionales, le thème de l’interface utilisateur) qui s’avèrent nécessaires pour de nombreux composants au sein d’une application. Le Contexte offre un moyen de partager des valeurs comme celles-ci entre des composants sans avoir à explicitement passer une prop à chaque niveau de l’arborescence.
-
-> En utilisant le Contexte, nous pouvons éviter de passer les props à travers des éléments intermédiaires.
 
 ![](https://wptemplates.pehaa.com/assets/alyra/diagram-usecontext.png)
 
@@ -140,15 +141,17 @@ export default Gradients
 
 ### Consommer context avec `useContext`
 
-`useContext` accepte un objet contexte (dans notre cas se sera `FilterContext`), et retourne la valeur actuelle du contexte. La valeur de `useContext(FilterContext)` est déterminée par la prop `value` du plus proche <FilterContext.Provider> au-dessus du composant dans l’arbre.
+`useContext` est un hook React qui permet de consommre le contexte. `useContext` accepte un objet contexte (dans notre cas se sera `FilterContext`), et retourne la valeur actuelle du contexte. 
 
-Quand le plus proche <FilterContext.Provider> au-dessus du composant est mis à jour, `useContext` déclenche un re-render avec la value la plus récente passée au fournisseur MyContext.
+La valeur de `useContext(FilterContext)` est déterminée par la prop `value` du plus proche <FilterContext.Provider> au-dessus du composant dans l’arbre.
+
+Quand le plus proche <FilterContext.Provider> au-dessus du composant est mis à jour, `useContext` déclenche un re-render avec la value la plus récente passée au `MyContext.Provider`.
 
 #### GradientsList.js
 
 ```javascript
 // src/components/GradientsList.js
-import React, { useContext } from "react"
+import { useContext } from "react"
 import { gradients } from "./../gradients"
 import Gradient from "./Gradient"
 import { FilterContext } from "./../context/FilterContext"
@@ -190,7 +193,7 @@ Nous allons enlever `filter` et `setFilter` en tant que props.
 
 ```javascript
 // src/components/Gradient/GradientTagButton.js
-import React, { useContext } from "react"
+import { useContext } from "react"
 import { FilterContext } from "./../../context/FilterContext"
 
 const GradientTagButton = ({ tag }) => {
@@ -205,7 +208,7 @@ export default GradientTagButton
 
 ```javascript
 // src/components/GradientsSelect.js
-import React, { useContext } from "react"
+import { useContext } from "react"
 import { uniqueTags } from "../gradients"
 import { FilterContext } from "./../context/FilterContext"
 
@@ -224,7 +227,7 @@ export default GradientsSelect
 Au lieu d'importer à chaque fois `useContex` et le Context lui même nous pouvons créer et utiliser notre propre hook :
 
 ```js
-//
+// src/context/FilterContext.js
 import { createContext, useState, useContext } from "react"
 
 // créer FilterContext object
@@ -269,9 +272,9 @@ export const FilterContextProvider = ({ children }) => {
 
 ## Exemple 2 useReducer & Context
 
-Voici notre [repo de depart](https://github.com/pehaa/alyra-todos-context)
+Voici notre [repo de depart.](https://github.com/pehaa/alyra-todos-context)
 
-Nous allons commencer par le refactoring vers `useReducer`
+Nous allons commencer par le refactoring vers `useReducer`.
 
 https://codepen.io/alyra/pen/oNxZBmb
 
@@ -332,16 +335,18 @@ const Todos = () => {
 
 ## Exercices :
 
-- Mettre en place DarkModeContext. Utiliser la valeur darkMode du contexte dans le component `AddTodoForm` afin de changer les couleurs du formulaire.
-- Familiarisez vous avec [React Router](https://reactrouter.com/web/guides/quick-start) Installer CRA (1) et mettre en place un simple système de routes - comme dans [1st-example-basic-routing](https://reactrouter.com/web/guides/quick-start/1st-example-basic-routing)
+- Mettre en place `DarkModeContext` (`value={darkMode}`). Utiliser la valeur darkMode du contexte dans le component `AddTodoForm` afin de changer les couleurs du formulaire. 
+- Familiarisez-vous avec [React Router](https://reactrouter.com/web/guides/quick-start)
+    - Installer CRA (1) et mettre en place un simple système de routes - comme dans [1st-example-basic-routing](https://reactrouter.com/web/guides/quick-start/1st-example-basic-routing)
+    - Deployer sur Netlify
 
-  Attention - avant de deployer sur Netlify, vous devez configurer les redirects
+    Attention - avant de deployer sur Netlify, vous devez configurer les redirects :
 
-  ```bash
-  touch public/_redirects
-  ```
+    ```bash
+    touch public/_redirects
+    ```
 
-  ```bash
-  # public/_redirects
-  /*    /index.html   200
-  ```
+    ```bash
+    # public/_redirects
+    /*    /index.html   200
+    ```
