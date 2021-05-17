@@ -235,8 +235,6 @@ import { createContext, useState, useContext } from "react"
 // créer FilterContext object
 const FilterContext = createContext()
 
-/* le component-provider qui embrassera la partie de notre app où on utilise ce context */
-
 export const useFilter = () => {
   const context = useContext(FilterContext)
   if (context === "undefined") {
