@@ -22,8 +22,6 @@ Nous allons retravailler l’application Alyra Gradients avec une approche alter
 
 ---
 
-![](https://wptemplates.pehaa.com/assets/alyra/diagram.png)
-
 ### Motivation
 
 Nous utilisons `filter` et `setFilter` dans `GradientsSelect` et `GradientsTagButton`.
@@ -46,7 +44,11 @@ Ensuite nous passons `filter` et `setFilter` en tant que props dans `GradientsSe
 
 Nous devons aussi poursuivre tout le chemin entre `Gradients` vers `GradientTagButton` en passant à chaque fois des props `filter` et `setFilter`.
 
+![](https://wptemplates.pehaa.com/assets/alyra/diagram.png)
+
 ---
+
+### Solution alternative avec l'API Context
 
 ![](https://wptemplates.pehaa.com/assets/alyra/diagram-usecontext.png)
 
