@@ -310,7 +310,7 @@ const DeleteTodo = ({ todo }) => {
       })
       .then(result => {
         if (isMounted.current) {
-          dispatch({ type: "DELETE", payload: todo })
+          dispatch({ type: "DELETE", payload: result })
         }
       })
       .catch(error => {
@@ -361,7 +361,7 @@ const ToggleTodo = ({ todo }) => {
         }
         return response.json()
       })
-      .then(result => {
+      .then(() => {
         if (isMounted.current) {
           dispatch({ type: "TOGGLE", payload: todo })
         }
@@ -385,3 +385,7 @@ const ToggleTodo = ({ todo }) => {
 
 export default ToggleTodo
 ```
+
+## Exercice :
+
+![](https://wptemplates.pehaa.com/assets/alyra.todos.png)
