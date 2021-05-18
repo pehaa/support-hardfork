@@ -388,4 +388,4 @@ export default ToggleTodo
 
 ## Exercice :
 
-![](https://wptemplates.pehaa.com/assets/alyra.todos.png)
+![](https://wptemplates.pehaa.com/assets/alyra/todos.png)
