@@ -55,3 +55,5 @@
 - [useReducer](./react/usereducer)
 - [useContext](./react/use-context-1)
 - [Todos with API](./react/todos-with-api)
+- [Todos with JWT Authentication](./react/todos-with-api-2)
+- [Projet : Gradients once more](./react/gradients-from-api)
