@@ -60,7 +60,7 @@ Voici des exemples :
 
 ## Validation (/10):
 
-**[le site de référence](https://alyra-gradients-bonus.netlify.app/)**
+**[le site de référence](https://alyra-gradients-once-more.netlify.app/)**
 
 - rendu sur GitHub et déploiement sur Netlify
 - `useReducer` avec des actions `FETCH_INIT`, `FETCH_SUCCESS`, `FETCH_FAILURE` est mis en place correctement (/2)
