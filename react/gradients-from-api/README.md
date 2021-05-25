@@ -19,7 +19,7 @@ Voici un exemple :
   <Route exact path="/">
     <Home />
   </Route>
-  <Route exact path="/products/:id">
+  <Route exact path="/product/:id">
     <Product />
   </Route>
 </Switch>
