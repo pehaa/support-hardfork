@@ -241,22 +241,18 @@ const Login = () => {
         return response.json()
       })
       .then(result => {
-        if (isMounted.current) {
-          userDispatch({
-            type: "LOGIN_SUCCESS",
-            payload: result,
-          })
-          // si ok nous allons rediriger l'utilisateur vers "todos"
-          history.replace("/todos")
-        }
+        userDispatch({
+          type: "LOGIN_SUCCESS",
+          payload: result,
+        })
+        // si ok nous allons rediriger l'utilisateur vers "todos"
+        history.replace("/todos")
       })
       .catch(e => {
-        if (isMounted.current) {
-          userDispatch({
-            type: "LOGIN_FAILURE",
-            payload: e.message,
-          })
-        }
+        userDispatch({
+          type: "LOGIN_FAILURE",
+          payload: e.message,
+        })
       })
   }
   return (
