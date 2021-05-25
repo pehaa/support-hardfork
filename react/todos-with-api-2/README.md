@@ -241,7 +241,7 @@ const Login = () => {
         return response.json()
       })
       .then(result => {
-        if (isMounted) {
+        if (isMounted.current) {
           userDispatch({
             type: "LOGIN_SUCCESS",
             payload: result,
@@ -251,7 +251,7 @@ const Login = () => {
         }
       })
       .catch(e => {
-        if (isMounted) {
+        if (isMounted.current) {
           userDispatch({
             type: "LOGIN_FAILURE",
             payload: e.message,
