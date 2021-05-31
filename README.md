@@ -57,4 +57,5 @@
 - [Todos with API](./react/todos-with-api)
 - [Todos with JWT Authentication](./react/todos-with-api-2)
 - [Projet : Gradients once more](./react/gradients-from-api)
-- [Memoization](./react/memoization)
+- Memoization
+- [useCallback](./react/memoization/usecallback)
