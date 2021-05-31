@@ -211,12 +211,10 @@ Et finalement dans notre component `Login.js`
 // src/components/Login.js
 import { useHistory } from "react-router-dom"
 import { useUser } from "../context/UserContext"
-import { useIsMounted } from "../hooks/useIsMounted"
 
 const Login = () => {
   const history = useHistory()
   const { error, loading, userDispatch } = useUser()
-  const isMounted = useIsMounted()
   const handleFormSubmit = e => {
     e.preventDefault()
     const login = e.target.elements.login.value
