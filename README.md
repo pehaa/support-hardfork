@@ -59,3 +59,5 @@
 - [Projet : Gradients once more](./react/gradients-from-api)
 - Memoization
   - [useCallback](./react/memoization/usecallback)
+  - [memo](./react/memoization/memo)
+  - [useMemo](./react/memoization/useMemo)
