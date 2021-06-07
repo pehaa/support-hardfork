@@ -1,6 +1,6 @@
 # React useMemo
 
-Nous alons démarrer avec [ce repo](https://github.com/pehaa/crypto-memo), la branche `start-useMemo`.
+Nous allons démarrer avec [ce repo](https://github.com/pehaa/crypto-memo), la branche `start-useMemo`.
 
 ```bash
 git checkout start-useMemo
@@ -72,7 +72,7 @@ const List = () => {
 export default List
 ```
 
-Nous allons observer la performance de notre application dans Profiler. En particulier observons la différence :
+Nous allons observer la performance de notre application dans Profiler. En particulier, nous allons clicker **Show/Hide details** et observer la différence :
 
 - avec le champs de `input` vide (`filter = ""`)
 - avec le champs de `input` rempli (`filter = "bit"`).
@@ -84,17 +84,21 @@ A chaque rendu de `List` nous recalculons `filteredCurrencies` et enfin `display
 
 Nous n'avons pas besoin de recalculer `displayedCurrencies` à chaque fois que `active` change.
 
-Ce serait bien si on pouvait memoïser `displayedCurrencies` 🤔.
+Ce serait bien si on pouvait mémoïser `displayedCurrencies` 🤔.
 
 ## Solution
 
-React hook `useMemo` permet de memoïser une valeur (de la même façon que `useCallback` permet de memoïser une fonction).
+React hook `useMemo` permet de mémoïser une valeur (de la même façon que `useCallback` permet de mémoïser une fonction).
+
+---
 
 ```js
 const myMemoizedValue = useMemo(() => {
   /* .... */ return valueToMemoize
 }, [deps])
 ```
+
+---
 
 ```js
 // src/components/List.js
@@ -144,6 +148,10 @@ const myFunction = useMemo(() => fn, [deps])
 
 Nous allons introduire `darkMode` dans notre application.
 
+```bash
+git checkout start-with-context
+```
+
 ```js
 // src/App.js
 
@@ -171,7 +179,7 @@ function App() {
 export default App
 ```
 
-Suite à ça notre compoment `List` est rendu quand `darkMode` change. Ceci n'a pas un impacte très fort sur la performance, mais nous pouvons quand même opter à emballer `List` dans `memo`.
+Suite à ça notre component `List` est rendu quand `darkMode` change. Ceci n'a pas un impact très fort sur la performance, mais nous pouvons quand même opter à emballer `List` dans `memo`.
 
 ```js
 // src/components/List.js
@@ -181,23 +189,25 @@ import { useState, useCallback, useMemo, memo } from "react"
 export default memo(List)
 ```
 
-Regardons maintenant ce qui va se passer si nous decidons d'utiliser les currencies avec l'API Context.
+Regardons maintenant ce qui va se passer si nous décidons d'utiliser les currencies avec l'API Context.
 
 ```js
+// src/context/CurrenciesContext.js
 import { createContext, useContext } from "react"
 import { useCurrencies } from "../hooks/useCurrencies"
 
 export const CurrenciesContext = createContext()
+
 export const CurrenciesContextProvider = ({ children }) => {
-  const value = useCurrencies()
+  const { error, loading, currencies } = useCurrencies()
   return (
-    <CurrenciesContext.Provider value={value}>
+    <CurrenciesContext.Provider value={{ error, loading, currencies }}>
       {children}
     </CurrenciesContext.Provider>
   )
 }
 
-export const useCurrenciesContext = id => {
+export const useCurrenciesContext = () => {
   const context = useContext(CurrenciesContext)
   if (context === "undefined") {
     throw new Error(
@@ -208,6 +218,8 @@ export const useCurrenciesContext = id => {
   return context
 }
 ```
+
+Nous allons placer `CurrenciesContextProvider` dans notre component `App`.
 
 ```js
 import { useState } from "react"
@@ -237,8 +249,24 @@ function App() {
 export default App
 ```
 
-Vous pouvez observer que `List` (`memo(List)`) rerenders quand nous changons le `darkMode`. Pourquoi ?
+Vous pouvez observer que `List` (`memo(List)`) _”rerenders”_ quand nous changeons le `darkMode`. Pourquoi ?
 
-`List` rerenders quand son state change. Si un component _consomme_ un contexte, il rerenders à chaque fois que `value` passée au Provider ce ce contexte change. Et dans notre cas ?
+`List` _”rerenders”_ quand son state change. Si un component _consomme_ un contexte, il _”rerenders”_ à chaque fois que `value` passée au Provider ce ce contexte change. Et dans notre cas ?
 
-Quand le `darkMode` change dans App, `CurrenciesContextProvider` rerenders et
+Quand le `darkMode` change dans App, `CurrenciesContextProvider` repasse `{error, loading, currencies}` dans sa props value. Cette valeur est à chaque fois différente, à chaque fois c'est un nouvel objet. Mais nous pouvons le mémoïser avec `useMemo`.
+
+```js
+export const CurrenciesContextProvider = ({ children }) => {
+  const { error, loading, currencies } = useCurrencies()
+  const value = useMemo(() => ({ error, loading, currencies }), [
+    error,
+    loading,
+    currencies,
+  ])
+  return (
+    <CurrenciesContext.Provider value={value}>
+      {children}
+    </CurrenciesContext.Provider>
+  )
+}
+```

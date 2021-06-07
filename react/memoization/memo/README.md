@@ -2,10 +2,10 @@
 
 https://codepen.io/alyra/pen/dyveQmE
 
-Enrober un component dans `React.memo` permet de mémoïser le résultat. React vérifiera si les props sont les mêmes que pour le rendu précédent. Si c'est le cas, React sautera le rafraîchissement du composant en réutilisant son dernier rendu en date.  
-Dans certain cas cela améliore la performance.
+Enrober un component dans `React.memo` permet de le mémoïser. React vérifiera si les props sont les mêmes que pour le rendu précédent. Si c'est le cas, React sautera le rafraîchissement du composant en réutilisant son dernier rendu en date.  
+Dans certains cas cela améliore la performance.
 
-> `React.memo` ne se préoccupe **que** des modifications de props. Si votre fonction composant enrobée par `React.memo` utilise un Hook `useState` ou `useContext` dans son implémentation, des changements d’état local ou de contexte entraîneront tout de même un nouveau rendu.
+> `React.memo` ne se préoccupe **que** des modifications de props. Si votre composant enrobée par `React.memo` utilise un Hook `useState` ou `useContext` dans son implémentation, des changements de state ou de contexte entraîneront tout de même un nouveau rendu.
 
 ---
 
@@ -171,8 +171,8 @@ export const reducer = (state, action) => {
 
 ## Problème
 
-Nous avons 500 currencies sur la page. Quand une devient _"active"_, le state `active` change dans le component `List`. Toute l'arborescence à partir de `List` est alors _regénérée_.  
-Avec un grand nombre d'éléments, ceci peut avoir l'impacte sur la performance.
+Nous avons 500 currencies sur la page. Quand une devient _"active"_, le state `active` change dans le component `List`. Toute l'arborescence à partir de `List` est alors _régénérée_.  
+Avec un grand nombre d'éléments, ceci peut avoir l'impact sur la performance.
 
 - Pour mieux observer ce problème nous allons "empirer" l'expérience dans l'onglet **Performance** de Dev Tools. Nous allons changer **CPU: No throttling** pour **CPU: 6x slowndown**.
 - Nous allons ouvrir l'onglet **Profiler** de React Dev Tools.
@@ -297,7 +297,7 @@ export default memo(Currency)
 
 Nous pouvons vérifier dans Profiler que 500 components `Currency` sont de retours rendu à chaque changement de `active`. Pourquoi ? Quand React compare des props, les 👉**fonctions**👈 `hideDetails` et `showDetails` ne sont jamais les mêmes que pendant le rendu précédent.
 
-Nous pouvons y rémédier avec `useCallback`.
+Nous pouvons y remédier avec `useCallback`.
 
 ```js
 // src/components/List.js
