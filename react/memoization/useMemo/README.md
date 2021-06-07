@@ -1,12 +1,22 @@
 # React <code>useMemo</code>
 
+---
+
+```js
+const myMemoizedValue = useMemo(() => {
+  /* .... */ return valueToMemoize
+}, [deps])
+```
+
+---
+
+## Point de départ
+
 Nous allons démarrer avec [ce repo](https://github.com/pehaa/crypto-memo), la branche `start-useMemo`.
 
 ```bash
 git checkout start-useMemo
 ```
-
-## Point de départ
 
 Nous allons installer une librairie externe [match-sorter](https://github.com/kentcdodds/match-sorter)
 
