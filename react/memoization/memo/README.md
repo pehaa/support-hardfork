@@ -1,4 +1,4 @@
-# React memo
+# React <code>memo</code>
 
 https://codepen.io/alyra/pen/dyveQmE
 
@@ -169,7 +169,7 @@ export const reducer = (state, action) => {
 }
 ```
 
-## Problème
+## Le problème
 
 Nous avons 500 currencies sur la page. Quand une devient _"active"_, le state `active` change dans le component `List`. Toute l'arborescence à partir de `List` est alors _régénérée_.  
 Avec un grand nombre d'éléments, ceci peut avoir l'impact sur la performance.
@@ -185,7 +185,7 @@ A chaque fois que `active` change, 500 components `Currency` sont rendus, dont 4
 
 Dans ce cas là, nous pouvons **envisager** l'utilisation de `memo`. Nous allons alors vérifier si `memo` effectivement améliore la performance.
 
-## memo
+## La solution - `memo`
 
 ```js
 // src/components/Currency.js

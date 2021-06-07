@@ -1,4 +1,4 @@
-# React useMemo
+# React <code>useMemo</code>
 
 Nous allons démarrer avec [ce repo](https://github.com/pehaa/crypto-memo), la branche `start-useMemo`.
 
@@ -86,7 +86,7 @@ Nous n'avons pas besoin de recalculer `displayedCurrencies` à chaque fois que `
 
 Ce serait bien si on pouvait mémoïser `displayedCurrencies` 🤔.
 
-## Solution
+## La solution - `useMemo`
 
 React hook `useMemo` permet de mémoïser une valeur (de la même façon que `useCallback` permet de mémoïser une fonction).
 
