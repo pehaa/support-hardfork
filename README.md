@@ -61,3 +61,4 @@
   - [useCallback](./react/memoization/usecallback)
   - [memo](./react/memoization/memo)
   - [useMemo](./react/memoization/useMemo)
+- [Chakra UI](./react/chakra-ui)
