@@ -201,9 +201,9 @@ ReactDOM.render(
 // comme avant
 ```
 
-## Mobile Naviagation
+## Mobile Navigation
 
-Nous allons utiliser `useMediaQuery` - un hook de Chakra UI pour afficher le menu de naviagion selon la taille de l'écran.
+Nous allons utiliser `useMediaQuery` - un hook de Chakra UI pour afficher le menu de navigion selon la taille de l'écran.
 
 ```js
 import { Link, List, ListItem } from "@chakra-ui/react"
