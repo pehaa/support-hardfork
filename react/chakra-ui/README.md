@@ -130,9 +130,9 @@ Dans notre cas
 // src/theme/index.js
 import { extendTheme } from "@chakra-ui/react"
 // Global style overrides
-import styles from "./styles"
+import { styles } from "./styles"
 // Foundational style overrides
-import fonts from "./foundations/fonts"
+import { fonts } from "./foundations/fonts"
 // Component style overrides
 import Badge from "./components/Badge"
 const overrides = {
@@ -164,6 +164,7 @@ export const Badge = {
 // src/theme/foundations/fonts.js
 export const fonts = {
   body: "Lato, sans-serif",
+  headings: "Lato, sans-serif",
   special: "Trocchi, serif",
 }
 ```
@@ -209,7 +210,7 @@ Nous allons utiliser `useMediaQuery` - un hook de Chakra UI pour afficher le men
 import { Link, List, ListItem } from "@chakra-ui/react"
 const NavigationListItems = ({ sx, ...props }) => {
   return (
-    <List>
+    <List sx={{ ...sx }} {...props}>
       <ListItem>
         <Link href="/#sample">Sample</Link>
       </ListItem>
@@ -229,7 +230,7 @@ const Navigation = () => {
   const [isMobile] = useMediaQuery("(max-width: 720px)")
   return (
     <>
-      <Box py="3" position="fixed" w="100%" zIndex="100">
+      <Box py="3" position="fixed" w="100%" zIndex="sticky">
         <Container as="nav" maxW="container.lg" d="flex" alignItems="center">
           <Link href="/" mr="auto">
             AlyraKit
