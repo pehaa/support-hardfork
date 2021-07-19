@@ -2,8 +2,8 @@
 
 ## Jamstack
 
-[Jamstack wtf (en)](https://jamstack.wtf/)
-[Jamstack wtf - explication en fr](https://jamstatic.fr/2019/02/07/c-est-quoi-la-jamstack/)
+- [Jamstack wtf (en)](https://jamstack.wtf/)
+- [Jamstack wtf - explication en fr](https://jamstatic.fr/2019/02/07/c-est-quoi-la-jamstack/)
 
 ## SSR
 
