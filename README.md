@@ -62,3 +62,4 @@
   - [memo](./react/memoization/memo)
   - [useMemo](./react/memoization/useMemo)
 - [Chakra UI](./react/chakra-ui)
+- [SSR avec Gatsby JS](./react/gatsbyjs)
